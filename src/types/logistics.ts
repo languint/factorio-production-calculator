@@ -1,0 +1,1 @@
+export type LogisticsBelt = "transport-belt" | "fast-transport-belt" | "express-transport-belt";
