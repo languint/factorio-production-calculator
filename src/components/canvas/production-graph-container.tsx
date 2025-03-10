@@ -86,7 +86,6 @@ export function ProductionGraphContainer(props: Props) {
   };
 
   const handleWheel = (e: React.WheelEvent<SVGSVGElement>) => {
-    e.preventDefault();
     const zoomFactor = 0.1;
     const zoom = e.deltaY < 0 ? 1 + zoomFactor : 1 - zoomFactor;
     const newScale = clampScale(scaleRef.current * zoom);
