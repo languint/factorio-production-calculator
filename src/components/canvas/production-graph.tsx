@@ -1,8 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import {
-  getMachineCount,
-  getNumberOfMachines,
-} from "@/calc/calculate-production";
+import { getMachineCount } from "@/calc/calculate-production";
 import { Node } from "@/calc/types";
 import { AppConfig } from "@/config";
 import { AppState } from "@/state";
@@ -138,21 +135,25 @@ export function ProductionGraph(props: ProductionGraphProps) {
     if (!d.data.item) return acc;
 
     const recipes = getRecipes(d.data.item.id);
-    const recipeTime = recipes && recipes[0] ? recipes[0].time : 1;
+
     const machineId =
       getProductionBuilding(props.appConfig, recipes!) ??
       "assembling-machine-1";
-    const machineSpeed = getItem(machineId)?.machine?.speed ?? 0.5;
-    const numberOfMachines = getNumberOfMachines(
+
+    const numberOfMachines = getMachineCount(
+      machineId,
       d.data.rate,
-      recipeTime,
-      machineSpeed
+      d.data.item,
+      props.appConfig.bonuses.mining
     );
 
     const machine = getItem(machineId);
     const power =
       machine && getPowerConsumption(machine)
-        ? getPowerConsumption(machine) * numberOfMachines
+        ? getPowerConsumption(machine) *
+          (numberOfMachines !== 0
+            ? Number.parseFloat(numberOfMachines)
+            : numberOfMachines)
         : 0;
 
     return acc + power;

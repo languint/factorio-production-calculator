@@ -77,14 +77,14 @@ export function getMachineCount(
 
   if (!machine?.machine) return 0;
 
-  if (machineId === "offshore-pump") return (rate / 12000).toFixed(2) + "x"; // Pipe throughput
+  if (machineId === "offshore-pump") return (rate / 12000).toFixed(2) + "x";
   if (machineId === "pumpjack") return (rate / 10).toFixed(2) + "%";
   if (machineId === "oil-refinery") return ((rate * 60) / 500).toFixed(2) + "x";
 
   if (machineId === "electric-mining-drill")
     return (
       Math.max(rate * 2 * (1 - 0.1 * miningProductivity), 1).toFixed(2) + "x"
-    ); // Mining drill
+    );
 
   const recipes = getRecipes(item.id);
 
@@ -95,12 +95,4 @@ export function getMachineCount(
     return ((rate * recipeTime) / machineSpeed).toFixed(2) + "x";
 
   return ((rate * recipeTime) / machineSpeed).toFixed(2) + "x";
-}
-
-export function getNumberOfMachines(
-  rate: number,
-  craftingTime: number,
-  speedFactor: number
-) {
-  return (rate * craftingTime) / speedFactor;
 }

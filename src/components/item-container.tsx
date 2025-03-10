@@ -31,7 +31,7 @@ export function ItemContainer(props: ItemContainerProps) {
       style={{
         width: desiredIconSize,
         height: desiredIconSize,
-        backgroundImage: "url(icons.webp)",
+        backgroundImage: "url(factorio-production-calculator/icons.webp)",
         backgroundPosition: iconClip,
         backgroundSize: `${atlasWidth * scale}px ${atlasHeight * scale}px`,
       }}
