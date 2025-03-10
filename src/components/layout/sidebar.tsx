@@ -42,7 +42,7 @@ export function Sidebar(props: SidebarProps) {
         <SidebarHeader>
           <SidebarMenuItem className="flex-row flex gap-4 items-center">
             <div className="flex aspect-square size-8 items-center justify-center text-sidebar-primary-foreground">
-              <img src="/logo.svg" />
+              <img src="/factorio-production-calculator/logo.svg" />
             </div>
             <span className="font-semibold text-sm">Factorio Production Calculator</span>
           </SidebarMenuItem>
