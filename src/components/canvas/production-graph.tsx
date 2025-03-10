@@ -16,6 +16,8 @@ import { Dispatch, RefObject, SetStateAction } from "react";
 import { ProductionNode } from "./production-node";
 import { hierarchy, tree } from "d3-hierarchy";
 import { getProductionBuilding } from "@/calc/get-production-building";
+import { buildDAG } from "./buildDAG";
+import { buildCombinedTree } from "./buildCombinedTree";
 
 interface ProductionGraphProps {
   appConfig: AppConfig;
@@ -33,71 +35,6 @@ interface ProductionGraphProps {
 
 const NODE_WIDTH = 360;
 const NODE_HEIGHT = 120;
-
-function buildDAG(_config: AppConfig, finalItemId: string, finalRate: number) {
-  const nodeMap = new Map<string, { id: string; rate: number }>();
-
-  const edges = new Map<string, Set<string>>();
-  const allEdges: Array<{ source: string; target: string; value: number }> = [];
-
-  function visit(itemId: string, rate: number) {
-    if (nodeMap.has(itemId)) {
-      nodeMap.get(itemId)!.rate += rate;
-    } else {
-      nodeMap.set(itemId, { id: itemId, rate });
-    }
-
-    const recipes = getRecipes(itemId);
-    if (!recipes || recipes.length === 0) return;
-
-    const recipe = recipes[0];
-    const outAmount = recipe.out[itemId] ?? 1;
-
-    for (const [childId, inAmount] of Object.entries(recipe.in)) {
-      const childRate = (rate * inAmount) / outAmount;
-      allEdges.push({ source: childId, target: itemId, value: childRate });
-
-      if (!edges.has(itemId)) edges.set(itemId, new Set());
-      edges.get(itemId)!.add(childId);
-
-      visit(childId, childRate);
-    }
-  }
-
-  visit(finalItemId, finalRate);
-  return { nodeMap, edges, allEdges };
-}
-
-function buildCombinedTree(
-  finalItemId: string,
-  nodeMap: Map<string, { id: string; rate: number }>,
-  edges: Map<string, Set<string>>
-): Node {
-  const visited = new Set<string>();
-
-  function buildTree(itemId: string): Node {
-    const dagNode = nodeMap.get(itemId);
-    const newNode: Node = {
-      item: getItem(itemId)!,
-      rate: dagNode ? dagNode.rate : 0,
-      machine: "",
-      children: [],
-    };
-    visited.add(itemId);
-
-    const childrenIds = edges.get(itemId);
-    if (childrenIds) {
-      childrenIds.forEach((childId) => {
-        if (!visited.has(childId)) {
-          newNode.children!.push(buildTree(childId));
-        }
-      });
-    }
-    return newNode;
-  }
-
-  return buildTree(finalItemId);
-}
 
 export function ProductionGraph(props: ProductionGraphProps) {
   const finalLine = props.appState.production[0];
@@ -162,6 +99,7 @@ export function ProductionGraph(props: ProductionGraphProps) {
   props.powerConsumption.current = totalPower;
 
   const treeNodeMap = new Map<string, any>();
+  
   allNodes.forEach((d: any) => {
     if (d.data.item && d.data.item.id) {
       treeNodeMap.set(d.data.item.id, d);
@@ -217,12 +155,9 @@ export function ProductionGraph(props: ProductionGraphProps) {
         const tx = t.screenX;
         const ty = t.screenY;
 
-        // Corrected for right-to-left flow
-        // For source (item on right): connect to left edge
         const sourceX = sx;
         const sourceY = sy + NODE_HEIGHT / 2;
 
-        // For target (item on left): connect to right edge
         const targetX = tx + NODE_WIDTH;
         const targetY = ty + NODE_HEIGHT / 2;
 

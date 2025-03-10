@@ -139,8 +139,8 @@ export function ProductionGraphContainer(props: Props) {
   };
 
   const handleKeydown = (e: KeyboardEvent) => {
-    const dx = 10;
-    const dy = 10;
+    const dx = 20;
+    const dy = 20;
 
     if (e.key === "ArrowDown") {
       if (e.ctrlKey) {

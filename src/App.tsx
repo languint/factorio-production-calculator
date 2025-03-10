@@ -13,6 +13,8 @@ import "./App.css";
 import { AppConfig, defaultConfig } from "./config";
 import { LoadingModal } from "./components/layout/loading-modal";
 import { AppState, defaultAppState } from "./state";
+import { useIsMobile } from "./hooks/use-mobile";
+import { MobileModal } from "./components/layout/mobile-modal";
 
 function App() {
   const [appConfig, setAppConfig] = useState<AppConfig>(defaultConfig);
@@ -35,19 +37,22 @@ function App() {
 
   return (
     <ThemeProvider defaultTheme="dark">
+      {useIsMobile() && <MobileModal />}
       {isLoading && <LoadingModal />}
-      <Layout
-        appConfig={appConfig}
-        setAppConfig={setAppConfig}
-        appState={appState}
-        setAppState={setAppState}
-        icons={icons}
-        setIcons={setIcons}
-        items={items}
-        setItems={setItems}
-        recipes={recipes}
-        setRecipes={setRecipes}
-      />
+      {!useIsMobile() && (
+        <Layout
+          appConfig={appConfig}
+          setAppConfig={setAppConfig}
+          appState={appState}
+          setAppState={setAppState}
+          icons={icons}
+          setIcons={setIcons}
+          items={items}
+          setItems={setItems}
+          recipes={recipes}
+          setRecipes={setRecipes}
+        />
+      )}
     </ThemeProvider>
   );
 }
