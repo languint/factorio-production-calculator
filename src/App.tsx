@@ -1,58 +1,53 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { Layout } from "./components/layout";
 import { ThemeProvider } from "./components/theme-provider";
-import { AssemblyBuildings, FurnaceBuildings } from "./types/buildings";
-import { LogisticsBelt } from "./types/logistics";
-import { ItemRateUnit, PowerUnit } from "./types/units";
-import { Item, loadItemsFromFile } from "./types/data";
+import {
+  Item,
+  ItemDisplay,
+  loadIcons,
+  loadItems,
+  loadRecipes,
+  Recipe,
+} from "./types/data";
 import "./App.css";
-
-export interface AppConfig {
-  bonuses: {
-    mining: number;
-  };
-  logistics: {
-    belt: LogisticsBelt;
-  };
-  production: {
-    furnace: FurnaceBuildings;
-    assembly: AssemblyBuildings;
-  };
-  display: {
-    itemUnits: ItemRateUnit;
-    powerUnits: PowerUnit;
-  };
-}
-
-const defaultConfig = {
-  bonuses: {
-    mining: 0,
-  },
-  logistics: {
-    belt: "transport-belt",
-  },
-  production: {
-    furnace: "stone-furnace",
-    assembly: "assembling-machine-1",
-  },
-  display: {
-    itemUnits: "minute",
-    powerUnits: "MW",
-  },
-} as AppConfig;
+import { AppConfig, defaultConfig } from "./config";
+import { LoadingModal } from "./components/layout/loading-modal";
+import { AppState, defaultAppState } from "./state";
 
 function App() {
   const [appConfig, setAppConfig] = useState<AppConfig>(defaultConfig);
-
-  const [items, setItems] = useState<Item[]>();
+  const [appState, setAppState] = useState<AppState>(defaultAppState);
+  const [items, setItems] = useState<Item[]>([]);
+  const [icons, setIcons] = useState<ItemDisplay[]>([]);
+  const [recipes, setRecipes] = useState<Recipe[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    loadItemsFromFile("/src/data/data.json").then((items) => setItems(items));
+    setItems(loadItems);
+    setIcons(loadIcons);
+    setRecipes(loadRecipes);
+    setIsLoading(false);
   }, []);
+
+  console.log(`Loaded: ${items!.length} items.`);
+  console.log(`Loaded: ${icons!.length} icons.`);
+  console.log(`Loaded: ${recipes.length} recipes.`);
 
   return (
     <ThemeProvider defaultTheme="dark">
-      <Layout appConfig={appConfig} setAppConfig={setAppConfig} />
+      {isLoading && <LoadingModal />}
+      <Layout
+        appConfig={appConfig}
+        setAppConfig={setAppConfig}
+        appState={appState}
+        setAppState={setAppState}
+        icons={icons}
+        setIcons={setIcons}
+        items={items}
+        setItems={setItems}
+        recipes={recipes}
+        setRecipes={setRecipes}
+      />
     </ThemeProvider>
   );
 }

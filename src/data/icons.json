@@ -1,0 +1,1219 @@
+[
+  { "id": "wooden-chest", "position": "0px 0px", "color": "#937139" },
+  { "id": "iron-chest", "position": "-66px 0px", "color": "#7c6c5f" },
+  { "id": "steel-chest", "position": "0px -66px", "color": "#86787b" },
+  { "id": "storage-tank", "position": "-66px -66px", "color": "#7d715c" },
+  { "id": "transport-belt", "position": "-132px 0px", "color": "#716358" },
+  {
+    "id": "fast-transport-belt",
+    "position": "-132px -66px",
+    "color": "#735a57"
+  },
+  {
+    "id": "express-transport-belt",
+    "position": "0px -132px",
+    "color": "#626469"
+  },
+  {
+    "id": "underground-belt",
+    "position": "-66px -132px",
+    "color": "#7a674a"
+  },
+  {
+    "id": "fast-underground-belt",
+    "position": "-132px -132px",
+    "color": "#764a47"
+  },
+  {
+    "id": "express-underground-belt",
+    "position": "-198px 0px",
+    "color": "#576671"
+  },
+  { "id": "splitter", "position": "-198px -66px", "color": "#776b54" },
+  { "id": "fast-splitter", "position": "-198px -132px", "color": "#80615f" },
+  { "id": "express-splitter", "position": "0px -198px", "color": "#6a797f" },
+  { "id": "burner-inserter", "position": "-66px -198px", "color": "#6f6b69" },
+  { "id": "inserter", "position": "-132px -198px", "color": "#a08459" },
+  {
+    "id": "long-handed-inserter",
+    "position": "-198px -198px",
+    "color": "#9e605b"
+  },
+  { "id": "fast-inserter", "position": "-264px 0px", "color": "#5c8b9d" },
+  { "id": "bulk-inserter", "position": "-264px -66px", "color": "#7f995c" },
+  {
+    "id": "small-electric-pole",
+    "position": "-264px -132px",
+    "color": "#706258"
+  },
+  {
+    "id": "medium-electric-pole",
+    "position": "-264px -198px",
+    "color": "#877061"
+  },
+  { "id": "big-electric-pole", "position": "0px -264px", "color": "#6e757a" },
+  { "id": "substation", "position": "-66px -264px", "color": "#5c5e65" },
+  { "id": "pipe", "position": "-132px -264px", "color": "#6d634d" },
+  { "id": "pipe-to-ground", "position": "-198px -264px", "color": "#7f735a" },
+  { "id": "pump", "position": "-264px -264px", "color": "#6c5b4e" },
+  { "id": "rail", "position": "-330px 0px", "color": "#7b705a" },
+  { "id": "train-stop", "position": "-330px -66px", "color": "#936556" },
+  { "id": "rail-signal", "position": "-330px -132px", "color": "#6e7257" },
+  {
+    "id": "rail-chain-signal",
+    "position": "-330px -198px",
+    "color": "#5d7c87"
+  },
+  { "id": "locomotive", "position": "-330px -264px", "color": "#734d48" },
+  { "id": "cargo-wagon", "position": "0px -330px", "color": "#6b6968" },
+  { "id": "fluid-wagon", "position": "-66px -330px", "color": "#7d7b79" },
+  {
+    "id": "artillery-wagon",
+    "position": "-132px -330px",
+    "color": "#746e5a"
+  },
+  { "id": "car", "position": "-198px -330px", "color": "#755a42" },
+  { "id": "tank", "position": "-264px -330px", "color": "#705843" },
+  { "id": "spidertron", "position": "-330px -330px", "color": "#77522d" },
+  { "id": "logistic-robot", "position": "-396px 0px", "color": "#7d7165" },
+  {
+    "id": "construction-robot",
+    "position": "-396px -66px",
+    "color": "#867a67"
+  },
+  {
+    "id": "active-provider-chest",
+    "position": "-396px -132px",
+    "color": "#6d5570"
+  },
+  {
+    "id": "passive-provider-chest",
+    "position": "-396px -198px",
+    "color": "#83574b"
+  },
+  { "id": "storage-chest", "position": "-396px -264px", "color": "#7e7046" },
+  { "id": "buffer-chest", "position": "-396px -330px", "color": "#597b54" },
+  { "id": "requester-chest", "position": "0px -396px", "color": "#5d7072" },
+  { "id": "roboport", "position": "-66px -396px", "color": "#746d67" },
+  { "id": "small-lamp", "position": "-132px -396px", "color": "#aba8a6" },
+  {
+    "id": "arithmetic-combinator",
+    "position": "-198px -396px",
+    "color": "#6b6c5d"
+  },
+  {
+    "id": "decider-combinator",
+    "position": "-264px -396px",
+    "color": "#7e714e"
+  },
+  {
+    "id": "selector-combinator",
+    "position": "-330px -396px",
+    "color": "#747055"
+  },
+  {
+    "id": "constant-combinator",
+    "position": "-396px -396px",
+    "color": "#7a504c"
+  },
+  { "id": "power-switch", "position": "-462px 0px", "color": "#686365" },
+  {
+    "id": "programmable-speaker",
+    "position": "-462px -66px",
+    "color": "#736f65"
+  },
+  { "id": "display-panel", "position": "-462px -132px", "color": "#5a554d" },
+  { "id": "stone-brick", "position": "-462px -198px", "color": "#7b7c77" },
+  { "id": "concrete", "position": "-462px -264px", "color": "#828486" },
+  {
+    "id": "hazard-concrete",
+    "position": "-462px -330px",
+    "color": "#807a60"
+  },
+  {
+    "id": "refined-concrete",
+    "position": "-462px -396px",
+    "color": "#7d7f7f"
+  },
+  {
+    "id": "refined-hazard-concrete",
+    "position": "0px -462px",
+    "color": "#86795c"
+  },
+  { "id": "landfill", "position": "-66px -462px", "color": "#6d523e" },
+  {
+    "id": "cliff-explosives",
+    "position": "-132px -462px",
+    "color": "#5a7d96"
+  },
+  { "id": "repair-pack", "position": "-198px -462px", "color": "#a79e92" },
+  { "id": "boiler", "position": "-264px -462px", "color": "#6e6a58" },
+  { "id": "steam-engine", "position": "-330px -462px", "color": "#726a5c" },
+  { "id": "solar-panel", "position": "-396px -462px", "color": "#608895" },
+  { "id": "accumulator", "position": "-462px -462px", "color": "#7f9798" },
+  { "id": "nuclear-reactor", "position": "-528px 0px", "color": "#84866c" },
+  { "id": "heat-pipe", "position": "-528px -66px", "color": "#af7362" },
+  { "id": "heat-exchanger", "position": "-528px -132px", "color": "#885745" },
+  { "id": "steam-turbine", "position": "-528px -198px", "color": "#666661" },
+  {
+    "id": "burner-mining-drill",
+    "position": "-528px -264px",
+    "color": "#696160"
+  },
+  {
+    "id": "electric-mining-drill",
+    "position": "-528px -330px",
+    "color": "#6b6a63"
+  },
+  { "id": "offshore-pump", "position": "-528px -396px", "color": "#6e5e4c" },
+  { "id": "pumpjack", "position": "-528px -462px", "color": "#667c4d" },
+  { "id": "stone-furnace", "position": "0px -528px", "color": "#7c6c4a" },
+  { "id": "steel-furnace", "position": "-66px -528px", "color": "#716651" },
+  {
+    "id": "electric-furnace",
+    "position": "-132px -528px",
+    "color": "#66625e"
+  },
+  {
+    "id": "assembling-machine-1",
+    "position": "-198px -528px",
+    "color": "#72635c"
+  },
+  {
+    "id": "assembling-machine-2",
+    "position": "-264px -528px",
+    "color": "#66656f"
+  },
+  {
+    "id": "assembling-machine-3",
+    "position": "-330px -528px",
+    "color": "#707462"
+  },
+  { "id": "oil-refinery", "position": "-396px -528px", "color": "#7e654b" },
+  { "id": "chemical-plant", "position": "-462px -528px", "color": "#746a5d" },
+  { "id": "centrifuge", "position": "-528px -528px", "color": "#7b8971" },
+  { "id": "lab", "position": "-594px 0px", "color": "#697c9b" },
+  { "id": "beacon", "position": "-594px -66px", "color": "#6b635d" },
+  { "id": "speed-module", "position": "-594px -132px", "color": "#5e8391" },
+  { "id": "speed-module-2", "position": "-594px -198px", "color": "#5f8999" },
+  { "id": "speed-module-3", "position": "-594px -264px", "color": "#5e92a0" },
+  {
+    "id": "efficiency-module",
+    "position": "-594px -330px",
+    "color": "#6c8c59"
+  },
+  {
+    "id": "efficiency-module-2",
+    "position": "-594px -396px",
+    "color": "#779660"
+  },
+  {
+    "id": "efficiency-module-3",
+    "position": "-594px -462px",
+    "color": "#7f9f62"
+  },
+  {
+    "id": "productivity-module",
+    "position": "-594px -528px",
+    "color": "#986f53"
+  },
+  {
+    "id": "productivity-module-2",
+    "position": "0px -594px",
+    "color": "#9f7a5a"
+  },
+  {
+    "id": "productivity-module-3",
+    "position": "-66px -594px",
+    "color": "#a68258"
+  },
+  { "id": "rocket-silo", "position": "-132px -594px", "color": "#7c7462" },
+  {
+    "id": "cargo-landing-pad",
+    "position": "-198px -594px",
+    "color": "#6c665e"
+  },
+  { "id": "satellite", "position": "-264px -594px", "color": "#8e8d95" },
+  { "id": "wood", "position": "-330px -594px", "color": "#926634" },
+  { "id": "coal", "position": "-396px -594px", "color": "#322e2b" },
+  { "id": "stone", "position": "-462px -594px", "color": "#8b7754" },
+  { "id": "iron-ore", "position": "-528px -594px", "color": "#5d7682" },
+  { "id": "copper-ore", "position": "-594px -594px", "color": "#a96844" },
+  { "id": "uranium-ore", "position": "-660px 0px", "color": "#639d24" },
+  { "id": "raw-fish", "position": "-660px -66px", "color": "#9c9b71" },
+  { "id": "iron-plate", "position": "-660px -132px", "color": "#8f8f8f" },
+  { "id": "copper-plate", "position": "-660px -198px", "color": "#bc7760" },
+  { "id": "steel-plate", "position": "-660px -264px", "color": "#858581" },
+  { "id": "solid-fuel", "position": "-660px -330px", "color": "#525252" },
+  { "id": "plastic-bar", "position": "-660px -396px", "color": "#cbcbcb" },
+  { "id": "sulfur", "position": "-660px -462px", "color": "#afa545" },
+  { "id": "battery", "position": "-660px -528px", "color": "#635d5a" },
+  { "id": "explosives", "position": "-660px -594px", "color": "#965e5a" },
+  { "id": "water-barrel", "position": "0px -660px", "color": "#6d737a" },
+  {
+    "id": "crude-oil-barrel",
+    "position": "-66px -660px",
+    "color": "#626362"
+  },
+  {
+    "id": "petroleum-gas-barrel",
+    "position": "-132px -660px",
+    "color": "#787477"
+  },
+  {
+    "id": "light-oil-barrel",
+    "position": "-198px -660px",
+    "color": "#8a7552"
+  },
+  {
+    "id": "heavy-oil-barrel",
+    "position": "-264px -660px",
+    "color": "#806959"
+  },
+  {
+    "id": "lubricant-barrel",
+    "position": "-330px -660px",
+    "color": "#61755a"
+  },
+  {
+    "id": "sulfuric-acid-barrel",
+    "position": "-396px -660px",
+    "color": "#818d54"
+  },
+  {
+    "id": "iron-gear-wheel",
+    "position": "-462px -660px",
+    "color": "#6e6f6a"
+  },
+  { "id": "iron-stick", "position": "-528px -660px", "color": "#868786" },
+  { "id": "copper-cable", "position": "-594px -660px", "color": "#b87b62" },
+  { "id": "barrel", "position": "-660px -660px", "color": "#777776" },
+  {
+    "id": "electronic-circuit",
+    "position": "-726px 0px",
+    "color": "#7f9649"
+  },
+  {
+    "id": "advanced-circuit",
+    "position": "-726px -66px",
+    "color": "#b36e49"
+  },
+  {
+    "id": "processing-unit",
+    "position": "-726px -132px",
+    "color": "#7c7db2"
+  },
+  { "id": "engine-unit", "position": "-726px -198px", "color": "#6d6350" },
+  {
+    "id": "electric-engine-unit",
+    "position": "-726px -264px",
+    "color": "#816b65"
+  },
+  {
+    "id": "flying-robot-frame",
+    "position": "-726px -330px",
+    "color": "#6c726e"
+  },
+  {
+    "id": "low-density-structure",
+    "position": "-726px -396px",
+    "color": "#907d61"
+  },
+  { "id": "rocket-fuel", "position": "-726px -462px", "color": "#6f6352" },
+  { "id": "rocket-part", "position": "-726px -528px", "color": "#847c5f" },
+  { "id": "uranium-235", "position": "-726px -594px", "color": "#5ea33e" },
+  { "id": "uranium-238", "position": "-726px -660px", "color": "#3c6a3b" },
+  { "id": "uranium-fuel-cell", "position": "0px -726px", "color": "#598d56" },
+  {
+    "id": "depleted-uranium-fuel-cell",
+    "position": "-66px -726px",
+    "color": "#535853"
+  },
+  { "id": "nuclear-fuel", "position": "-132px -726px", "color": "#638352" },
+  {
+    "id": "automation-science-pack",
+    "position": "-198px -726px",
+    "color": "#ae6e6e"
+  },
+  {
+    "id": "logistic-science-pack",
+    "position": "-264px -726px",
+    "color": "#72b073"
+  },
+  {
+    "id": "military-science-pack",
+    "position": "-330px -726px",
+    "color": "#7f8087"
+  },
+  {
+    "id": "chemical-science-pack",
+    "position": "-396px -726px",
+    "color": "#70a6b6"
+  },
+  {
+    "id": "production-science-pack",
+    "position": "-462px -726px",
+    "color": "#9b6bb4"
+  },
+  {
+    "id": "utility-science-pack",
+    "position": "-528px -726px",
+    "color": "#b8a573"
+  },
+  {
+    "id": "space-science-pack",
+    "position": "-594px -726px",
+    "color": "#bcbbbb"
+  },
+  { "id": "submachine-gun", "position": "-660px -726px", "color": "#635f5d" },
+  { "id": "shotgun", "position": "-726px -726px", "color": "#866256" },
+  { "id": "combat-shotgun", "position": "-792px 0px", "color": "#856456" },
+  { "id": "rocket-launcher", "position": "-792px -66px", "color": "#6b6a5e" },
+  { "id": "flamethrower", "position": "-792px -132px", "color": "#695e57" },
+  {
+    "id": "firearm-magazine",
+    "position": "-792px -198px",
+    "color": "#655f41"
+  },
+  {
+    "id": "piercing-rounds-magazine",
+    "position": "-792px -264px",
+    "color": "#6d4141"
+  },
+  {
+    "id": "uranium-rounds-magazine",
+    "position": "-792px -330px",
+    "color": "#3b7b3c"
+  },
+  { "id": "shotgun-shell", "position": "-792px -396px", "color": "#a05138" },
+  {
+    "id": "piercing-shotgun-shell",
+    "position": "-792px -462px",
+    "color": "#6d8168"
+  },
+  { "id": "cannon-shell", "position": "-792px -528px", "color": "#6d5d46" },
+  {
+    "id": "explosive-cannon-shell",
+    "position": "-792px -594px",
+    "color": "#8c5d46"
+  },
+  {
+    "id": "uranium-cannon-shell",
+    "position": "-792px -660px",
+    "color": "#656f41"
+  },
+  {
+    "id": "explosive-uranium-cannon-shell",
+    "position": "-792px -726px",
+    "color": "#866f41"
+  },
+  { "id": "artillery-shell", "position": "0px -792px", "color": "#a17e62" },
+  { "id": "rocket", "position": "-66px -792px", "color": "#837b68" },
+  {
+    "id": "explosive-rocket",
+    "position": "-132px -792px",
+    "color": "#846c6b"
+  },
+  { "id": "atomic-bomb", "position": "-198px -792px", "color": "#6c8c68" },
+  {
+    "id": "flamethrower-ammo",
+    "position": "-264px -792px",
+    "color": "#8b7771"
+  },
+  { "id": "grenade", "position": "-330px -792px", "color": "#656b5b" },
+  {
+    "id": "cluster-grenade",
+    "position": "-396px -792px",
+    "color": "#785d53"
+  },
+  { "id": "poison-capsule", "position": "-462px -792px", "color": "#608b9a" },
+  {
+    "id": "slowdown-capsule",
+    "position": "-528px -792px",
+    "color": "#98835f"
+  },
+  {
+    "id": "defender-capsule",
+    "position": "-594px -792px",
+    "color": "#6b8696"
+  },
+  {
+    "id": "distractor-capsule",
+    "position": "-660px -792px",
+    "color": "#75723e"
+  },
+  {
+    "id": "destroyer-capsule",
+    "position": "-726px -792px",
+    "color": "#925342"
+  },
+  { "id": "light-armor", "position": "-792px -792px", "color": "#73593c" },
+  { "id": "heavy-armor", "position": "-858px 0px", "color": "#87603b" },
+  { "id": "modular-armor", "position": "-858px -66px", "color": "#8a6740" },
+  { "id": "power-armor", "position": "-858px -132px", "color": "#7c4f27" },
+  {
+    "id": "power-armor-mk2",
+    "position": "-858px -198px",
+    "color": "#7f5432"
+  },
+  {
+    "id": "solar-panel-equipment",
+    "position": "-858px -264px",
+    "color": "#527b8f"
+  },
+  {
+    "id": "fission-reactor-equipment",
+    "position": "-858px -330px",
+    "color": "#877a5b"
+  },
+  {
+    "id": "battery-equipment",
+    "position": "-858px -396px",
+    "color": "#747764"
+  },
+  {
+    "id": "battery-mk2-equipment",
+    "position": "-858px -462px",
+    "color": "#6e6f5e"
+  },
+  {
+    "id": "belt-immunity-equipment",
+    "position": "-858px -528px",
+    "color": "#6f7274"
+  },
+  {
+    "id": "exoskeleton-equipment",
+    "position": "-858px -594px",
+    "color": "#7a7271"
+  },
+  {
+    "id": "personal-roboport-equipment",
+    "position": "-858px -660px",
+    "color": "#7a705b"
+  },
+  {
+    "id": "personal-roboport-mk2-equipment",
+    "position": "-858px -726px",
+    "color": "#6b7479"
+  },
+  {
+    "id": "night-vision-equipment",
+    "position": "-858px -792px",
+    "color": "#68775f"
+  },
+  {
+    "id": "energy-shield-equipment",
+    "position": "0px -858px",
+    "color": "#637f85"
+  },
+  {
+    "id": "energy-shield-mk2-equipment",
+    "position": "-66px -858px",
+    "color": "#9e6f53"
+  },
+  {
+    "id": "personal-laser-defense-equipment",
+    "position": "-132px -858px",
+    "color": "#746042"
+  },
+  {
+    "id": "discharge-defense-equipment",
+    "position": "-198px -858px",
+    "color": "#789386"
+  },
+  { "id": "stone-wall", "position": "-264px -858px", "color": "#625a4a" },
+  { "id": "gate", "position": "-330px -858px", "color": "#685f41" },
+  { "id": "radar", "position": "-396px -858px", "color": "#7f7a66" },
+  { "id": "land-mine", "position": "-462px -858px", "color": "#736553" },
+  { "id": "gun-turret", "position": "-528px -858px", "color": "#836745" },
+  { "id": "laser-turret", "position": "-594px -858px", "color": "#846f3f" },
+  {
+    "id": "flamethrower-turret",
+    "position": "-660px -858px",
+    "color": "#776550"
+  },
+  {
+    "id": "artillery-turret",
+    "position": "-726px -858px",
+    "color": "#7f7868"
+  },
+  { "id": "water", "position": "-792px -858px", "color": "#3e7c8f" },
+  { "id": "steam", "position": "-858px -858px", "color": "#787878" },
+  { "id": "crude-oil", "position": "-924px 0px", "color": "#4e4e4e" },
+  { "id": "petroleum-gas", "position": "-924px -66px", "color": "#7a7a7a" },
+  { "id": "light-oil", "position": "-924px -132px", "color": "#947733" },
+  { "id": "heavy-oil", "position": "-924px -198px", "color": "#984f28" },
+  { "id": "lubricant", "position": "-924px -264px", "color": "#41822e" },
+  { "id": "sulfuric-acid", "position": "-924px -330px", "color": "#a5694b" },
+  {
+    "id": "basic-oil-processing",
+    "position": "-924px -396px",
+    "color": "#6a6a6a"
+  },
+  {
+    "id": "advanced-oil-processing",
+    "position": "-924px -462px",
+    "color": "#716960"
+  },
+  {
+    "id": "coal-liquefaction",
+    "position": "-924px -528px",
+    "color": "#5e4138"
+  },
+  {
+    "id": "heavy-oil-cracking",
+    "position": "-924px -594px",
+    "color": "#95652e"
+  },
+  {
+    "id": "light-oil-cracking",
+    "position": "-924px -660px",
+    "color": "#847761"
+  },
+  {
+    "id": "solid-fuel-from-petroleum-gas",
+    "position": "-924px -726px",
+    "color": "#545454"
+  },
+  {
+    "id": "solid-fuel-from-light-oil",
+    "position": "-924px -792px",
+    "color": "#595246"
+  },
+  {
+    "id": "solid-fuel-from-heavy-oil",
+    "position": "-924px -858px",
+    "color": "#5a4a45"
+  },
+  { "id": "water-barrel-0", "position": "0px -924px", "color": "#596974" },
+  {
+    "id": "crude-oil-barrel-0",
+    "position": "-66px -924px",
+    "color": "#555554"
+  },
+  {
+    "id": "petroleum-gas-barrel-0",
+    "position": "-132px -924px",
+    "color": "#696669"
+  },
+  {
+    "id": "light-oil-barrel-0",
+    "position": "-198px -924px",
+    "color": "#7e6948"
+  },
+  {
+    "id": "heavy-oil-barrel-0",
+    "position": "-264px -924px",
+    "color": "#785a4b"
+  },
+  {
+    "id": "lubricant-barrel-0",
+    "position": "-330px -924px",
+    "color": "#546b4c"
+  },
+  {
+    "id": "sulfuric-acid-barrel-0",
+    "position": "-396px -924px",
+    "color": "#80774c"
+  },
+  {
+    "id": "empty-water-barrel",
+    "position": "-462px -924px",
+    "color": "#566f80"
+  },
+  {
+    "id": "empty-crude-oil-barrel",
+    "position": "-528px -924px",
+    "color": "#575756"
+  },
+  {
+    "id": "empty-petroleum-gas-barrel",
+    "position": "-594px -924px",
+    "color": "#6f686e"
+  },
+  {
+    "id": "empty-light-oil-barrel",
+    "position": "-660px -924px",
+    "color": "#836e50"
+  },
+  {
+    "id": "empty-heavy-oil-barrel",
+    "position": "-726px -924px",
+    "color": "#7f5c4f"
+  },
+  {
+    "id": "empty-lubricant-barrel",
+    "position": "-792px -924px",
+    "color": "#597051"
+  },
+  {
+    "id": "empty-sulfuric-acid-barrel",
+    "position": "-858px -924px",
+    "color": "#8f7e56"
+  },
+  {
+    "id": "uranium-processing",
+    "position": "-924px -924px",
+    "color": "#528a36"
+  },
+  {
+    "id": "nuclear-fuel-reprocessing",
+    "position": "-990px 0px",
+    "color": "#756b43"
+  },
+  {
+    "id": "kovarex-enrichment-process",
+    "position": "-990px -66px",
+    "color": "#487e38"
+  },
+  { "id": "steam-power", "position": "-990px -132px", "color": "#797061" },
+  { "id": "electronics", "position": "-990px -198px", "color": "#839e48" },
+  {
+    "id": "automation-science-pack-technology",
+    "position": "-990px -264px",
+    "color": "#9a514d"
+  },
+  { "id": "steel-axe", "position": "-990px -330px", "color": "#948477" },
+  {
+    "id": "space-science-pack-technology",
+    "position": "-990px -396px",
+    "color": "#9c9896"
+  },
+  { "id": "oil-processing", "position": "-990px -462px", "color": "#735f4c" },
+  {
+    "id": "uranium-processing-technology",
+    "position": "-990px -528px",
+    "color": "#687d59"
+  },
+  {
+    "id": "electric-mining-drill-technology",
+    "position": "-990px -594px",
+    "color": "#726b61"
+  },
+  {
+    "id": "repair-pack-technology",
+    "position": "-990px -660px",
+    "color": "#a99f93"
+  },
+  {
+    "id": "radar-technology",
+    "position": "-990px -726px",
+    "color": "#9b8468"
+  },
+  {
+    "id": "physical-projectile-damage-1",
+    "position": "-990px -792px",
+    "color": "#aa7651"
+  },
+  {
+    "id": "weapon-shooting-speed-1",
+    "position": "-990px -858px",
+    "color": "#95837e"
+  },
+  { "id": "automation", "position": "-990px -924px", "color": "#5b503f" },
+  {
+    "id": "logistic-science-pack-technology",
+    "position": "0px -990px",
+    "color": "#56974e"
+  },
+  {
+    "id": "steel-processing",
+    "position": "-66px -990px",
+    "color": "#5d5b53"
+  },
+  { "id": "military", "position": "-132px -990px", "color": "#676450" },
+  {
+    "id": "fast-inserter-technology",
+    "position": "-198px -990px",
+    "color": "#52728b"
+  },
+  {
+    "id": "logistics-technology",
+    "position": "-264px -990px",
+    "color": "#7d7153"
+  },
+  { "id": "lamp", "position": "-330px -990px", "color": "#9d9892" },
+  {
+    "id": "heavy-armor-technology",
+    "position": "-396px -990px",
+    "color": "#6b553a"
+  },
+  {
+    "id": "gun-turret-technology",
+    "position": "-462px -990px",
+    "color": "#785f46"
+  },
+  {
+    "id": "stone-wall-technology",
+    "position": "-528px -990px",
+    "color": "#6b6660"
+  },
+  {
+    "id": "stronger-explosives-1",
+    "position": "-594px -990px",
+    "color": "#bc944d"
+  },
+  {
+    "id": "bulk-inserter-technology",
+    "position": "-660px -990px",
+    "color": "#788559"
+  },
+  {
+    "id": "inserter-capacity-bonus-1",
+    "position": "-726px -990px",
+    "color": "#a88366"
+  },
+  { "id": "automation-2", "position": "-792px -990px", "color": "#595a54" },
+  { "id": "railway", "position": "-858px -990px", "color": "#7d6f60" },
+  {
+    "id": "automated-rail-transportation",
+    "position": "-924px -990px",
+    "color": "#89715a"
+  },
+  { "id": "automobilism", "position": "-990px -990px", "color": "#6e5a44" },
+  { "id": "solar-energy", "position": "-1056px 0px", "color": "#5c899e" },
+  {
+    "id": "research-speed-1",
+    "position": "-1056px -66px",
+    "color": "#71809b"
+  },
+  {
+    "id": "electric-energy-distribution-1",
+    "position": "-1056px -132px",
+    "color": "#7f6b68"
+  },
+  {
+    "id": "advanced-material-processing",
+    "position": "-1056px -198px",
+    "color": "#7e6d57"
+  },
+  {
+    "id": "concrete-technology",
+    "position": "-1056px -264px",
+    "color": "#858071"
+  },
+  { "id": "engine", "position": "-1056px -330px", "color": "#5f5647" },
+  {
+    "id": "landfill-technology",
+    "position": "-1056px -396px",
+    "color": "#786049"
+  },
+  { "id": "logistics-2", "position": "-1056px -462px", "color": "#7b5553" },
+  { "id": "toolbelt", "position": "-1056px -528px", "color": "#836b54" },
+  {
+    "id": "gate-technology",
+    "position": "-1056px -594px",
+    "color": "#655f57"
+  },
+  {
+    "id": "chemical-science-pack-technology",
+    "position": "-1056px -660px",
+    "color": "#568aa0"
+  },
+  {
+    "id": "military-science-pack-technology",
+    "position": "-1056px -726px",
+    "color": "#615d5f"
+  },
+  {
+    "id": "explosives-technology",
+    "position": "-1056px -792px",
+    "color": "#724a41"
+  },
+  {
+    "id": "cliff-explosives-technology",
+    "position": "-1056px -858px",
+    "color": "#496771"
+  },
+  { "id": "flammables", "position": "-1056px -924px", "color": "#795c35" },
+  {
+    "id": "advanced-circuit-technology",
+    "position": "-1056px -990px",
+    "color": "#bc6f5a"
+  },
+  {
+    "id": "fluid-wagon-technology",
+    "position": "0px -1056px",
+    "color": "#776f64"
+  },
+  {
+    "id": "modular-armor-technology",
+    "position": "-66px -1056px",
+    "color": "#6b5339"
+  },
+  {
+    "id": "electric-energy-accumulators",
+    "position": "-132px -1056px",
+    "color": "#797a7a"
+  },
+  {
+    "id": "battery-technology",
+    "position": "-198px -1056px",
+    "color": "#665859"
+  },
+  {
+    "id": "night-vision-equipment-technology",
+    "position": "-264px -1056px",
+    "color": "#767368"
+  },
+  {
+    "id": "belt-immunity-equipment-technology",
+    "position": "-330px -1056px",
+    "color": "#746e62"
+  },
+  {
+    "id": "battery-equipment-technology",
+    "position": "-396px -1056px",
+    "color": "#7d766b"
+  },
+  {
+    "id": "solar-panel-equipment-technology",
+    "position": "-462px -1056px",
+    "color": "#757f85"
+  },
+  {
+    "id": "fluid-handling",
+    "position": "-528px -1056px",
+    "color": "#7a7363"
+  },
+  { "id": "oil-gathering", "position": "-594px -1056px", "color": "#696946" },
+  {
+    "id": "sulfur-processing",
+    "position": "-660px -1056px",
+    "color": "#b1a837"
+  },
+  { "id": "plastics", "position": "-726px -1056px", "color": "#a19985" },
+  { "id": "modules", "position": "-792px -1056px", "color": "#50635a" },
+  {
+    "id": "speed-module-technology",
+    "position": "-858px -1056px",
+    "color": "#4d7686"
+  },
+  {
+    "id": "productivity-module-technology",
+    "position": "-924px -1056px",
+    "color": "#7a5c4a"
+  },
+  {
+    "id": "efficiency-module-technology",
+    "position": "-990px -1056px",
+    "color": "#547f4c"
+  },
+  {
+    "id": "mining-productivity-1",
+    "position": "-1056px -1056px",
+    "color": "#88746c"
+  },
+  { "id": "circuit-network", "position": "-1122px 0px", "color": "#756b5b" },
+  {
+    "id": "stronger-explosives-2",
+    "position": "-1122px -66px",
+    "color": "#b4914f"
+  },
+  {
+    "id": "refined-flammables-1",
+    "position": "-1122px -132px",
+    "color": "#9c6e3a"
+  },
+  {
+    "id": "weapon-shooting-speed-3",
+    "position": "-1122px -198px",
+    "color": "#958784"
+  },
+  {
+    "id": "follower-robot-count-1",
+    "position": "-1122px -264px",
+    "color": "#72604f"
+  },
+  {
+    "id": "land-mine-technology",
+    "position": "-1122px -330px",
+    "color": "#766451"
+  },
+  {
+    "id": "flamethrower-technology",
+    "position": "-1122px -396px",
+    "color": "#8c6b50"
+  },
+  { "id": "rocketry", "position": "-1122px -462px", "color": "#8a684e" },
+  {
+    "id": "energy-shield-equipment-technology",
+    "position": "-1122px -528px",
+    "color": "#66848c"
+  },
+  { "id": "defender", "position": "-1122px -594px", "color": "#61666e" },
+  {
+    "id": "production-science-pack-technology",
+    "position": "-1122px -660px",
+    "color": "#8151a0"
+  },
+  {
+    "id": "utility-science-pack-technology",
+    "position": "-1122px -726px",
+    "color": "#a6874d"
+  },
+  {
+    "id": "processing-unit-technology",
+    "position": "-1122px -792px",
+    "color": "#7e74a8"
+  },
+  {
+    "id": "braking-force-1",
+    "position": "-1122px -858px",
+    "color": "#8e6252"
+  },
+  { "id": "laser", "position": "-1122px -924px", "color": "#968069" },
+  {
+    "id": "power-armor-technology",
+    "position": "-1122px -990px",
+    "color": "#895c26"
+  },
+  { "id": "robotics", "position": "-1122px -1056px", "color": "#707575" },
+  {
+    "id": "rocket-fuel-technology",
+    "position": "0px -1122px",
+    "color": "#655c4b"
+  },
+  {
+    "id": "low-density-structure-technology",
+    "position": "-66px -1122px",
+    "color": "#8b7d6c"
+  },
+  {
+    "id": "electric-energy-distribution-2",
+    "position": "-132px -1122px",
+    "color": "#858079"
+  },
+  {
+    "id": "advanced-material-processing-2",
+    "position": "-198px -1122px",
+    "color": "#7b624c"
+  },
+  {
+    "id": "lubricant-technology",
+    "position": "-264px -1122px",
+    "color": "#5b8354"
+  },
+  {
+    "id": "electric-engine",
+    "position": "-330px -1122px",
+    "color": "#847068"
+  },
+  {
+    "id": "construction-robotics",
+    "position": "-396px -1122px",
+    "color": "#7d716b"
+  },
+  {
+    "id": "logistic-robotics",
+    "position": "-462px -1122px",
+    "color": "#7c6f6b"
+  },
+  {
+    "id": "worker-robots-speed-1",
+    "position": "-528px -1122px",
+    "color": "#66727b"
+  },
+  {
+    "id": "worker-robots-storage-1",
+    "position": "-594px -1122px",
+    "color": "#7d6f5a"
+  },
+  {
+    "id": "battery-mk2-equipment-technology",
+    "position": "-660px -1122px",
+    "color": "#81736a"
+  },
+  {
+    "id": "exoskeleton-equipment-technology",
+    "position": "-726px -1122px",
+    "color": "#786f67"
+  },
+  {
+    "id": "personal-roboport-equipment-technology",
+    "position": "-792px -1122px",
+    "color": "#917d6a"
+  },
+  {
+    "id": "advanced-oil-processing-technology",
+    "position": "-858px -1122px",
+    "color": "#7c5e45"
+  },
+  {
+    "id": "speed-module-2-technology",
+    "position": "-924px -1122px",
+    "color": "#4d7e8e"
+  },
+  {
+    "id": "productivity-module-2-technology",
+    "position": "-990px -1122px",
+    "color": "#84644a"
+  },
+  {
+    "id": "efficiency-module-2-technology",
+    "position": "-1056px -1122px",
+    "color": "#56884c"
+  },
+  {
+    "id": "uranium-mining",
+    "position": "-1122px -1122px",
+    "color": "#827765"
+  },
+  { "id": "nuclear-power", "position": "-1188px 0px", "color": "#7c6a52" },
+  {
+    "id": "advanced-combinators",
+    "position": "-1188px -66px",
+    "color": "#736d57"
+  },
+  {
+    "id": "physical-projectile-damage-5",
+    "position": "-1188px -132px",
+    "color": "#ad8567"
+  },
+  {
+    "id": "weapon-shooting-speed-5",
+    "position": "-1188px -198px",
+    "color": "#988e89"
+  },
+  {
+    "id": "laser-shooting-speed-3",
+    "position": "-1188px -264px",
+    "color": "#918579"
+  },
+  {
+    "id": "tank-technology",
+    "position": "-1188px -330px",
+    "color": "#756148"
+  },
+  {
+    "id": "explosive-rocketry",
+    "position": "-1188px -396px",
+    "color": "#735642"
+  },
+  {
+    "id": "energy-shield-mk2-equipment-technology",
+    "position": "-1188px -462px",
+    "color": "#a25b4f"
+  },
+  {
+    "id": "personal-laser-defense-equipment-technology",
+    "position": "-1188px -528px",
+    "color": "#7e6b58"
+  },
+  {
+    "id": "discharge-defense-equipment-technology",
+    "position": "-1188px -594px",
+    "color": "#7e918d"
+  },
+  { "id": "distractor", "position": "-1188px -660px", "color": "#635e39" },
+  {
+    "id": "stronger-explosives-3",
+    "position": "-1188px -726px",
+    "color": "#ac854b"
+  },
+  {
+    "id": "laser-weapons-damage-1",
+    "position": "-1188px -792px",
+    "color": "#a87259"
+  },
+  {
+    "id": "laser-turret-technology",
+    "position": "-1188px -858px",
+    "color": "#77644b"
+  },
+  { "id": "automation-3", "position": "-1188px -924px", "color": "#645a38" },
+  { "id": "logistics-3", "position": "-1188px -990px", "color": "#5e747c" },
+  {
+    "id": "effect-transmission",
+    "position": "-1188px -1056px",
+    "color": "#826f5c"
+  },
+  {
+    "id": "coal-liquefaction-technology",
+    "position": "-1188px -1122px",
+    "color": "#67473e"
+  },
+  {
+    "id": "speed-module-3-technology",
+    "position": "0px -1188px",
+    "color": "#4d8595"
+  },
+  {
+    "id": "productivity-module-3-technology",
+    "position": "-66px -1188px",
+    "color": "#8c6a4a"
+  },
+  {
+    "id": "efficiency-module-3-technology",
+    "position": "-132px -1188px",
+    "color": "#578e4c"
+  },
+  {
+    "id": "kovarex-enrichment-process-technology",
+    "position": "-198px -1188px",
+    "color": "#4a803b"
+  },
+  {
+    "id": "nuclear-fuel-reprocessing-technology",
+    "position": "-264px -1188px",
+    "color": "#6a7049"
+  },
+  {
+    "id": "logistic-system",
+    "position": "-330px -1188px",
+    "color": "#948452"
+  },
+  {
+    "id": "personal-roboport-mk2-equipment-technology",
+    "position": "-396px -1188px",
+    "color": "#84786f"
+  },
+  { "id": "uranium-ammo", "position": "-462px -1188px", "color": "#759041" },
+  {
+    "id": "power-armor-mk2-technology",
+    "position": "-528px -1188px",
+    "color": "#725431"
+  },
+  {
+    "id": "rocket-silo-technology",
+    "position": "-594px -1188px",
+    "color": "#795e47"
+  },
+  {
+    "id": "fission-reactor-equipment-technology",
+    "position": "-660px -1188px",
+    "color": "#8c8167"
+  },
+  { "id": "destroyer", "position": "-726px -1188px", "color": "#76433a" },
+  { "id": "artillery", "position": "-792px -1188px", "color": "#7f7163" },
+  {
+    "id": "atomic-bomb-technology",
+    "position": "-858px -1188px",
+    "color": "#ab8c6a"
+  },
+  {
+    "id": "spidertron-technology",
+    "position": "-924px -1188px",
+    "color": "#7b5f43"
+  },
+  {
+    "id": "artillery-shell-range-1",
+    "position": "-990px -1188px",
+    "color": "#7d6d5c"
+  },
+  {
+    "id": "artillery-shell-speed-1",
+    "position": "-1056px -1188px",
+    "color": "#6f777d"
+  },
+  { "id": "logistics", "position": "-1122px -1188px", "color": "#76684e" },
+  { "id": "production", "position": "-1188px -1188px", "color": "#605b51" },
+  {
+    "id": "intermediate-products",
+    "position": "-1254px 0px",
+    "color": "#858676"
+  },
+  { "id": "combat", "position": "-1254px -66px", "color": "#786f67" },
+  { "id": "fluids", "position": "-1254px -132px", "color": "#476974" },
+  { "id": "nauvis", "position": "-1254px -198px", "color": "#777b65" }
+]

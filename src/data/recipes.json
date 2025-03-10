@@ -1,0 +1,6264 @@
+[
+  {
+    "id": "wooden-chest",
+    "name": "Wooden chest",
+    "category": "logistics",
+    "row": 0,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "wood": 2 },
+    "out": { "wooden-chest": 1 },
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "iron-chest",
+    "name": "Iron chest",
+    "category": "logistics",
+    "row": 0,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "iron-plate": 8 },
+    "out": { "iron-chest": 1 },
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "steel-chest",
+    "name": "Steel chest",
+    "category": "logistics",
+    "row": 0,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "steel-plate": 8 },
+    "out": { "steel-chest": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "storage-tank",
+    "name": "Storage tank",
+    "category": "logistics",
+    "row": 0,
+    "time": 3,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "iron-plate": 20, "steel-plate": 5 },
+    "out": { "storage-tank": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "transport-belt",
+    "name": "Transport belt",
+    "category": "logistics",
+    "row": 1,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "iron-plate": 1, "iron-gear-wheel": 1 },
+    "out": { "transport-belt": 2 },
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "fast-transport-belt",
+    "name": "Fast transport belt",
+    "category": "logistics",
+    "row": 1,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "iron-gear-wheel": 5, "transport-belt": 1 },
+    "out": { "fast-transport-belt": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "express-transport-belt",
+    "name": "Express transport belt",
+    "category": "logistics",
+    "row": 1,
+    "time": 0.5,
+    "producers": ["assembling-machine-2", "assembling-machine-3"],
+    "in": {
+      "iron-gear-wheel": 10,
+      "fast-transport-belt": 1,
+      "lubricant": 20
+    },
+    "out": { "express-transport-belt": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "underground-belt",
+    "name": "Underground belt",
+    "category": "logistics",
+    "row": 1,
+    "time": 1,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "iron-plate": 10, "transport-belt": 5 },
+    "out": { "underground-belt": 2 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "fast-underground-belt",
+    "name": "Fast underground belt",
+    "category": "logistics",
+    "row": 1,
+    "time": 2,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "iron-gear-wheel": 40, "underground-belt": 2 },
+    "out": { "fast-underground-belt": 2 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "express-underground-belt",
+    "name": "Express underground belt",
+    "category": "logistics",
+    "row": 1,
+    "time": 2,
+    "producers": ["assembling-machine-2", "assembling-machine-3"],
+    "in": {
+      "iron-gear-wheel": 80,
+      "fast-underground-belt": 2,
+      "lubricant": 40
+    },
+    "out": { "express-underground-belt": 2 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "splitter",
+    "name": "Splitter",
+    "category": "logistics",
+    "row": 1,
+    "time": 1,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "electronic-circuit": 5, "iron-plate": 5, "transport-belt": 4 },
+    "out": { "splitter": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "fast-splitter",
+    "name": "Fast splitter",
+    "category": "logistics",
+    "row": 1,
+    "time": 2,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "splitter": 1, "iron-gear-wheel": 10, "electronic-circuit": 10 },
+    "out": { "fast-splitter": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "express-splitter",
+    "name": "Express splitter",
+    "category": "logistics",
+    "row": 1,
+    "time": 2,
+    "producers": ["assembling-machine-2", "assembling-machine-3"],
+    "in": {
+      "fast-splitter": 1,
+      "iron-gear-wheel": 10,
+      "advanced-circuit": 10,
+      "lubricant": 80
+    },
+    "out": { "express-splitter": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "burner-inserter",
+    "name": "Burner inserter",
+    "category": "logistics",
+    "row": 2,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "iron-plate": 1, "iron-gear-wheel": 1 },
+    "out": { "burner-inserter": 1 },
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "inserter",
+    "name": "Inserter",
+    "category": "logistics",
+    "row": 2,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "electronic-circuit": 1, "iron-gear-wheel": 1, "iron-plate": 1 },
+    "out": { "inserter": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "long-handed-inserter",
+    "name": "Long-handed inserter",
+    "category": "logistics",
+    "row": 2,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "iron-gear-wheel": 1, "iron-plate": 1, "inserter": 1 },
+    "out": { "long-handed-inserter": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "fast-inserter",
+    "name": "Fast inserter",
+    "category": "logistics",
+    "row": 2,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "electronic-circuit": 2, "iron-plate": 2, "inserter": 1 },
+    "out": { "fast-inserter": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "bulk-inserter",
+    "name": "Bulk inserter",
+    "category": "logistics",
+    "row": 2,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "iron-gear-wheel": 15,
+      "electronic-circuit": 15,
+      "advanced-circuit": 1,
+      "fast-inserter": 1
+    },
+    "out": { "bulk-inserter": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "small-electric-pole",
+    "name": "Small electric pole",
+    "category": "logistics",
+    "row": 3,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "wood": 1, "copper-cable": 2 },
+    "out": { "small-electric-pole": 2 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "medium-electric-pole",
+    "name": "Medium electric pole",
+    "category": "logistics",
+    "row": 3,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "iron-stick": 4, "steel-plate": 2, "copper-cable": 2 },
+    "out": { "medium-electric-pole": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "big-electric-pole",
+    "name": "Big electric pole",
+    "category": "logistics",
+    "row": 3,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "iron-stick": 8, "steel-plate": 5, "copper-cable": 4 },
+    "out": { "big-electric-pole": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "substation",
+    "name": "Substation",
+    "category": "logistics",
+    "row": 3,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "steel-plate": 10, "advanced-circuit": 5, "copper-cable": 6 },
+    "out": { "substation": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "pipe",
+    "name": "Pipe",
+    "category": "logistics",
+    "row": 3,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "iron-plate": 1 },
+    "out": { "pipe": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "pipe-to-ground",
+    "name": "Pipe to ground",
+    "category": "logistics",
+    "row": 3,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "pipe": 10, "iron-plate": 5 },
+    "out": { "pipe-to-ground": 2 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "pump",
+    "name": "Pump",
+    "category": "logistics",
+    "row": 3,
+    "time": 2,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "engine-unit": 1, "steel-plate": 1, "pipe": 1 },
+    "out": { "pump": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "rail",
+    "name": "Rail",
+    "category": "logistics",
+    "row": 4,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "stone": 1, "iron-stick": 1, "steel-plate": 1 },
+    "out": { "rail": 2 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "train-stop",
+    "name": "Train stop",
+    "category": "logistics",
+    "row": 4,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "electronic-circuit": 5,
+      "iron-plate": 6,
+      "iron-stick": 6,
+      "steel-plate": 3
+    },
+    "out": { "train-stop": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "rail-signal",
+    "name": "Rail signal",
+    "category": "logistics",
+    "row": 4,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "electronic-circuit": 1, "iron-plate": 5 },
+    "out": { "rail-signal": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "rail-chain-signal",
+    "name": "Rail chain signal",
+    "category": "logistics",
+    "row": 4,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "electronic-circuit": 1, "iron-plate": 5 },
+    "out": { "rail-chain-signal": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "locomotive",
+    "name": "Locomotive",
+    "category": "logistics",
+    "row": 4,
+    "time": 4,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "engine-unit": 20, "electronic-circuit": 10, "steel-plate": 30 },
+    "out": { "locomotive": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "cargo-wagon",
+    "name": "Cargo wagon",
+    "category": "logistics",
+    "row": 4,
+    "time": 1,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "iron-gear-wheel": 10, "iron-plate": 20, "steel-plate": 20 },
+    "out": { "cargo-wagon": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "fluid-wagon",
+    "name": "Fluid wagon",
+    "category": "logistics",
+    "row": 4,
+    "time": 1.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "iron-gear-wheel": 10,
+      "steel-plate": 16,
+      "pipe": 8,
+      "storage-tank": 1
+    },
+    "out": { "fluid-wagon": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "artillery-wagon",
+    "name": "Artillery wagon",
+    "category": "logistics",
+    "row": 4,
+    "time": 4,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "engine-unit": 64,
+      "iron-gear-wheel": 10,
+      "steel-plate": 40,
+      "pipe": 16,
+      "advanced-circuit": 20
+    },
+    "out": { "artillery-wagon": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "car",
+    "name": "Car",
+    "category": "logistics",
+    "row": 5,
+    "time": 2,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "engine-unit": 8, "iron-plate": 20, "steel-plate": 5 },
+    "out": { "car": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "tank",
+    "name": "Tank",
+    "category": "logistics",
+    "row": 5,
+    "time": 5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "engine-unit": 32,
+      "steel-plate": 50,
+      "iron-gear-wheel": 15,
+      "advanced-circuit": 10
+    },
+    "out": { "tank": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "spidertron",
+    "name": "Spidertron",
+    "category": "logistics",
+    "row": 5,
+    "time": 10,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "exoskeleton-equipment": 4,
+      "fission-reactor-equipment": 2,
+      "rocket-launcher": 4,
+      "processing-unit": 16,
+      "low-density-structure": 150,
+      "radar": 2,
+      "efficiency-module-3": 2,
+      "raw-fish": 1
+    },
+    "out": { "spidertron": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "logistic-robot",
+    "name": "Logistic robot",
+    "category": "logistics",
+    "row": 6,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "flying-robot-frame": 1, "advanced-circuit": 2 },
+    "out": { "logistic-robot": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "construction-robot",
+    "name": "Construction robot",
+    "category": "logistics",
+    "row": 6,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "flying-robot-frame": 1, "electronic-circuit": 2 },
+    "out": { "construction-robot": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "active-provider-chest",
+    "name": "Active provider chest",
+    "category": "logistics",
+    "row": 6,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "steel-chest": 1,
+      "electronic-circuit": 3,
+      "advanced-circuit": 1
+    },
+    "out": { "active-provider-chest": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "passive-provider-chest",
+    "name": "Passive provider chest",
+    "category": "logistics",
+    "row": 6,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "steel-chest": 1,
+      "electronic-circuit": 3,
+      "advanced-circuit": 1
+    },
+    "out": { "passive-provider-chest": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "storage-chest",
+    "name": "Storage chest",
+    "category": "logistics",
+    "row": 6,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "steel-chest": 1,
+      "electronic-circuit": 3,
+      "advanced-circuit": 1
+    },
+    "out": { "storage-chest": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "buffer-chest",
+    "name": "Buffer chest",
+    "category": "logistics",
+    "row": 6,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "steel-chest": 1,
+      "electronic-circuit": 3,
+      "advanced-circuit": 1
+    },
+    "out": { "buffer-chest": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "requester-chest",
+    "name": "Requester chest",
+    "category": "logistics",
+    "row": 6,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "steel-chest": 1,
+      "electronic-circuit": 3,
+      "advanced-circuit": 1
+    },
+    "out": { "requester-chest": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "roboport",
+    "name": "Roboport",
+    "category": "logistics",
+    "row": 6,
+    "time": 5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "steel-plate": 45,
+      "iron-gear-wheel": 45,
+      "advanced-circuit": 45
+    },
+    "out": { "roboport": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "small-lamp",
+    "name": "Lamp",
+    "category": "logistics",
+    "row": 7,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "electronic-circuit": 1, "copper-cable": 3, "iron-plate": 1 },
+    "out": { "small-lamp": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "arithmetic-combinator",
+    "name": "Arithmetic combinator",
+    "category": "logistics",
+    "row": 7,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "copper-cable": 5, "electronic-circuit": 5 },
+    "out": { "arithmetic-combinator": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "decider-combinator",
+    "name": "Decider combinator",
+    "category": "logistics",
+    "row": 7,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "copper-cable": 5, "electronic-circuit": 5 },
+    "out": { "decider-combinator": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "selector-combinator",
+    "name": "Selector combinator",
+    "category": "logistics",
+    "row": 7,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "advanced-circuit": 2, "decider-combinator": 5 },
+    "out": { "selector-combinator": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "constant-combinator",
+    "name": "Constant combinator",
+    "category": "logistics",
+    "row": 7,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "copper-cable": 5, "electronic-circuit": 2 },
+    "out": { "constant-combinator": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "power-switch",
+    "name": "Power switch",
+    "category": "logistics",
+    "row": 7,
+    "time": 2,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "iron-plate": 5, "copper-cable": 5, "electronic-circuit": 2 },
+    "out": { "power-switch": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "programmable-speaker",
+    "name": "Programmable speaker",
+    "category": "logistics",
+    "row": 7,
+    "time": 2,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "iron-plate": 3,
+      "iron-stick": 4,
+      "copper-cable": 5,
+      "electronic-circuit": 4
+    },
+    "out": { "programmable-speaker": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "display-panel",
+    "name": "Display panel",
+    "category": "logistics",
+    "row": 7,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "iron-plate": 1, "electronic-circuit": 1 },
+    "out": { "display-panel": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "stone-brick",
+    "name": "Stone brick",
+    "category": "logistics",
+    "row": 8,
+    "time": 3.2,
+    "producers": ["stone-furnace", "steel-furnace", "electric-furnace"],
+    "in": { "stone": 2 },
+    "out": { "stone-brick": 1 }
+  },
+  {
+    "id": "concrete",
+    "name": "Concrete",
+    "category": "logistics",
+    "row": 8,
+    "time": 10,
+    "producers": ["assembling-machine-2", "assembling-machine-3"],
+    "in": { "stone-brick": 5, "iron-ore": 1, "water": 100 },
+    "out": { "concrete": 10 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "hazard-concrete",
+    "name": "Hazard concrete",
+    "category": "logistics",
+    "row": 8,
+    "time": 0.25,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "concrete": 10 },
+    "out": { "hazard-concrete": 10 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "refined-concrete",
+    "name": "Refined concrete",
+    "category": "logistics",
+    "row": 8,
+    "time": 15,
+    "producers": ["assembling-machine-2", "assembling-machine-3"],
+    "in": { "concrete": 20, "iron-stick": 8, "steel-plate": 1, "water": 100 },
+    "out": { "refined-concrete": 10 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "refined-hazard-concrete",
+    "name": "Refined hazard concrete",
+    "category": "logistics",
+    "row": 8,
+    "time": 0.25,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "refined-concrete": 10 },
+    "out": { "refined-hazard-concrete": 10 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "landfill",
+    "name": "Landfill",
+    "category": "logistics",
+    "row": 8,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "stone": 50 },
+    "out": { "landfill": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "cliff-explosives",
+    "name": "Cliff explosives",
+    "category": "logistics",
+    "row": 8,
+    "time": 8,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "explosives": 10, "grenade": 1, "barrel": 1 },
+    "out": { "cliff-explosives": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "repair-pack",
+    "name": "Repair pack",
+    "category": "production",
+    "row": 0,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "electronic-circuit": 2, "iron-gear-wheel": 2 },
+    "out": { "repair-pack": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "boiler",
+    "name": "Boiler",
+    "category": "production",
+    "row": 1,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "stone-furnace": 1, "pipe": 4 },
+    "out": { "boiler": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "steam-engine",
+    "name": "Steam engine",
+    "category": "production",
+    "row": 1,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "iron-gear-wheel": 8, "pipe": 5, "iron-plate": 10 },
+    "out": { "steam-engine": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "solar-panel",
+    "name": "Solar panel",
+    "category": "production",
+    "row": 1,
+    "time": 10,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "steel-plate": 5, "electronic-circuit": 15, "copper-plate": 5 },
+    "out": { "solar-panel": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "accumulator",
+    "name": "Accumulator",
+    "category": "production",
+    "row": 1,
+    "time": 10,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "iron-plate": 2, "battery": 5 },
+    "out": { "accumulator": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "nuclear-reactor",
+    "name": "Nuclear reactor",
+    "category": "production",
+    "row": 1,
+    "time": 8,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "concrete": 500,
+      "steel-plate": 500,
+      "advanced-circuit": 500,
+      "copper-plate": 500
+    },
+    "out": { "nuclear-reactor": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "heat-pipe",
+    "name": "Heat pipe",
+    "category": "production",
+    "row": 1,
+    "time": 1,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "steel-plate": 10, "copper-plate": 20 },
+    "out": { "heat-pipe": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "heat-exchanger",
+    "name": "Heat exchanger",
+    "category": "production",
+    "row": 1,
+    "time": 3,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "steel-plate": 10, "copper-plate": 100, "pipe": 10 },
+    "out": { "heat-exchanger": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "steam-turbine",
+    "name": "Steam turbine",
+    "category": "production",
+    "row": 1,
+    "time": 3,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "iron-gear-wheel": 50, "copper-plate": 50, "pipe": 20 },
+    "out": { "steam-turbine": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "burner-mining-drill",
+    "name": "Burner mining drill",
+    "category": "production",
+    "row": 2,
+    "time": 2,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "iron-gear-wheel": 3, "stone-furnace": 1, "iron-plate": 3 },
+    "out": { "burner-mining-drill": 1 },
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "electric-mining-drill",
+    "name": "Electric mining drill",
+    "category": "production",
+    "row": 2,
+    "time": 2,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "electronic-circuit": 3, "iron-gear-wheel": 5, "iron-plate": 10 },
+    "out": { "electric-mining-drill": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "offshore-pump",
+    "name": "Offshore pump",
+    "category": "production",
+    "row": 2,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "pipe": 3, "iron-gear-wheel": 2 },
+    "out": { "offshore-pump": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "pumpjack",
+    "name": "Pumpjack",
+    "category": "production",
+    "row": 2,
+    "time": 5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "steel-plate": 5,
+      "iron-gear-wheel": 10,
+      "electronic-circuit": 5,
+      "pipe": 10
+    },
+    "out": { "pumpjack": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "stone-furnace",
+    "name": "Stone furnace",
+    "category": "production",
+    "row": 3,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "stone": 5 },
+    "out": { "stone-furnace": 1 },
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "steel-furnace",
+    "name": "Steel furnace",
+    "category": "production",
+    "row": 3,
+    "time": 3,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "steel-plate": 6, "stone-brick": 10 },
+    "out": { "steel-furnace": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "electric-furnace",
+    "name": "Electric furnace",
+    "category": "production",
+    "row": 3,
+    "time": 5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "steel-plate": 10, "advanced-circuit": 5, "stone-brick": 10 },
+    "out": { "electric-furnace": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "assembling-machine-1",
+    "name": "Assembling machine 1",
+    "category": "production",
+    "row": 4,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "electronic-circuit": 3, "iron-gear-wheel": 5, "iron-plate": 9 },
+    "out": { "assembling-machine-1": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "assembling-machine-2",
+    "name": "Assembling machine 2",
+    "category": "production",
+    "row": 4,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "steel-plate": 2,
+      "electronic-circuit": 3,
+      "iron-gear-wheel": 5,
+      "assembling-machine-1": 1
+    },
+    "out": { "assembling-machine-2": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "assembling-machine-3",
+    "name": "Assembling machine 3",
+    "category": "production",
+    "row": 4,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "speed-module": 4, "assembling-machine-2": 2 },
+    "out": { "assembling-machine-3": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "oil-refinery",
+    "name": "Oil refinery",
+    "category": "production",
+    "row": 4,
+    "time": 8,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "steel-plate": 15,
+      "iron-gear-wheel": 10,
+      "stone-brick": 10,
+      "electronic-circuit": 10,
+      "pipe": 10
+    },
+    "out": { "oil-refinery": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "chemical-plant",
+    "name": "Chemical plant",
+    "category": "production",
+    "row": 4,
+    "time": 5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "steel-plate": 5,
+      "iron-gear-wheel": 5,
+      "electronic-circuit": 5,
+      "pipe": 5
+    },
+    "out": { "chemical-plant": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "centrifuge",
+    "name": "Centrifuge",
+    "category": "production",
+    "row": 4,
+    "time": 4,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "concrete": 100,
+      "steel-plate": 50,
+      "advanced-circuit": 100,
+      "iron-gear-wheel": 100
+    },
+    "out": { "centrifuge": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "lab",
+    "name": "Lab",
+    "category": "production",
+    "row": 4,
+    "time": 2,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "electronic-circuit": 10,
+      "iron-gear-wheel": 10,
+      "transport-belt": 4
+    },
+    "out": { "lab": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "beacon",
+    "name": "Beacon",
+    "category": "production",
+    "row": 5,
+    "time": 15,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "electronic-circuit": 20,
+      "advanced-circuit": 20,
+      "steel-plate": 10,
+      "copper-cable": 10
+    },
+    "out": { "beacon": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "speed-module",
+    "name": "Speed module",
+    "category": "production",
+    "row": 5,
+    "time": 15,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "advanced-circuit": 5, "electronic-circuit": 5 },
+    "out": { "speed-module": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "speed-module-2",
+    "name": "Speed module 2",
+    "category": "production",
+    "row": 5,
+    "time": 30,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "speed-module": 4, "advanced-circuit": 5, "processing-unit": 5 },
+    "out": { "speed-module-2": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "speed-module-3",
+    "name": "Speed module 3",
+    "category": "production",
+    "row": 5,
+    "time": 60,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "speed-module-2": 4,
+      "advanced-circuit": 5,
+      "processing-unit": 5
+    },
+    "out": { "speed-module-3": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "efficiency-module",
+    "name": "Efficiency module",
+    "category": "production",
+    "row": 5,
+    "time": 15,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "advanced-circuit": 5, "electronic-circuit": 5 },
+    "out": { "efficiency-module": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "efficiency-module-2",
+    "name": "Efficiency module 2",
+    "category": "production",
+    "row": 5,
+    "time": 30,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "efficiency-module": 4,
+      "advanced-circuit": 5,
+      "processing-unit": 5
+    },
+    "out": { "efficiency-module-2": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "efficiency-module-3",
+    "name": "Efficiency module 3",
+    "category": "production",
+    "row": 5,
+    "time": 60,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "efficiency-module-2": 4,
+      "advanced-circuit": 5,
+      "processing-unit": 5
+    },
+    "out": { "efficiency-module-3": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "productivity-module",
+    "name": "Productivity module",
+    "category": "production",
+    "row": 5,
+    "time": 15,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "advanced-circuit": 5, "electronic-circuit": 5 },
+    "out": { "productivity-module": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "productivity-module-2",
+    "name": "Productivity module 2",
+    "category": "production",
+    "row": 5,
+    "time": 30,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "productivity-module": 4,
+      "advanced-circuit": 5,
+      "processing-unit": 5
+    },
+    "out": { "productivity-module-2": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "productivity-module-3",
+    "name": "Productivity module 3",
+    "category": "production",
+    "row": 5,
+    "time": 60,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "productivity-module-2": 4,
+      "advanced-circuit": 5,
+      "processing-unit": 5
+    },
+    "out": { "productivity-module-3": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "rocket-silo",
+    "name": "Rocket silo",
+    "category": "production",
+    "row": 6,
+    "time": 30,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "steel-plate": 1000,
+      "concrete": 1000,
+      "pipe": 100,
+      "processing-unit": 200,
+      "electric-engine-unit": 200
+    },
+    "out": { "rocket-silo": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "cargo-landing-pad",
+    "name": "Cargo landing pad",
+    "category": "production",
+    "row": 6,
+    "time": 30,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "concrete": 200, "steel-plate": 25, "processing-unit": 10 },
+    "out": { "cargo-landing-pad": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "satellite",
+    "name": "Satellite",
+    "category": "production",
+    "row": 6,
+    "time": 5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "low-density-structure": 100,
+      "solar-panel": 100,
+      "accumulator": 100,
+      "radar": 5,
+      "processing-unit": 100,
+      "rocket-fuel": 50
+    },
+    "out": { "satellite": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "basic-oil-processing",
+    "name": "Basic oil processing",
+    "category": "intermediate-products",
+    "row": 0,
+    "time": 5,
+    "producers": ["oil-refinery"],
+    "in": { "crude-oil": 100 },
+    "out": { "petroleum-gas": 45 },
+    "flags": ["locked"]
+  },
+  {
+    "id": "advanced-oil-processing",
+    "name": "Advanced oil processing",
+    "category": "intermediate-products",
+    "row": 0,
+    "time": 5,
+    "producers": ["oil-refinery"],
+    "in": { "water": 50, "crude-oil": 100 },
+    "out": { "heavy-oil": 25, "light-oil": 45, "petroleum-gas": 55 },
+    "flags": ["locked"]
+  },
+  {
+    "id": "coal-liquefaction",
+    "name": "Coal liquefaction",
+    "category": "intermediate-products",
+    "row": 0,
+    "time": 5,
+    "producers": ["oil-refinery"],
+    "in": { "coal": 10, "heavy-oil": 25, "steam": 50 },
+    "out": { "heavy-oil": 90, "light-oil": 20, "petroleum-gas": 10 },
+    "catalyst": { "heavy-oil": 25 },
+    "flags": ["locked"]
+  },
+  {
+    "id": "coal-liquefaction-steam-500",
+    "name": "Coal liquefaction",
+    "category": "intermediate-products",
+    "row": 0,
+    "time": 5,
+    "producers": ["oil-refinery"],
+    "in": { "coal": 10, "heavy-oil": 25, "steam-500": 50 },
+    "out": { "heavy-oil": 90, "light-oil": 20, "petroleum-gas": 10 },
+    "catalyst": { "heavy-oil": 25 },
+    "icon": "coal-liquefaction",
+    "flags": ["locked"]
+  },
+  {
+    "id": "heavy-oil-cracking",
+    "name": "Heavy oil cracking to light oil",
+    "category": "intermediate-products",
+    "row": 0,
+    "time": 2,
+    "producers": ["chemical-plant"],
+    "in": { "water": 30, "heavy-oil": 40 },
+    "out": { "light-oil": 30 },
+    "flags": ["locked"]
+  },
+  {
+    "id": "light-oil-cracking",
+    "name": "Light oil cracking to petroleum gas",
+    "category": "intermediate-products",
+    "row": 0,
+    "time": 2,
+    "producers": ["chemical-plant"],
+    "in": { "water": 30, "light-oil": 30 },
+    "out": { "petroleum-gas": 20 },
+    "flags": ["locked"]
+  },
+  {
+    "id": "solid-fuel-from-petroleum-gas",
+    "name": "Solid fuel from petroleum gas",
+    "category": "intermediate-products",
+    "row": 0,
+    "time": 1,
+    "producers": ["chemical-plant"],
+    "in": { "petroleum-gas": 20 },
+    "out": { "solid-fuel": 1 },
+    "flags": ["locked"]
+  },
+  {
+    "id": "solid-fuel-from-light-oil",
+    "name": "Solid fuel from light oil",
+    "category": "intermediate-products",
+    "row": 0,
+    "time": 1,
+    "producers": ["chemical-plant"],
+    "in": { "light-oil": 10 },
+    "out": { "solid-fuel": 1 },
+    "flags": ["locked"]
+  },
+  {
+    "id": "solid-fuel-from-heavy-oil",
+    "name": "Solid fuel from heavy oil",
+    "category": "intermediate-products",
+    "row": 0,
+    "time": 1,
+    "producers": ["chemical-plant"],
+    "in": { "heavy-oil": 20 },
+    "out": { "solid-fuel": 1 },
+    "flags": ["locked"]
+  },
+  {
+    "id": "lubricant",
+    "name": "Lubricant",
+    "category": "intermediate-products",
+    "row": 0,
+    "time": 1,
+    "producers": ["chemical-plant"],
+    "in": { "heavy-oil": 10 },
+    "out": { "lubricant": 10 },
+    "flags": ["locked"]
+  },
+  {
+    "id": "sulfuric-acid",
+    "name": "Sulfuric acid",
+    "category": "intermediate-products",
+    "row": 0,
+    "time": 1,
+    "producers": ["chemical-plant"],
+    "in": { "sulfur": 5, "iron-plate": 1, "water": 100 },
+    "out": { "sulfuric-acid": 50 },
+    "flags": ["locked"]
+  },
+  {
+    "id": "iron-plate",
+    "name": "Iron plate",
+    "category": "intermediate-products",
+    "row": 1,
+    "time": 3.2,
+    "producers": ["stone-furnace", "steel-furnace", "electric-furnace"],
+    "in": { "iron-ore": 1 },
+    "out": { "iron-plate": 1 }
+  },
+  {
+    "id": "copper-plate",
+    "name": "Copper plate",
+    "category": "intermediate-products",
+    "row": 1,
+    "time": 3.2,
+    "producers": ["stone-furnace", "steel-furnace", "electric-furnace"],
+    "in": { "copper-ore": 1 },
+    "out": { "copper-plate": 1 }
+  },
+  {
+    "id": "steel-plate",
+    "name": "Steel plate",
+    "category": "intermediate-products",
+    "row": 1,
+    "time": 16,
+    "producers": ["stone-furnace", "steel-furnace", "electric-furnace"],
+    "in": { "iron-plate": 5 },
+    "out": { "steel-plate": 1 },
+    "flags": ["locked"]
+  },
+  {
+    "id": "plastic-bar",
+    "name": "Plastic bar",
+    "category": "intermediate-products",
+    "row": 1,
+    "time": 1,
+    "producers": ["chemical-plant"],
+    "in": { "petroleum-gas": 20, "coal": 1 },
+    "out": { "plastic-bar": 2 },
+    "flags": ["locked"]
+  },
+  {
+    "id": "sulfur",
+    "name": "Sulfur",
+    "category": "intermediate-products",
+    "row": 1,
+    "time": 1,
+    "producers": ["chemical-plant"],
+    "in": { "water": 30, "petroleum-gas": 30 },
+    "out": { "sulfur": 2 },
+    "flags": ["locked"]
+  },
+  {
+    "id": "battery",
+    "name": "Battery",
+    "category": "intermediate-products",
+    "row": 1,
+    "time": 4,
+    "producers": ["chemical-plant"],
+    "in": { "sulfuric-acid": 20, "iron-plate": 1, "copper-plate": 1 },
+    "out": { "battery": 1 },
+    "flags": ["locked"]
+  },
+  {
+    "id": "explosives",
+    "name": "Explosives",
+    "category": "intermediate-products",
+    "row": 1,
+    "time": 4,
+    "producers": ["chemical-plant"],
+    "in": { "sulfur": 1, "coal": 1, "water": 10 },
+    "out": { "explosives": 2 },
+    "flags": ["locked"]
+  },
+  {
+    "id": "water-barrel",
+    "name": "Fill Water barrel",
+    "category": "intermediate-products",
+    "row": 2,
+    "time": 0.2,
+    "producers": ["assembling-machine-2", "assembling-machine-3"],
+    "in": { "water": 50, "barrel": 1 },
+    "out": { "water-barrel": 1 },
+    "icon": "water-barrel-0",
+    "flags": ["locked"],
+    "disallowedEffects": ["quality", "productivity"]
+  },
+  {
+    "id": "crude-oil-barrel",
+    "name": "Fill Crude oil barrel",
+    "category": "intermediate-products",
+    "row": 2,
+    "time": 0.2,
+    "producers": ["assembling-machine-2", "assembling-machine-3"],
+    "in": { "crude-oil": 50, "barrel": 1 },
+    "out": { "crude-oil-barrel": 1 },
+    "icon": "crude-oil-barrel-0",
+    "flags": ["locked"],
+    "disallowedEffects": ["quality", "productivity"]
+  },
+  {
+    "id": "petroleum-gas-barrel",
+    "name": "Fill Petroleum gas barrel",
+    "category": "intermediate-products",
+    "row": 2,
+    "time": 0.2,
+    "producers": ["assembling-machine-2", "assembling-machine-3"],
+    "in": { "petroleum-gas": 50, "barrel": 1 },
+    "out": { "petroleum-gas-barrel": 1 },
+    "icon": "petroleum-gas-barrel-0",
+    "flags": ["locked"],
+    "disallowedEffects": ["quality", "productivity"]
+  },
+  {
+    "id": "light-oil-barrel",
+    "name": "Fill Light oil barrel",
+    "category": "intermediate-products",
+    "row": 2,
+    "time": 0.2,
+    "producers": ["assembling-machine-2", "assembling-machine-3"],
+    "in": { "light-oil": 50, "barrel": 1 },
+    "out": { "light-oil-barrel": 1 },
+    "icon": "light-oil-barrel-0",
+    "flags": ["locked"],
+    "disallowedEffects": ["quality", "productivity"]
+  },
+  {
+    "id": "heavy-oil-barrel",
+    "name": "Fill Heavy oil barrel",
+    "category": "intermediate-products",
+    "row": 2,
+    "time": 0.2,
+    "producers": ["assembling-machine-2", "assembling-machine-3"],
+    "in": { "heavy-oil": 50, "barrel": 1 },
+    "out": { "heavy-oil-barrel": 1 },
+    "icon": "heavy-oil-barrel-0",
+    "flags": ["locked"],
+    "disallowedEffects": ["quality", "productivity"]
+  },
+  {
+    "id": "lubricant-barrel",
+    "name": "Fill Lubricant barrel",
+    "category": "intermediate-products",
+    "row": 2,
+    "time": 0.2,
+    "producers": ["assembling-machine-2", "assembling-machine-3"],
+    "in": { "lubricant": 50, "barrel": 1 },
+    "out": { "lubricant-barrel": 1 },
+    "icon": "lubricant-barrel-0",
+    "flags": ["locked"],
+    "disallowedEffects": ["quality", "productivity"]
+  },
+  {
+    "id": "sulfuric-acid-barrel",
+    "name": "Fill Sulfuric acid barrel",
+    "category": "intermediate-products",
+    "row": 2,
+    "time": 0.2,
+    "producers": ["assembling-machine-2", "assembling-machine-3"],
+    "in": { "sulfuric-acid": 50, "barrel": 1 },
+    "out": { "sulfuric-acid-barrel": 1 },
+    "icon": "sulfuric-acid-barrel-0",
+    "flags": ["locked"],
+    "disallowedEffects": ["quality", "productivity"]
+  },
+  {
+    "id": "empty-water-barrel",
+    "name": "Empty Water barrel",
+    "category": "intermediate-products",
+    "row": 3,
+    "time": 0.2,
+    "producers": ["assembling-machine-2", "assembling-machine-3"],
+    "in": { "water-barrel": 1 },
+    "out": { "water": 50, "barrel": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["quality", "productivity"]
+  },
+  {
+    "id": "empty-crude-oil-barrel",
+    "name": "Empty Crude oil barrel",
+    "category": "intermediate-products",
+    "row": 3,
+    "time": 0.2,
+    "producers": ["assembling-machine-2", "assembling-machine-3"],
+    "in": { "crude-oil-barrel": 1 },
+    "out": { "crude-oil": 50, "barrel": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["quality", "productivity"]
+  },
+  {
+    "id": "empty-petroleum-gas-barrel",
+    "name": "Empty Petroleum gas barrel",
+    "category": "intermediate-products",
+    "row": 3,
+    "time": 0.2,
+    "producers": ["assembling-machine-2", "assembling-machine-3"],
+    "in": { "petroleum-gas-barrel": 1 },
+    "out": { "petroleum-gas": 50, "barrel": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["quality", "productivity"]
+  },
+  {
+    "id": "empty-light-oil-barrel",
+    "name": "Empty Light oil barrel",
+    "category": "intermediate-products",
+    "row": 3,
+    "time": 0.2,
+    "producers": ["assembling-machine-2", "assembling-machine-3"],
+    "in": { "light-oil-barrel": 1 },
+    "out": { "light-oil": 50, "barrel": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["quality", "productivity"]
+  },
+  {
+    "id": "empty-heavy-oil-barrel",
+    "name": "Empty Heavy oil barrel",
+    "category": "intermediate-products",
+    "row": 3,
+    "time": 0.2,
+    "producers": ["assembling-machine-2", "assembling-machine-3"],
+    "in": { "heavy-oil-barrel": 1 },
+    "out": { "heavy-oil": 50, "barrel": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["quality", "productivity"]
+  },
+  {
+    "id": "empty-lubricant-barrel",
+    "name": "Empty Lubricant barrel",
+    "category": "intermediate-products",
+    "row": 3,
+    "time": 0.2,
+    "producers": ["assembling-machine-2", "assembling-machine-3"],
+    "in": { "lubricant-barrel": 1 },
+    "out": { "lubricant": 50, "barrel": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["quality", "productivity"]
+  },
+  {
+    "id": "empty-sulfuric-acid-barrel",
+    "name": "Empty Sulfuric acid barrel",
+    "category": "intermediate-products",
+    "row": 3,
+    "time": 0.2,
+    "producers": ["assembling-machine-2", "assembling-machine-3"],
+    "in": { "sulfuric-acid-barrel": 1 },
+    "out": { "sulfuric-acid": 50, "barrel": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["quality", "productivity"]
+  },
+  {
+    "id": "iron-gear-wheel",
+    "name": "Iron gear wheel",
+    "category": "intermediate-products",
+    "row": 4,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "iron-plate": 2 },
+    "out": { "iron-gear-wheel": 1 }
+  },
+  {
+    "id": "iron-stick",
+    "name": "Iron stick",
+    "category": "intermediate-products",
+    "row": 4,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "iron-plate": 1 },
+    "out": { "iron-stick": 2 },
+    "flags": ["locked"]
+  },
+  {
+    "id": "copper-cable",
+    "name": "Copper cable",
+    "category": "intermediate-products",
+    "row": 4,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "copper-plate": 1 },
+    "out": { "copper-cable": 2 },
+    "flags": ["locked"]
+  },
+  {
+    "id": "barrel",
+    "name": "Barrel",
+    "category": "intermediate-products",
+    "row": 4,
+    "time": 1,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "steel-plate": 1 },
+    "out": { "barrel": 1 },
+    "flags": ["locked"]
+  },
+  {
+    "id": "electronic-circuit",
+    "name": "Electronic circuit",
+    "category": "intermediate-products",
+    "row": 4,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "iron-plate": 1, "copper-cable": 3 },
+    "out": { "electronic-circuit": 1 },
+    "flags": ["locked"]
+  },
+  {
+    "id": "advanced-circuit",
+    "name": "Advanced circuit",
+    "category": "intermediate-products",
+    "row": 4,
+    "time": 6,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "electronic-circuit": 2, "plastic-bar": 2, "copper-cable": 4 },
+    "out": { "advanced-circuit": 1 },
+    "flags": ["locked"]
+  },
+  {
+    "id": "processing-unit",
+    "name": "Processing unit",
+    "category": "intermediate-products",
+    "row": 4,
+    "time": 10,
+    "producers": ["assembling-machine-2", "assembling-machine-3"],
+    "in": {
+      "electronic-circuit": 20,
+      "advanced-circuit": 2,
+      "sulfuric-acid": 5
+    },
+    "out": { "processing-unit": 1 },
+    "flags": ["locked"]
+  },
+  {
+    "id": "engine-unit",
+    "name": "Engine unit",
+    "category": "intermediate-products",
+    "row": 4,
+    "time": 10,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "steel-plate": 1, "iron-gear-wheel": 1, "pipe": 2 },
+    "out": { "engine-unit": 1 },
+    "flags": ["locked"]
+  },
+  {
+    "id": "electric-engine-unit",
+    "name": "Electric engine unit",
+    "category": "intermediate-products",
+    "row": 4,
+    "time": 10,
+    "producers": ["assembling-machine-2", "assembling-machine-3"],
+    "in": { "engine-unit": 1, "lubricant": 15, "electronic-circuit": 2 },
+    "out": { "electric-engine-unit": 1 },
+    "flags": ["locked"]
+  },
+  {
+    "id": "flying-robot-frame",
+    "name": "Flying robot frame",
+    "category": "intermediate-products",
+    "row": 4,
+    "time": 20,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "electric-engine-unit": 1,
+      "battery": 2,
+      "steel-plate": 1,
+      "electronic-circuit": 3
+    },
+    "out": { "flying-robot-frame": 1 },
+    "flags": ["locked"]
+  },
+  {
+    "id": "low-density-structure",
+    "name": "Low density structure",
+    "category": "intermediate-products",
+    "row": 4,
+    "time": 15,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "steel-plate": 2, "copper-plate": 20, "plastic-bar": 5 },
+    "out": { "low-density-structure": 1 },
+    "flags": ["locked"]
+  },
+  {
+    "id": "rocket-fuel",
+    "name": "Rocket fuel",
+    "category": "intermediate-products",
+    "row": 4,
+    "time": 15,
+    "producers": ["assembling-machine-2", "assembling-machine-3"],
+    "in": { "solid-fuel": 10, "light-oil": 10 },
+    "out": { "rocket-fuel": 1 },
+    "flags": ["locked"]
+  },
+  {
+    "id": "rocket-part",
+    "name": "Rocket part",
+    "category": "intermediate-products",
+    "row": 4,
+    "time": 3,
+    "producers": ["rocket-silo"],
+    "in": {
+      "processing-unit": 10,
+      "low-density-structure": 10,
+      "rocket-fuel": 10
+    },
+    "out": { "rocket-part": 1 },
+    "flags": ["locked"]
+  },
+  {
+    "id": "uranium-processing",
+    "name": "Uranium processing",
+    "category": "intermediate-products",
+    "row": 5,
+    "time": 12,
+    "producers": ["centrifuge"],
+    "in": { "uranium-ore": 10 },
+    "out": { "uranium-235": 0.007000000000000001, "uranium-238": 0.993 },
+    "flags": ["locked"]
+  },
+  {
+    "id": "depleted-uranium-fuel-cell",
+    "name": "Uranium fuel cell : Depleted uranium fuel cell",
+    "category": "intermediate-products",
+    "row": 5,
+    "time": 1,
+    "in": { "uranium-fuel-cell": 0 },
+    "out": { "depleted-uranium-fuel-cell": 0 },
+    "producers": ["nuclear-reactor"],
+    "flags": ["burn"]
+  },
+  {
+    "id": "uranium-fuel-cell",
+    "name": "Uranium fuel cell",
+    "category": "intermediate-products",
+    "row": 5,
+    "time": 10,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "iron-plate": 10, "uranium-235": 1, "uranium-238": 19 },
+    "out": { "uranium-fuel-cell": 10 },
+    "flags": ["locked"]
+  },
+  {
+    "id": "nuclear-fuel-reprocessing",
+    "name": "Nuclear fuel reprocessing",
+    "category": "intermediate-products",
+    "row": 5,
+    "time": 60,
+    "producers": ["centrifuge"],
+    "in": { "depleted-uranium-fuel-cell": 5 },
+    "out": { "uranium-238": 3 },
+    "flags": ["locked"]
+  },
+  {
+    "id": "kovarex-enrichment-process",
+    "name": "Kovarex enrichment process",
+    "category": "intermediate-products",
+    "row": 5,
+    "time": 60,
+    "producers": ["centrifuge"],
+    "in": { "uranium-235": 40, "uranium-238": 5 },
+    "out": { "uranium-235": 41, "uranium-238": 2 },
+    "catalyst": { "uranium-235": 40, "uranium-238": 2 },
+    "flags": ["locked"],
+    "disallowedEffects": ["quality"]
+  },
+  {
+    "id": "nuclear-fuel",
+    "name": "Nuclear fuel",
+    "category": "intermediate-products",
+    "row": 5,
+    "time": 90,
+    "producers": ["centrifuge"],
+    "in": { "uranium-235": 1, "rocket-fuel": 1 },
+    "out": { "nuclear-fuel": 1 },
+    "flags": ["locked"]
+  },
+  {
+    "id": "automation-science-pack",
+    "name": "Automation science pack",
+    "category": "intermediate-products",
+    "row": 6,
+    "time": 5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "copper-plate": 1, "iron-gear-wheel": 1 },
+    "out": { "automation-science-pack": 1 },
+    "flags": ["locked"]
+  },
+  {
+    "id": "logistic-science-pack",
+    "name": "Logistic science pack",
+    "category": "intermediate-products",
+    "row": 6,
+    "time": 6,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "inserter": 1, "transport-belt": 1 },
+    "out": { "logistic-science-pack": 1 },
+    "flags": ["locked"]
+  },
+  {
+    "id": "military-science-pack",
+    "name": "Military science pack",
+    "category": "intermediate-products",
+    "row": 6,
+    "time": 10,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "piercing-rounds-magazine": 1, "grenade": 1, "stone-wall": 2 },
+    "out": { "military-science-pack": 2 },
+    "flags": ["locked"]
+  },
+  {
+    "id": "chemical-science-pack",
+    "name": "Chemical science pack",
+    "category": "intermediate-products",
+    "row": 6,
+    "time": 24,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "engine-unit": 2, "advanced-circuit": 3, "sulfur": 1 },
+    "out": { "chemical-science-pack": 2 },
+    "flags": ["locked"]
+  },
+  {
+    "id": "production-science-pack",
+    "name": "Production science pack",
+    "category": "intermediate-products",
+    "row": 6,
+    "time": 21,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "electric-furnace": 1, "productivity-module": 1, "rail": 30 },
+    "out": { "production-science-pack": 3 },
+    "flags": ["locked"]
+  },
+  {
+    "id": "utility-science-pack",
+    "name": "Utility science pack",
+    "category": "intermediate-products",
+    "row": 6,
+    "time": 21,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "low-density-structure": 3,
+      "processing-unit": 2,
+      "flying-robot-frame": 1
+    },
+    "out": { "utility-science-pack": 3 },
+    "flags": ["locked"]
+  },
+  {
+    "id": "space-science-pack",
+    "name": "Rocket silo : Space science pack",
+    "category": "intermediate-products",
+    "row": 6,
+    "time": 40.6,
+    "in": { "satellite": 1, "rocket-part": 100 },
+    "out": { "space-science-pack": 1000 },
+    "part": "rocket-part",
+    "producers": ["rocket-silo"]
+  },
+  {
+    "id": "submachine-gun",
+    "name": "Submachine gun",
+    "category": "combat",
+    "row": 0,
+    "time": 10,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "iron-gear-wheel": 10, "copper-plate": 5, "iron-plate": 10 },
+    "out": { "submachine-gun": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "shotgun",
+    "name": "Shotgun",
+    "category": "combat",
+    "row": 0,
+    "time": 10,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "iron-plate": 15,
+      "iron-gear-wheel": 5,
+      "copper-plate": 10,
+      "wood": 5
+    },
+    "out": { "shotgun": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "combat-shotgun",
+    "name": "Combat shotgun",
+    "category": "combat",
+    "row": 0,
+    "time": 10,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "steel-plate": 15,
+      "iron-gear-wheel": 5,
+      "copper-plate": 10,
+      "wood": 10
+    },
+    "out": { "combat-shotgun": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "rocket-launcher",
+    "name": "Rocket launcher",
+    "category": "combat",
+    "row": 0,
+    "time": 10,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "iron-plate": 5, "iron-gear-wheel": 5, "electronic-circuit": 5 },
+    "out": { "rocket-launcher": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "flamethrower",
+    "name": "Flamethrower",
+    "category": "combat",
+    "row": 0,
+    "time": 10,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "steel-plate": 5, "iron-gear-wheel": 10 },
+    "out": { "flamethrower": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "firearm-magazine",
+    "name": "Firearm magazine",
+    "category": "combat",
+    "row": 1,
+    "time": 1,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "iron-plate": 4 },
+    "out": { "firearm-magazine": 1 },
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "piercing-rounds-magazine",
+    "name": "Piercing rounds magazine",
+    "category": "combat",
+    "row": 1,
+    "time": 3,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "firearm-magazine": 1, "steel-plate": 1, "copper-plate": 5 },
+    "out": { "piercing-rounds-magazine": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "uranium-rounds-magazine",
+    "name": "Uranium rounds magazine",
+    "category": "combat",
+    "row": 1,
+    "time": 10,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "piercing-rounds-magazine": 1, "uranium-238": 1 },
+    "out": { "uranium-rounds-magazine": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "shotgun-shell",
+    "name": "Shotgun shells",
+    "category": "combat",
+    "row": 1,
+    "time": 3,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "copper-plate": 2, "iron-plate": 2 },
+    "out": { "shotgun-shell": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "piercing-shotgun-shell",
+    "name": "Piercing shotgun shells",
+    "category": "combat",
+    "row": 1,
+    "time": 8,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "shotgun-shell": 2, "copper-plate": 5, "steel-plate": 2 },
+    "out": { "piercing-shotgun-shell": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "cannon-shell",
+    "name": "Cannon shell",
+    "category": "combat",
+    "row": 1,
+    "time": 8,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "steel-plate": 2, "plastic-bar": 2, "explosives": 1 },
+    "out": { "cannon-shell": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "explosive-cannon-shell",
+    "name": "Explosive cannon shell",
+    "category": "combat",
+    "row": 1,
+    "time": 8,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "steel-plate": 2, "plastic-bar": 2, "explosives": 2 },
+    "out": { "explosive-cannon-shell": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "uranium-cannon-shell",
+    "name": "Uranium cannon shell",
+    "category": "combat",
+    "row": 1,
+    "time": 12,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "cannon-shell": 1, "uranium-238": 1 },
+    "out": { "uranium-cannon-shell": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "explosive-uranium-cannon-shell",
+    "name": "Explosive uranium cannon shell",
+    "category": "combat",
+    "row": 1,
+    "time": 12,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "explosive-cannon-shell": 1, "uranium-238": 1 },
+    "out": { "explosive-uranium-cannon-shell": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "artillery-shell",
+    "name": "Artillery shell",
+    "category": "combat",
+    "row": 1,
+    "time": 15,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "explosive-cannon-shell": 4, "radar": 1, "explosives": 8 },
+    "out": { "artillery-shell": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "rocket",
+    "name": "Rocket",
+    "category": "combat",
+    "row": 1,
+    "time": 4,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "explosives": 1, "iron-plate": 2 },
+    "out": { "rocket": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "explosive-rocket",
+    "name": "Explosive rocket",
+    "category": "combat",
+    "row": 1,
+    "time": 8,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "rocket": 1, "explosives": 2 },
+    "out": { "explosive-rocket": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "atomic-bomb",
+    "name": "Atomic bomb",
+    "category": "combat",
+    "row": 1,
+    "time": 50,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "processing-unit": 10, "explosives": 10, "uranium-235": 30 },
+    "out": { "atomic-bomb": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "flamethrower-ammo",
+    "name": "Flamethrower ammo",
+    "category": "combat",
+    "row": 1,
+    "time": 6,
+    "producers": ["chemical-plant"],
+    "in": { "steel-plate": 5, "crude-oil": 100 },
+    "out": { "flamethrower-ammo": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "grenade",
+    "name": "Grenade",
+    "category": "combat",
+    "row": 2,
+    "time": 8,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "iron-plate": 5, "coal": 10 },
+    "out": { "grenade": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "cluster-grenade",
+    "name": "Cluster grenade",
+    "category": "combat",
+    "row": 2,
+    "time": 8,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "grenade": 7, "explosives": 5, "steel-plate": 5 },
+    "out": { "cluster-grenade": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "poison-capsule",
+    "name": "Poison capsule",
+    "category": "combat",
+    "row": 2,
+    "time": 8,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "steel-plate": 3, "electronic-circuit": 3, "coal": 10 },
+    "out": { "poison-capsule": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "slowdown-capsule",
+    "name": "Slowdown capsule",
+    "category": "combat",
+    "row": 2,
+    "time": 8,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "steel-plate": 2, "electronic-circuit": 2, "coal": 5 },
+    "out": { "slowdown-capsule": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "defender-capsule",
+    "name": "Defender capsule",
+    "category": "combat",
+    "row": 2,
+    "time": 8,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "piercing-rounds-magazine": 3,
+      "electronic-circuit": 3,
+      "iron-gear-wheel": 3
+    },
+    "out": { "defender-capsule": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "distractor-capsule",
+    "name": "Distractor capsule",
+    "category": "combat",
+    "row": 2,
+    "time": 15,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "defender-capsule": 4, "advanced-circuit": 3 },
+    "out": { "distractor-capsule": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "destroyer-capsule",
+    "name": "Destroyer capsule",
+    "category": "combat",
+    "row": 2,
+    "time": 15,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "distractor-capsule": 4, "speed-module": 1 },
+    "out": { "destroyer-capsule": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "light-armor",
+    "name": "Light armor",
+    "category": "combat",
+    "row": 3,
+    "time": 3,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "iron-plate": 40 },
+    "out": { "light-armor": 1 },
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "heavy-armor",
+    "name": "Heavy armor",
+    "category": "combat",
+    "row": 3,
+    "time": 8,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "copper-plate": 100, "steel-plate": 50 },
+    "out": { "heavy-armor": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "modular-armor",
+    "name": "Modular armor",
+    "category": "combat",
+    "row": 3,
+    "time": 15,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "advanced-circuit": 30, "steel-plate": 50 },
+    "out": { "modular-armor": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "power-armor",
+    "name": "Power armor",
+    "category": "combat",
+    "row": 3,
+    "time": 20,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "processing-unit": 40,
+      "electric-engine-unit": 20,
+      "steel-plate": 40
+    },
+    "out": { "power-armor": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "power-armor-mk2",
+    "name": "Power armor MK2",
+    "category": "combat",
+    "row": 3,
+    "time": 25,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "efficiency-module-2": 25,
+      "speed-module-2": 25,
+      "processing-unit": 60,
+      "electric-engine-unit": 40,
+      "low-density-structure": 30
+    },
+    "out": { "power-armor-mk2": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "solar-panel-equipment",
+    "name": "Portable solar panel",
+    "category": "combat",
+    "row": 4,
+    "time": 10,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "solar-panel": 1, "advanced-circuit": 2, "steel-plate": 5 },
+    "out": { "solar-panel-equipment": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "fission-reactor-equipment",
+    "name": "Portable fission reactor",
+    "category": "combat",
+    "row": 4,
+    "time": 10,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "processing-unit": 200,
+      "low-density-structure": 50,
+      "uranium-fuel-cell": 4
+    },
+    "out": { "fission-reactor-equipment": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "battery-equipment",
+    "name": "Personal battery",
+    "category": "combat",
+    "row": 4,
+    "time": 10,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "battery": 5, "steel-plate": 10 },
+    "out": { "battery-equipment": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "battery-mk2-equipment",
+    "name": "Personal battery MK2",
+    "category": "combat",
+    "row": 4,
+    "time": 10,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "battery-equipment": 10,
+      "processing-unit": 15,
+      "low-density-structure": 5
+    },
+    "out": { "battery-mk2-equipment": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "belt-immunity-equipment",
+    "name": "Belt immunity equipment",
+    "category": "combat",
+    "row": 5,
+    "time": 10,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "advanced-circuit": 5, "steel-plate": 10 },
+    "out": { "belt-immunity-equipment": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "exoskeleton-equipment",
+    "name": "Exoskeleton",
+    "category": "combat",
+    "row": 5,
+    "time": 10,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "processing-unit": 10,
+      "electric-engine-unit": 30,
+      "steel-plate": 20
+    },
+    "out": { "exoskeleton-equipment": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "personal-roboport-equipment",
+    "name": "Personal roboport",
+    "category": "combat",
+    "row": 5,
+    "time": 10,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "advanced-circuit": 10,
+      "iron-gear-wheel": 40,
+      "steel-plate": 20,
+      "battery": 45
+    },
+    "out": { "personal-roboport-equipment": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "personal-roboport-mk2-equipment",
+    "name": "Personal roboport MK2",
+    "category": "combat",
+    "row": 5,
+    "time": 20,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "personal-roboport-equipment": 5,
+      "processing-unit": 100,
+      "low-density-structure": 20
+    },
+    "out": { "personal-roboport-mk2-equipment": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "night-vision-equipment",
+    "name": "Nightvision",
+    "category": "combat",
+    "row": 5,
+    "time": 10,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "advanced-circuit": 5, "steel-plate": 10 },
+    "out": { "night-vision-equipment": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "energy-shield-equipment",
+    "name": "Energy shield",
+    "category": "combat",
+    "row": 6,
+    "time": 10,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "advanced-circuit": 5, "steel-plate": 10 },
+    "out": { "energy-shield-equipment": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "energy-shield-mk2-equipment",
+    "name": "Energy shield MK2",
+    "category": "combat",
+    "row": 6,
+    "time": 10,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "energy-shield-equipment": 10,
+      "processing-unit": 5,
+      "low-density-structure": 5
+    },
+    "out": { "energy-shield-mk2-equipment": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "personal-laser-defense-equipment",
+    "name": "Personal laser defense",
+    "category": "combat",
+    "row": 6,
+    "time": 10,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "processing-unit": 20,
+      "low-density-structure": 5,
+      "laser-turret": 5
+    },
+    "out": { "personal-laser-defense-equipment": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "discharge-defense-equipment",
+    "name": "Discharge defense",
+    "category": "combat",
+    "row": 6,
+    "time": 10,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "processing-unit": 5, "steel-plate": 20, "laser-turret": 10 },
+    "out": { "discharge-defense-equipment": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "stone-wall",
+    "name": "Wall",
+    "category": "combat",
+    "row": 7,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "stone-brick": 5 },
+    "out": { "stone-wall": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "gate",
+    "name": "Gate",
+    "category": "combat",
+    "row": 7,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "stone-wall": 1, "steel-plate": 2, "electronic-circuit": 2 },
+    "out": { "gate": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "radar",
+    "name": "Radar",
+    "category": "combat",
+    "row": 7,
+    "time": 0.5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "electronic-circuit": 5, "iron-gear-wheel": 5, "iron-plate": 10 },
+    "out": { "radar": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "land-mine",
+    "name": "Land mine",
+    "category": "combat",
+    "row": 7,
+    "time": 5,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "steel-plate": 1, "explosives": 2 },
+    "out": { "land-mine": 4 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "gun-turret",
+    "name": "Gun turret",
+    "category": "combat",
+    "row": 8,
+    "time": 8,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "iron-gear-wheel": 10, "copper-plate": 10, "iron-plate": 20 },
+    "out": { "gun-turret": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "laser-turret",
+    "name": "Laser turret",
+    "category": "combat",
+    "row": 8,
+    "time": 20,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": { "steel-plate": 20, "electronic-circuit": 20, "battery": 12 },
+    "out": { "laser-turret": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "flamethrower-turret",
+    "name": "Flamethrower turret",
+    "category": "combat",
+    "row": 8,
+    "time": 20,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "steel-plate": 30,
+      "iron-gear-wheel": 15,
+      "pipe": 10,
+      "engine-unit": 5
+    },
+    "out": { "flamethrower-turret": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "artillery-turret",
+    "name": "Artillery turret",
+    "category": "combat",
+    "row": 8,
+    "time": 40,
+    "producers": [
+      "assembling-machine-1",
+      "assembling-machine-2",
+      "assembling-machine-3"
+    ],
+    "in": {
+      "steel-plate": 60,
+      "concrete": 60,
+      "iron-gear-wheel": 40,
+      "advanced-circuit": 20
+    },
+    "out": { "artillery-turret": 1 },
+    "flags": ["locked"],
+    "disallowedEffects": ["productivity"]
+  },
+  {
+    "id": "water",
+    "name": "Offshore pump : Water",
+    "category": "fluids",
+    "row": 0,
+    "time": 1,
+    "in": {},
+    "out": { "water": 1200 },
+    "producers": ["offshore-pump"],
+    "locations": ["nauvis"]
+  },
+  {
+    "id": "steam",
+    "name": "Boiler : Steam",
+    "category": "fluids",
+    "row": 0,
+    "time": 300,
+    "in": { "water": 1 },
+    "out": { "steam": 10 },
+    "producers": ["boiler"]
+  },
+  {
+    "id": "heat-exchanger-steam-boil",
+    "name": "Heat exchanger : Steam",
+    "category": "fluids",
+    "row": 0,
+    "time": 970,
+    "in": { "water": 1 },
+    "out": { "steam-500": 10 },
+    "producers": ["heat-exchanger"]
+  },
+  {
+    "id": "iron-ore",
+    "name": "Iron ore",
+    "category": "intermediate-products",
+    "row": 0,
+    "time": 1,
+    "in": {},
+    "out": { "iron-ore": 1 },
+    "cost": 100,
+    "flags": ["mining"],
+    "producers": ["burner-mining-drill", "electric-mining-drill"],
+    "locations": ["nauvis"]
+  },
+  {
+    "id": "copper-ore",
+    "name": "Copper ore",
+    "category": "intermediate-products",
+    "row": 0,
+    "time": 1,
+    "in": {},
+    "out": { "copper-ore": 1 },
+    "cost": 100,
+    "flags": ["mining"],
+    "producers": ["burner-mining-drill", "electric-mining-drill"],
+    "locations": ["nauvis"]
+  },
+  {
+    "id": "coal",
+    "name": "Coal",
+    "category": "intermediate-products",
+    "row": 0,
+    "time": 1,
+    "in": {},
+    "out": { "coal": 1 },
+    "cost": 100,
+    "flags": ["mining"],
+    "producers": ["burner-mining-drill", "electric-mining-drill"],
+    "locations": ["nauvis"]
+  },
+  {
+    "id": "stone",
+    "name": "Stone",
+    "category": "intermediate-products",
+    "row": 0,
+    "time": 1,
+    "in": {},
+    "out": { "stone": 1 },
+    "cost": 100,
+    "flags": ["mining"],
+    "producers": ["burner-mining-drill", "electric-mining-drill"],
+    "locations": ["nauvis"]
+  },
+  {
+    "id": "uranium-ore",
+    "name": "Uranium ore",
+    "category": "intermediate-products",
+    "row": 0,
+    "time": 2,
+    "in": { "sulfuric-acid": 1 },
+    "out": { "uranium-ore": 1 },
+    "cost": 100,
+    "flags": ["mining"],
+    "producers": ["electric-mining-drill"],
+    "locations": ["nauvis"]
+  },
+  {
+    "id": "crude-oil",
+    "name": "Crude oil",
+    "category": "fluids",
+    "row": 0,
+    "time": 1,
+    "in": {},
+    "out": { "crude-oil": 10 },
+    "cost": 10,
+    "flags": ["mining"],
+    "producers": ["pumpjack"],
+    "locations": ["nauvis"]
+  },
+  {
+    "id": "electric-mining-drill-technology",
+    "name": "Electric mining drill",
+    "category": "technology",
+    "row": 1,
+    "time": 10,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1 },
+    "out": { "electric-mining-drill-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "repair-pack-technology",
+    "name": "Repair pack",
+    "category": "technology",
+    "row": 1,
+    "time": 10,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1 },
+    "out": { "repair-pack-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "radar-technology",
+    "name": "Radar",
+    "category": "technology",
+    "row": 1,
+    "time": 10,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1 },
+    "out": { "radar-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "physical-projectile-damage-1",
+    "name": "Physical projectile damage 1",
+    "category": "technology",
+    "row": 1,
+    "time": 30,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1 },
+    "out": { "physical-projectile-damage-1": 1 },
+    "flags": ["technology"],
+    "iconText": "1"
+  },
+  {
+    "id": "weapon-shooting-speed-1",
+    "name": "Weapon shooting speed 1",
+    "category": "technology",
+    "row": 1,
+    "time": 30,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1 },
+    "out": { "weapon-shooting-speed-1": 1 },
+    "flags": ["technology"],
+    "iconText": "1"
+  },
+  {
+    "id": "automation",
+    "name": "Automation",
+    "category": "technology",
+    "row": 1,
+    "time": 10,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1 },
+    "out": { "automation": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "logistic-science-pack-technology",
+    "name": "Logistic science pack",
+    "category": "technology",
+    "row": 1,
+    "time": 5,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1 },
+    "out": { "logistic-science-pack-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "steel-processing",
+    "name": "Steel processing",
+    "category": "technology",
+    "row": 1,
+    "time": 5,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1 },
+    "out": { "steel-processing": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "military",
+    "name": "Military",
+    "category": "technology",
+    "row": 1,
+    "time": 15,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1 },
+    "out": { "military": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "fast-inserter-technology",
+    "name": "Fast inserter",
+    "category": "technology",
+    "row": 1,
+    "time": 15,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1 },
+    "out": { "fast-inserter-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "logistics-technology",
+    "name": "Logistics",
+    "category": "technology",
+    "row": 1,
+    "time": 15,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1 },
+    "out": { "logistics-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "lamp",
+    "name": "Lamp",
+    "category": "technology",
+    "row": 1,
+    "time": 15,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1 },
+    "out": { "lamp": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "heavy-armor-technology",
+    "name": "Heavy armor",
+    "category": "technology",
+    "row": 1,
+    "time": 30,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1 },
+    "out": { "heavy-armor-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "gun-turret-technology",
+    "name": "Gun turret",
+    "category": "technology",
+    "row": 1,
+    "time": 10,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1 },
+    "out": { "gun-turret-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "stone-wall-technology",
+    "name": "Stone wall",
+    "category": "technology",
+    "row": 1,
+    "time": 10,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1 },
+    "out": { "stone-wall-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "physical-projectile-damage-2",
+    "name": "Physical projectile damage 2",
+    "category": "technology",
+    "row": 2,
+    "time": 30,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "physical-projectile-damage-2": 1 },
+    "flags": ["technology"],
+    "icon": "physical-projectile-damage-1",
+    "iconText": "2"
+  },
+  {
+    "id": "weapon-shooting-speed-2",
+    "name": "Weapon shooting speed 2",
+    "category": "technology",
+    "row": 2,
+    "time": 30,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "weapon-shooting-speed-2": 1 },
+    "flags": ["technology"],
+    "icon": "weapon-shooting-speed-1",
+    "iconText": "2"
+  },
+  {
+    "id": "stronger-explosives-1",
+    "name": "Stronger explosives 1",
+    "category": "technology",
+    "row": 2,
+    "time": 30,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "stronger-explosives-1": 1 },
+    "flags": ["technology"],
+    "iconText": "1"
+  },
+  {
+    "id": "bulk-inserter-technology",
+    "name": "Bulk inserter",
+    "category": "technology",
+    "row": 2,
+    "time": 30,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "bulk-inserter-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "inserter-capacity-bonus-1",
+    "name": "Inserter capacity bonus 1",
+    "category": "technology",
+    "row": 2,
+    "time": 30,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "inserter-capacity-bonus-1": 1 },
+    "flags": ["technology"],
+    "iconText": "1"
+  },
+  {
+    "id": "inserter-capacity-bonus-2",
+    "name": "Inserter capacity bonus 2",
+    "category": "technology",
+    "row": 2,
+    "time": 30,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "inserter-capacity-bonus-2": 1 },
+    "flags": ["technology"],
+    "icon": "inserter-capacity-bonus-1",
+    "iconText": "2"
+  },
+  {
+    "id": "automation-2",
+    "name": "Automation 2",
+    "category": "technology",
+    "row": 2,
+    "time": 15,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "automation-2": 1 },
+    "flags": ["technology"],
+    "iconText": "2"
+  },
+  {
+    "id": "military-2",
+    "name": "Military 2",
+    "category": "technology",
+    "row": 2,
+    "time": 15,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "military-2": 1 },
+    "flags": ["technology"],
+    "icon": "military",
+    "iconText": "2"
+  },
+  {
+    "id": "railway",
+    "name": "Railway",
+    "category": "technology",
+    "row": 2,
+    "time": 30,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "railway": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "automated-rail-transportation",
+    "name": "Automated rail transportation",
+    "category": "technology",
+    "row": 2,
+    "time": 30,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "automated-rail-transportation": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "automobilism",
+    "name": "Automobilism",
+    "category": "technology",
+    "row": 2,
+    "time": 30,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "automobilism": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "solar-energy",
+    "name": "Solar energy",
+    "category": "technology",
+    "row": 2,
+    "time": 30,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "solar-energy": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "research-speed-1",
+    "name": "Lab research speed 1",
+    "category": "technology",
+    "row": 2,
+    "time": 30,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "research-speed-1": 1 },
+    "flags": ["technology"],
+    "iconText": "1"
+  },
+  {
+    "id": "research-speed-2",
+    "name": "Lab research speed 2",
+    "category": "technology",
+    "row": 2,
+    "time": 30,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "research-speed-2": 1 },
+    "flags": ["technology"],
+    "icon": "research-speed-1",
+    "iconText": "2"
+  },
+  {
+    "id": "electric-energy-distribution-1",
+    "name": "Electric energy distribution 1",
+    "category": "technology",
+    "row": 2,
+    "time": 30,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "electric-energy-distribution-1": 1 },
+    "flags": ["technology"],
+    "iconText": "1"
+  },
+  {
+    "id": "advanced-material-processing",
+    "name": "Advanced material processing",
+    "category": "technology",
+    "row": 2,
+    "time": 30,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "advanced-material-processing": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "concrete-technology",
+    "name": "Concrete",
+    "category": "technology",
+    "row": 2,
+    "time": 30,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "concrete-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "engine",
+    "name": "Engine",
+    "category": "technology",
+    "row": 2,
+    "time": 15,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "engine": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "landfill-technology",
+    "name": "Landfill",
+    "category": "technology",
+    "row": 2,
+    "time": 30,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "landfill-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "logistics-2",
+    "name": "Logistics 2",
+    "category": "technology",
+    "row": 2,
+    "time": 30,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "logistics-2": 1 },
+    "flags": ["technology"],
+    "iconText": "2"
+  },
+  {
+    "id": "toolbelt",
+    "name": "Toolbelt",
+    "category": "technology",
+    "row": 2,
+    "time": 30,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "toolbelt": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "gate-technology",
+    "name": "Gate",
+    "category": "technology",
+    "row": 2,
+    "time": 30,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "gate-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "chemical-science-pack-technology",
+    "name": "Chemical science pack",
+    "category": "technology",
+    "row": 2,
+    "time": 10,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "chemical-science-pack-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "military-science-pack-technology",
+    "name": "Military science pack",
+    "category": "technology",
+    "row": 2,
+    "time": 15,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "military-science-pack-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "explosives-technology",
+    "name": "Explosives",
+    "category": "technology",
+    "row": 2,
+    "time": 15,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "explosives-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "cliff-explosives-technology",
+    "name": "Cliff explosives",
+    "category": "technology",
+    "row": 2,
+    "time": 15,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "cliff-explosives-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "flammables",
+    "name": "Flammables",
+    "category": "technology",
+    "row": 2,
+    "time": 30,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "flammables": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "advanced-circuit-technology",
+    "name": "Advanced circuit",
+    "category": "technology",
+    "row": 2,
+    "time": 15,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "advanced-circuit-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "fluid-wagon-technology",
+    "name": "Fluid wagon",
+    "category": "technology",
+    "row": 2,
+    "time": 30,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "fluid-wagon-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "modular-armor-technology",
+    "name": "Modular armor",
+    "category": "technology",
+    "row": 2,
+    "time": 30,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "modular-armor-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "electric-energy-accumulators",
+    "name": "Electric energy accumulators",
+    "category": "technology",
+    "row": 2,
+    "time": 30,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "electric-energy-accumulators": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "battery-technology",
+    "name": "Battery",
+    "category": "technology",
+    "row": 2,
+    "time": 30,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "battery-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "night-vision-equipment-technology",
+    "name": "Nightvision equipment",
+    "category": "technology",
+    "row": 2,
+    "time": 15,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "night-vision-equipment-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "belt-immunity-equipment-technology",
+    "name": "Belt immunity equipment",
+    "category": "technology",
+    "row": 2,
+    "time": 15,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "belt-immunity-equipment-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "battery-equipment-technology",
+    "name": "Personal battery",
+    "category": "technology",
+    "row": 2,
+    "time": 15,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "battery-equipment-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "solar-panel-equipment-technology",
+    "name": "Portable solar panel",
+    "category": "technology",
+    "row": 2,
+    "time": 15,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "solar-panel-equipment-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "fluid-handling",
+    "name": "Fluid handling",
+    "category": "technology",
+    "row": 2,
+    "time": 15,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "fluid-handling": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "oil-gathering",
+    "name": "Oil gathering",
+    "category": "technology",
+    "row": 2,
+    "time": 30,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "oil-gathering": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "sulfur-processing",
+    "name": "Sulfur processing",
+    "category": "technology",
+    "row": 2,
+    "time": 30,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "sulfur-processing": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "plastics",
+    "name": "Plastics",
+    "category": "technology",
+    "row": 2,
+    "time": 30,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "plastics": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "modules",
+    "name": "Modules",
+    "category": "technology",
+    "row": 2,
+    "time": 30,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "modules": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "speed-module-technology",
+    "name": "Speed module",
+    "category": "technology",
+    "row": 2,
+    "time": 30,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "speed-module-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "productivity-module-technology",
+    "name": "Productivity module",
+    "category": "technology",
+    "row": 2,
+    "time": 30,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "productivity-module-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "efficiency-module-technology",
+    "name": "Efficiency module",
+    "category": "technology",
+    "row": 2,
+    "time": 30,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "efficiency-module-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "mining-productivity-1",
+    "name": "Mining productivity 1",
+    "category": "technology",
+    "row": 2,
+    "time": 60,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "mining-productivity-1": 1 },
+    "flags": ["technology"],
+    "iconText": "1"
+  },
+  {
+    "id": "circuit-network",
+    "name": "Circuit network",
+    "category": "technology",
+    "row": 2,
+    "time": 15,
+    "producers": ["lab"],
+    "in": { "automation-science-pack": 1, "logistic-science-pack": 1 },
+    "out": { "circuit-network": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "physical-projectile-damage-3",
+    "name": "Physical projectile damage 3",
+    "category": "technology",
+    "row": 3,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "military-science-pack": 1
+    },
+    "out": { "physical-projectile-damage-3": 1 },
+    "flags": ["technology"],
+    "icon": "physical-projectile-damage-1",
+    "iconText": "3"
+  },
+  {
+    "id": "physical-projectile-damage-4",
+    "name": "Physical projectile damage 4",
+    "category": "technology",
+    "row": 3,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "military-science-pack": 1
+    },
+    "out": { "physical-projectile-damage-4": 1 },
+    "flags": ["technology"],
+    "icon": "physical-projectile-damage-1",
+    "iconText": "4"
+  },
+  {
+    "id": "stronger-explosives-2",
+    "name": "Stronger explosives 2",
+    "category": "technology",
+    "row": 3,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "military-science-pack": 1
+    },
+    "out": { "stronger-explosives-2": 1 },
+    "flags": ["technology"],
+    "iconText": "2"
+  },
+  {
+    "id": "refined-flammables-1",
+    "name": "Refined flammables 1",
+    "category": "technology",
+    "row": 3,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "military-science-pack": 1
+    },
+    "out": { "refined-flammables-1": 1 },
+    "flags": ["technology"],
+    "iconText": "1"
+  },
+  {
+    "id": "refined-flammables-2",
+    "name": "Refined flammables 2",
+    "category": "technology",
+    "row": 3,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "military-science-pack": 1
+    },
+    "out": { "refined-flammables-2": 1 },
+    "flags": ["technology"],
+    "icon": "refined-flammables-1",
+    "iconText": "2"
+  },
+  {
+    "id": "weapon-shooting-speed-3",
+    "name": "Weapon shooting speed 3",
+    "category": "technology",
+    "row": 3,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "military-science-pack": 1
+    },
+    "out": { "weapon-shooting-speed-3": 1 },
+    "flags": ["technology"],
+    "iconText": "3"
+  },
+  {
+    "id": "weapon-shooting-speed-4",
+    "name": "Weapon shooting speed 4",
+    "category": "technology",
+    "row": 3,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "military-science-pack": 1
+    },
+    "out": { "weapon-shooting-speed-4": 1 },
+    "flags": ["technology"],
+    "icon": "weapon-shooting-speed-3",
+    "iconText": "4"
+  },
+  {
+    "id": "follower-robot-count-1",
+    "name": "Follower robot count 1",
+    "category": "technology",
+    "row": 3,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "military-science-pack": 1
+    },
+    "out": { "follower-robot-count-1": 1 },
+    "flags": ["technology"],
+    "iconText": "1"
+  },
+  {
+    "id": "follower-robot-count-2",
+    "name": "Follower robot count 2",
+    "category": "technology",
+    "row": 3,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "military-science-pack": 1
+    },
+    "out": { "follower-robot-count-2": 1 },
+    "flags": ["technology"],
+    "icon": "follower-robot-count-1",
+    "iconText": "2"
+  },
+  {
+    "id": "land-mine-technology",
+    "name": "Land mines",
+    "category": "technology",
+    "row": 3,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "military-science-pack": 1
+    },
+    "out": { "land-mine-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "flamethrower-technology",
+    "name": "Flamethrower",
+    "category": "technology",
+    "row": 3,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "military-science-pack": 1
+    },
+    "out": { "flamethrower-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "rocketry",
+    "name": "Rocketry",
+    "category": "technology",
+    "row": 3,
+    "time": 15,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "military-science-pack": 1
+    },
+    "out": { "rocketry": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "energy-shield-equipment-technology",
+    "name": "Energy shield equipment",
+    "category": "technology",
+    "row": 3,
+    "time": 15,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "military-science-pack": 1
+    },
+    "out": { "energy-shield-equipment-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "defender",
+    "name": "Defender",
+    "category": "technology",
+    "row": 3,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "military-science-pack": 1
+    },
+    "out": { "defender": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "inserter-capacity-bonus-3",
+    "name": "Inserter capacity bonus 3",
+    "category": "technology",
+    "row": 3,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1
+    },
+    "out": { "inserter-capacity-bonus-3": 1 },
+    "flags": ["technology"],
+    "icon": "inserter-capacity-bonus-1",
+    "iconText": "3"
+  },
+  {
+    "id": "production-science-pack-technology",
+    "name": "Production science pack",
+    "category": "technology",
+    "row": 3,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1
+    },
+    "out": { "production-science-pack-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "utility-science-pack-technology",
+    "name": "Utility science pack",
+    "category": "technology",
+    "row": 3,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1
+    },
+    "out": { "utility-science-pack-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "processing-unit-technology",
+    "name": "Processing unit",
+    "category": "technology",
+    "row": 3,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1
+    },
+    "out": { "processing-unit-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "braking-force-1",
+    "name": "Braking force 1",
+    "category": "technology",
+    "row": 3,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1
+    },
+    "out": { "braking-force-1": 1 },
+    "flags": ["technology"],
+    "iconText": "1"
+  },
+  {
+    "id": "braking-force-2",
+    "name": "Braking force 2",
+    "category": "technology",
+    "row": 3,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1
+    },
+    "out": { "braking-force-2": 1 },
+    "flags": ["technology"],
+    "icon": "braking-force-1",
+    "iconText": "2"
+  },
+  {
+    "id": "laser",
+    "name": "Laser",
+    "category": "technology",
+    "row": 3,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1
+    },
+    "out": { "laser": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "power-armor-technology",
+    "name": "Power armor",
+    "category": "technology",
+    "row": 3,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1
+    },
+    "out": { "power-armor-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "robotics",
+    "name": "Robotics",
+    "category": "technology",
+    "row": 3,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1
+    },
+    "out": { "robotics": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "rocket-fuel-technology",
+    "name": "Rocket fuel",
+    "category": "technology",
+    "row": 3,
+    "time": 45,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1
+    },
+    "out": { "rocket-fuel-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "low-density-structure-technology",
+    "name": "Low density structure",
+    "category": "technology",
+    "row": 3,
+    "time": 45,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1
+    },
+    "out": { "low-density-structure-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "research-speed-3",
+    "name": "Lab research speed 3",
+    "category": "technology",
+    "row": 3,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1
+    },
+    "out": { "research-speed-3": 1 },
+    "flags": ["technology"],
+    "icon": "research-speed-1",
+    "iconText": "3"
+  },
+  {
+    "id": "research-speed-4",
+    "name": "Lab research speed 4",
+    "category": "technology",
+    "row": 3,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1
+    },
+    "out": { "research-speed-4": 1 },
+    "flags": ["technology"],
+    "icon": "research-speed-1",
+    "iconText": "4"
+  },
+  {
+    "id": "electric-energy-distribution-2",
+    "name": "Electric energy distribution 2",
+    "category": "technology",
+    "row": 3,
+    "time": 45,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1
+    },
+    "out": { "electric-energy-distribution-2": 1 },
+    "flags": ["technology"],
+    "iconText": "2"
+  },
+  {
+    "id": "advanced-material-processing-2",
+    "name": "Advanced material processing 2",
+    "category": "technology",
+    "row": 3,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1
+    },
+    "out": { "advanced-material-processing-2": 1 },
+    "flags": ["technology"],
+    "iconText": "2"
+  },
+  {
+    "id": "lubricant-technology",
+    "name": "Lubricant",
+    "category": "technology",
+    "row": 3,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1
+    },
+    "out": { "lubricant-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "electric-engine",
+    "name": "Electric engine",
+    "category": "technology",
+    "row": 3,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1
+    },
+    "out": { "electric-engine": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "construction-robotics",
+    "name": "Construction robotics",
+    "category": "technology",
+    "row": 3,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1
+    },
+    "out": { "construction-robotics": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "logistic-robotics",
+    "name": "Logistic robotics",
+    "category": "technology",
+    "row": 3,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1
+    },
+    "out": { "logistic-robotics": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "worker-robots-speed-1",
+    "name": "Worker robot speed 1",
+    "category": "technology",
+    "row": 3,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1
+    },
+    "out": { "worker-robots-speed-1": 1 },
+    "flags": ["technology"],
+    "iconText": "1"
+  },
+  {
+    "id": "worker-robots-speed-2",
+    "name": "Worker robot speed 2",
+    "category": "technology",
+    "row": 3,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1
+    },
+    "out": { "worker-robots-speed-2": 1 },
+    "flags": ["technology"],
+    "icon": "worker-robots-speed-1",
+    "iconText": "2"
+  },
+  {
+    "id": "worker-robots-storage-1",
+    "name": "Worker robot cargo size 1",
+    "category": "technology",
+    "row": 3,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1
+    },
+    "out": { "worker-robots-storage-1": 1 },
+    "flags": ["technology"],
+    "iconText": "1"
+  },
+  {
+    "id": "battery-mk2-equipment-technology",
+    "name": "Personal battery MK2",
+    "category": "technology",
+    "row": 3,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1
+    },
+    "out": { "battery-mk2-equipment-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "exoskeleton-equipment-technology",
+    "name": "Exoskeleton equipment",
+    "category": "technology",
+    "row": 3,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1
+    },
+    "out": { "exoskeleton-equipment-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "personal-roboport-equipment-technology",
+    "name": "Personal roboport",
+    "category": "technology",
+    "row": 3,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1
+    },
+    "out": { "personal-roboport-equipment-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "advanced-oil-processing-technology",
+    "name": "Advanced oil processing",
+    "category": "technology",
+    "row": 3,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1
+    },
+    "out": { "advanced-oil-processing-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "speed-module-2-technology",
+    "name": "Speed module 2",
+    "category": "technology",
+    "row": 3,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1
+    },
+    "out": { "speed-module-2-technology": 1 },
+    "flags": ["technology"],
+    "iconText": "2"
+  },
+  {
+    "id": "productivity-module-2-technology",
+    "name": "Productivity module 2",
+    "category": "technology",
+    "row": 3,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1
+    },
+    "out": { "productivity-module-2-technology": 1 },
+    "flags": ["technology"],
+    "iconText": "2"
+  },
+  {
+    "id": "efficiency-module-2-technology",
+    "name": "Efficiency module 2",
+    "category": "technology",
+    "row": 3,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1
+    },
+    "out": { "efficiency-module-2-technology": 1 },
+    "flags": ["technology"],
+    "iconText": "2"
+  },
+  {
+    "id": "uranium-mining",
+    "name": "Uranium mining",
+    "category": "technology",
+    "row": 3,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1
+    },
+    "out": { "uranium-mining": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "nuclear-power",
+    "name": "Nuclear power",
+    "category": "technology",
+    "row": 3,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1
+    },
+    "out": { "nuclear-power": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "mining-productivity-2",
+    "name": "Mining productivity 2",
+    "category": "technology",
+    "row": 3,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1
+    },
+    "out": { "mining-productivity-2": 1 },
+    "flags": ["technology"],
+    "icon": "mining-productivity-1",
+    "iconText": "2"
+  },
+  {
+    "id": "advanced-combinators",
+    "name": "Advanced combinators",
+    "category": "technology",
+    "row": 3,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1
+    },
+    "out": { "advanced-combinators": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "physical-projectile-damage-5",
+    "name": "Physical projectile damage 5",
+    "category": "technology",
+    "row": 4,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "military-science-pack": 1
+    },
+    "out": { "physical-projectile-damage-5": 1 },
+    "flags": ["technology"],
+    "iconText": "5"
+  },
+  {
+    "id": "weapon-shooting-speed-5",
+    "name": "Weapon shooting speed 5",
+    "category": "technology",
+    "row": 4,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "military-science-pack": 1
+    },
+    "out": { "weapon-shooting-speed-5": 1 },
+    "flags": ["technology"],
+    "iconText": "5"
+  },
+  {
+    "id": "laser-shooting-speed-3",
+    "name": "Laser shooting speed 3",
+    "category": "technology",
+    "row": 4,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "military-science-pack": 1
+    },
+    "out": { "laser-shooting-speed-3": 1 },
+    "flags": ["technology"],
+    "iconText": "3"
+  },
+  {
+    "id": "laser-shooting-speed-4",
+    "name": "Laser shooting speed 4",
+    "category": "technology",
+    "row": 4,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "military-science-pack": 1
+    },
+    "out": { "laser-shooting-speed-4": 1 },
+    "flags": ["technology"],
+    "icon": "laser-shooting-speed-3",
+    "iconText": "4"
+  },
+  {
+    "id": "follower-robot-count-3",
+    "name": "Follower robot count 3",
+    "category": "technology",
+    "row": 4,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "military-science-pack": 1
+    },
+    "out": { "follower-robot-count-3": 1 },
+    "flags": ["technology"],
+    "icon": "follower-robot-count-1",
+    "iconText": "3"
+  },
+  {
+    "id": "military-3",
+    "name": "Military 3",
+    "category": "technology",
+    "row": 4,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "military-science-pack": 1
+    },
+    "out": { "military-3": 1 },
+    "flags": ["technology"],
+    "icon": "military",
+    "iconText": "3"
+  },
+  {
+    "id": "tank-technology",
+    "name": "Tank",
+    "category": "technology",
+    "row": 4,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "military-science-pack": 1
+    },
+    "out": { "tank-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "explosive-rocketry",
+    "name": "Explosive rocketry",
+    "category": "technology",
+    "row": 4,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "military-science-pack": 1
+    },
+    "out": { "explosive-rocketry": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "energy-shield-mk2-equipment-technology",
+    "name": "Energy shield MK2 equipment",
+    "category": "technology",
+    "row": 4,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "military-science-pack": 1
+    },
+    "out": { "energy-shield-mk2-equipment-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "personal-laser-defense-equipment-technology",
+    "name": "Personal laser defense",
+    "category": "technology",
+    "row": 4,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "military-science-pack": 1
+    },
+    "out": { "personal-laser-defense-equipment-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "discharge-defense-equipment-technology",
+    "name": "Discharge defense",
+    "category": "technology",
+    "row": 4,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "military-science-pack": 1
+    },
+    "out": { "discharge-defense-equipment-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "distractor",
+    "name": "Distractor",
+    "category": "technology",
+    "row": 4,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "military-science-pack": 1
+    },
+    "out": { "distractor": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "stronger-explosives-3",
+    "name": "Stronger explosives 3",
+    "category": "technology",
+    "row": 4,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "military-science-pack": 1,
+      "chemical-science-pack": 1
+    },
+    "out": { "stronger-explosives-3": 1 },
+    "flags": ["technology"],
+    "iconText": "3"
+  },
+  {
+    "id": "refined-flammables-3",
+    "name": "Refined flammables 3",
+    "category": "technology",
+    "row": 4,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "military-science-pack": 1,
+      "chemical-science-pack": 1
+    },
+    "out": { "refined-flammables-3": 1 },
+    "flags": ["technology"],
+    "icon": "refined-flammables-1",
+    "iconText": "3"
+  },
+  {
+    "id": "laser-weapons-damage-1",
+    "name": "Energy weapons damage 1",
+    "category": "technology",
+    "row": 4,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "military-science-pack": 1,
+      "chemical-science-pack": 1
+    },
+    "out": { "laser-weapons-damage-1": 1 },
+    "flags": ["technology"],
+    "iconText": "1"
+  },
+  {
+    "id": "laser-weapons-damage-2",
+    "name": "Energy weapons damage 2",
+    "category": "technology",
+    "row": 4,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "military-science-pack": 1,
+      "chemical-science-pack": 1
+    },
+    "out": { "laser-weapons-damage-2": 1 },
+    "flags": ["technology"],
+    "icon": "laser-weapons-damage-1",
+    "iconText": "2"
+  },
+  {
+    "id": "laser-weapons-damage-3",
+    "name": "Energy weapons damage 3",
+    "category": "technology",
+    "row": 4,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "military-science-pack": 1,
+      "chemical-science-pack": 1
+    },
+    "out": { "laser-weapons-damage-3": 1 },
+    "flags": ["technology"],
+    "icon": "laser-weapons-damage-1",
+    "iconText": "3"
+  },
+  {
+    "id": "laser-weapons-damage-4",
+    "name": "Energy weapons damage 4",
+    "category": "technology",
+    "row": 4,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "military-science-pack": 1,
+      "chemical-science-pack": 1
+    },
+    "out": { "laser-weapons-damage-4": 1 },
+    "flags": ["technology"],
+    "icon": "laser-weapons-damage-1",
+    "iconText": "4"
+  },
+  {
+    "id": "laser-shooting-speed-1",
+    "name": "Laser shooting speed 1",
+    "category": "technology",
+    "row": 4,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "military-science-pack": 1,
+      "chemical-science-pack": 1
+    },
+    "out": { "laser-shooting-speed-1": 1 },
+    "flags": ["technology"],
+    "icon": "laser-shooting-speed-3",
+    "iconText": "1"
+  },
+  {
+    "id": "laser-shooting-speed-2",
+    "name": "Laser shooting speed 2",
+    "category": "technology",
+    "row": 4,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "military-science-pack": 1,
+      "chemical-science-pack": 1
+    },
+    "out": { "laser-shooting-speed-2": 1 },
+    "flags": ["technology"],
+    "icon": "laser-shooting-speed-3",
+    "iconText": "2"
+  },
+  {
+    "id": "laser-turret-technology",
+    "name": "Laser turret",
+    "category": "technology",
+    "row": 4,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "military-science-pack": 1,
+      "chemical-science-pack": 1
+    },
+    "out": { "laser-turret-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "inserter-capacity-bonus-4",
+    "name": "Inserter capacity bonus 4",
+    "category": "technology",
+    "row": 4,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "production-science-pack": 1
+    },
+    "out": { "inserter-capacity-bonus-4": 1 },
+    "flags": ["technology"],
+    "icon": "inserter-capacity-bonus-1",
+    "iconText": "4"
+  },
+  {
+    "id": "inserter-capacity-bonus-5",
+    "name": "Inserter capacity bonus 5",
+    "category": "technology",
+    "row": 4,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "production-science-pack": 1
+    },
+    "out": { "inserter-capacity-bonus-5": 1 },
+    "flags": ["technology"],
+    "icon": "inserter-capacity-bonus-1",
+    "iconText": "5"
+  },
+  {
+    "id": "inserter-capacity-bonus-6",
+    "name": "Inserter capacity bonus 6",
+    "category": "technology",
+    "row": 4,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "production-science-pack": 1
+    },
+    "out": { "inserter-capacity-bonus-6": 1 },
+    "flags": ["technology"],
+    "icon": "inserter-capacity-bonus-1",
+    "iconText": "6"
+  },
+  {
+    "id": "automation-3",
+    "name": "Automation 3",
+    "category": "technology",
+    "row": 4,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "production-science-pack": 1
+    },
+    "out": { "automation-3": 1 },
+    "flags": ["technology"],
+    "iconText": "3"
+  },
+  {
+    "id": "braking-force-3",
+    "name": "Braking force 3",
+    "category": "technology",
+    "row": 4,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "production-science-pack": 1
+    },
+    "out": { "braking-force-3": 1 },
+    "flags": ["technology"],
+    "icon": "braking-force-1",
+    "iconText": "3"
+  },
+  {
+    "id": "braking-force-4",
+    "name": "Braking force 4",
+    "category": "technology",
+    "row": 4,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "production-science-pack": 1
+    },
+    "out": { "braking-force-4": 1 },
+    "flags": ["technology"],
+    "icon": "braking-force-1",
+    "iconText": "4"
+  },
+  {
+    "id": "braking-force-5",
+    "name": "Braking force 5",
+    "category": "technology",
+    "row": 4,
+    "time": 35,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "production-science-pack": 1
+    },
+    "out": { "braking-force-5": 1 },
+    "flags": ["technology"],
+    "icon": "braking-force-1",
+    "iconText": "5"
+  },
+  {
+    "id": "logistics-3",
+    "name": "Logistics 3",
+    "category": "technology",
+    "row": 4,
+    "time": 15,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "production-science-pack": 1
+    },
+    "out": { "logistics-3": 1 },
+    "flags": ["technology"],
+    "iconText": "3"
+  },
+  {
+    "id": "research-speed-5",
+    "name": "Lab research speed 5",
+    "category": "technology",
+    "row": 4,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "production-science-pack": 1
+    },
+    "out": { "research-speed-5": 1 },
+    "flags": ["technology"],
+    "icon": "research-speed-1",
+    "iconText": "5"
+  },
+  {
+    "id": "effect-transmission",
+    "name": "Effect transmission",
+    "category": "technology",
+    "row": 4,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "production-science-pack": 1
+    },
+    "out": { "effect-transmission": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "worker-robots-storage-2",
+    "name": "Worker robot cargo size 2",
+    "category": "technology",
+    "row": 4,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "production-science-pack": 1
+    },
+    "out": { "worker-robots-storage-2": 1 },
+    "flags": ["technology"],
+    "icon": "worker-robots-storage-1",
+    "iconText": "2"
+  },
+  {
+    "id": "coal-liquefaction-technology",
+    "name": "Coal liquefaction",
+    "category": "technology",
+    "row": 4,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "production-science-pack": 1
+    },
+    "out": { "coal-liquefaction-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "speed-module-3-technology",
+    "name": "Speed module 3",
+    "category": "technology",
+    "row": 4,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "production-science-pack": 1
+    },
+    "out": { "speed-module-3-technology": 1 },
+    "flags": ["technology"],
+    "iconText": "3"
+  },
+  {
+    "id": "productivity-module-3-technology",
+    "name": "Productivity module 3",
+    "category": "technology",
+    "row": 4,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "production-science-pack": 1
+    },
+    "out": { "productivity-module-3-technology": 1 },
+    "flags": ["technology"],
+    "iconText": "3"
+  },
+  {
+    "id": "efficiency-module-3-technology",
+    "name": "Efficiency module 3",
+    "category": "technology",
+    "row": 4,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "production-science-pack": 1
+    },
+    "out": { "efficiency-module-3-technology": 1 },
+    "flags": ["technology"],
+    "iconText": "3"
+  },
+  {
+    "id": "kovarex-enrichment-process-technology",
+    "name": "Kovarex enrichment process",
+    "category": "technology",
+    "row": 4,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "production-science-pack": 1
+    },
+    "out": { "kovarex-enrichment-process-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "nuclear-fuel-reprocessing-technology",
+    "name": "Nuclear fuel reprocessing",
+    "category": "technology",
+    "row": 4,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "production-science-pack": 1
+    },
+    "out": { "nuclear-fuel-reprocessing-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "logistic-system",
+    "name": "Logistic system",
+    "category": "technology",
+    "row": 4,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "utility-science-pack": 1
+    },
+    "out": { "logistic-system": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "worker-robots-speed-3",
+    "name": "Worker robot speed 3",
+    "category": "technology",
+    "row": 4,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "utility-science-pack": 1
+    },
+    "out": { "worker-robots-speed-3": 1 },
+    "flags": ["technology"],
+    "icon": "worker-robots-speed-1",
+    "iconText": "3"
+  },
+  {
+    "id": "worker-robots-speed-4",
+    "name": "Worker robot speed 4",
+    "category": "technology",
+    "row": 4,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "utility-science-pack": 1
+    },
+    "out": { "worker-robots-speed-4": 1 },
+    "flags": ["technology"],
+    "icon": "worker-robots-speed-1",
+    "iconText": "4"
+  },
+  {
+    "id": "personal-roboport-mk2-equipment-technology",
+    "name": "Personal roboport MK2",
+    "category": "technology",
+    "row": 4,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "utility-science-pack": 1
+    },
+    "out": { "personal-roboport-mk2-equipment-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "physical-projectile-damage-6",
+    "name": "Physical projectile damage 6",
+    "category": "technology",
+    "row": 5,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "military-science-pack": 1,
+      "utility-science-pack": 1
+    },
+    "out": { "physical-projectile-damage-6": 1 },
+    "flags": ["technology"],
+    "icon": "physical-projectile-damage-5",
+    "iconText": "6"
+  },
+  {
+    "id": "stronger-explosives-4",
+    "name": "Stronger explosives 4",
+    "category": "technology",
+    "row": 5,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "military-science-pack": 1,
+      "chemical-science-pack": 1,
+      "utility-science-pack": 1
+    },
+    "out": { "stronger-explosives-4": 1 },
+    "flags": ["technology"],
+    "icon": "stronger-explosives-3",
+    "iconText": "4"
+  },
+  {
+    "id": "stronger-explosives-5",
+    "name": "Stronger explosives 5",
+    "category": "technology",
+    "row": 5,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "military-science-pack": 1,
+      "chemical-science-pack": 1,
+      "utility-science-pack": 1
+    },
+    "out": { "stronger-explosives-5": 1 },
+    "flags": ["technology"],
+    "icon": "stronger-explosives-3",
+    "iconText": "5"
+  },
+  {
+    "id": "stronger-explosives-6",
+    "name": "Stronger explosives 6",
+    "category": "technology",
+    "row": 5,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "military-science-pack": 1,
+      "utility-science-pack": 1
+    },
+    "out": { "stronger-explosives-6": 1 },
+    "flags": ["technology"],
+    "icon": "stronger-explosives-3",
+    "iconText": "6"
+  },
+  {
+    "id": "refined-flammables-4",
+    "name": "Refined flammables 4",
+    "category": "technology",
+    "row": 5,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "military-science-pack": 1,
+      "chemical-science-pack": 1,
+      "utility-science-pack": 1
+    },
+    "out": { "refined-flammables-4": 1 },
+    "flags": ["technology"],
+    "icon": "refined-flammables-1",
+    "iconText": "4"
+  },
+  {
+    "id": "refined-flammables-5",
+    "name": "Refined flammables 5",
+    "category": "technology",
+    "row": 5,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "military-science-pack": 1,
+      "chemical-science-pack": 1,
+      "utility-science-pack": 1
+    },
+    "out": { "refined-flammables-5": 1 },
+    "flags": ["technology"],
+    "icon": "refined-flammables-1",
+    "iconText": "5"
+  },
+  {
+    "id": "refined-flammables-6",
+    "name": "Refined flammables 6",
+    "category": "technology",
+    "row": 5,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "military-science-pack": 1,
+      "utility-science-pack": 1
+    },
+    "out": { "refined-flammables-6": 1 },
+    "flags": ["technology"],
+    "icon": "refined-flammables-1",
+    "iconText": "6"
+  },
+  {
+    "id": "laser-weapons-damage-5",
+    "name": "Energy weapons damage 5",
+    "category": "technology",
+    "row": 5,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "military-science-pack": 1,
+      "utility-science-pack": 1
+    },
+    "out": { "laser-weapons-damage-5": 1 },
+    "flags": ["technology"],
+    "icon": "laser-weapons-damage-1",
+    "iconText": "5"
+  },
+  {
+    "id": "laser-weapons-damage-6",
+    "name": "Energy weapons damage 6",
+    "category": "technology",
+    "row": 5,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "military-science-pack": 1,
+      "utility-science-pack": 1
+    },
+    "out": { "laser-weapons-damage-6": 1 },
+    "flags": ["technology"],
+    "icon": "laser-weapons-damage-1",
+    "iconText": "6"
+  },
+  {
+    "id": "weapon-shooting-speed-6",
+    "name": "Weapon shooting speed 6",
+    "category": "technology",
+    "row": 5,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "military-science-pack": 1,
+      "utility-science-pack": 1
+    },
+    "out": { "weapon-shooting-speed-6": 1 },
+    "flags": ["technology"],
+    "icon": "weapon-shooting-speed-5",
+    "iconText": "6"
+  },
+  {
+    "id": "laser-shooting-speed-5",
+    "name": "Laser shooting speed 5",
+    "category": "technology",
+    "row": 5,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "military-science-pack": 1,
+      "utility-science-pack": 1
+    },
+    "out": { "laser-shooting-speed-5": 1 },
+    "flags": ["technology"],
+    "icon": "laser-shooting-speed-3",
+    "iconText": "5"
+  },
+  {
+    "id": "laser-shooting-speed-6",
+    "name": "Laser shooting speed 6",
+    "category": "technology",
+    "row": 5,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "military-science-pack": 1,
+      "utility-science-pack": 1
+    },
+    "out": { "laser-shooting-speed-6": 1 },
+    "flags": ["technology"],
+    "icon": "laser-shooting-speed-3",
+    "iconText": "6"
+  },
+  {
+    "id": "laser-shooting-speed-7",
+    "name": "Laser shooting speed 7",
+    "category": "technology",
+    "row": 5,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "military-science-pack": 1,
+      "utility-science-pack": 1
+    },
+    "out": { "laser-shooting-speed-7": 1 },
+    "flags": ["technology"],
+    "icon": "laser-shooting-speed-3",
+    "iconText": "7"
+  },
+  {
+    "id": "follower-robot-count-4",
+    "name": "Follower robot count 4",
+    "category": "technology",
+    "row": 5,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "military-science-pack": 1,
+      "utility-science-pack": 1
+    },
+    "out": { "follower-robot-count-4": 1 },
+    "flags": ["technology"],
+    "icon": "follower-robot-count-1",
+    "iconText": "4"
+  },
+  {
+    "id": "inserter-capacity-bonus-7",
+    "name": "Inserter capacity bonus 7",
+    "category": "technology",
+    "row": 5,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "production-science-pack": 1,
+      "utility-science-pack": 1
+    },
+    "out": { "inserter-capacity-bonus-7": 1 },
+    "flags": ["technology"],
+    "icon": "inserter-capacity-bonus-1",
+    "iconText": "7"
+  },
+  {
+    "id": "military-4",
+    "name": "Military 4",
+    "category": "technology",
+    "row": 5,
+    "time": 45,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "military-science-pack": 1,
+      "utility-science-pack": 1
+    },
+    "out": { "military-4": 1 },
+    "flags": ["technology"],
+    "icon": "military",
+    "iconText": "4"
+  },
+  {
+    "id": "uranium-ammo",
+    "name": "Uranium ammo",
+    "category": "technology",
+    "row": 5,
+    "time": 45,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "military-science-pack": 1,
+      "utility-science-pack": 1
+    },
+    "out": { "uranium-ammo": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "braking-force-6",
+    "name": "Braking force 6",
+    "category": "technology",
+    "row": 5,
+    "time": 45,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "production-science-pack": 1,
+      "utility-science-pack": 1
+    },
+    "out": { "braking-force-6": 1 },
+    "flags": ["technology"],
+    "icon": "braking-force-1",
+    "iconText": "6"
+  },
+  {
+    "id": "braking-force-7",
+    "name": "Braking force 7",
+    "category": "technology",
+    "row": 5,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "production-science-pack": 1,
+      "utility-science-pack": 1
+    },
+    "out": { "braking-force-7": 1 },
+    "flags": ["technology"],
+    "icon": "braking-force-1",
+    "iconText": "7"
+  },
+  {
+    "id": "power-armor-mk2-technology",
+    "name": "Power armor MK2",
+    "category": "technology",
+    "row": 5,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "military-science-pack": 1,
+      "utility-science-pack": 1
+    },
+    "out": { "power-armor-mk2-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "rocket-silo-technology",
+    "name": "Rocket silo",
+    "category": "technology",
+    "row": 5,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "production-science-pack": 1,
+      "utility-science-pack": 1
+    },
+    "out": { "rocket-silo-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "research-speed-6",
+    "name": "Lab research speed 6",
+    "category": "technology",
+    "row": 5,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "production-science-pack": 1,
+      "utility-science-pack": 1
+    },
+    "out": { "research-speed-6": 1 },
+    "flags": ["technology"],
+    "icon": "research-speed-1",
+    "iconText": "6"
+  },
+  {
+    "id": "worker-robots-speed-5",
+    "name": "Worker robot speed 5",
+    "category": "technology",
+    "row": 5,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "production-science-pack": 1,
+      "utility-science-pack": 1
+    },
+    "out": { "worker-robots-speed-5": 1 },
+    "flags": ["technology"],
+    "icon": "worker-robots-speed-1",
+    "iconText": "5"
+  },
+  {
+    "id": "worker-robots-storage-3",
+    "name": "Worker robot cargo size 3",
+    "category": "technology",
+    "row": 5,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "production-science-pack": 1,
+      "utility-science-pack": 1
+    },
+    "out": { "worker-robots-storage-3": 1 },
+    "flags": ["technology"],
+    "icon": "worker-robots-storage-1",
+    "iconText": "3"
+  },
+  {
+    "id": "fission-reactor-equipment-technology",
+    "name": "Portable fission reactor",
+    "category": "technology",
+    "row": 5,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "military-science-pack": 1,
+      "utility-science-pack": 1
+    },
+    "out": { "fission-reactor-equipment-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "destroyer",
+    "name": "Destroyer",
+    "category": "technology",
+    "row": 5,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "military-science-pack": 1,
+      "utility-science-pack": 1
+    },
+    "out": { "destroyer": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "mining-productivity-3",
+    "name": "Mining productivity 3",
+    "category": "technology",
+    "row": 5,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "production-science-pack": 1,
+      "utility-science-pack": 1
+    },
+    "out": { "mining-productivity-3": 1 },
+    "flags": ["technology"],
+    "icon": "mining-productivity-1",
+    "iconText": "3"
+  },
+  {
+    "id": "artillery",
+    "name": "Artillery",
+    "category": "technology",
+    "row": 5,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "military-science-pack": 1,
+      "utility-science-pack": 1
+    },
+    "out": { "artillery": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "atomic-bomb-technology",
+    "name": "Atomic bomb",
+    "category": "technology",
+    "row": 6,
+    "time": 45,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "military-science-pack": 1,
+      "production-science-pack": 1,
+      "utility-science-pack": 1
+    },
+    "out": { "atomic-bomb-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "spidertron-technology",
+    "name": "Spidertron",
+    "category": "technology",
+    "row": 6,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "military-science-pack": 1,
+      "chemical-science-pack": 1,
+      "production-science-pack": 1,
+      "utility-science-pack": 1
+    },
+    "out": { "spidertron-technology": 1 },
+    "flags": ["technology"]
+  },
+  {
+    "id": "physical-projectile-damage-7",
+    "name": "Physical projectile damage",
+    "category": "technology",
+    "row": 6,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "military-science-pack": 1,
+      "utility-science-pack": 1,
+      "space-science-pack": 1
+    },
+    "out": { "physical-projectile-damage-7": 1 },
+    "flags": ["technology"],
+    "icon": "physical-projectile-damage-5",
+    "iconText": "7"
+  },
+  {
+    "id": "stronger-explosives-7",
+    "name": "Stronger explosives",
+    "category": "technology",
+    "row": 6,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "military-science-pack": 1,
+      "utility-science-pack": 1,
+      "space-science-pack": 1
+    },
+    "out": { "stronger-explosives-7": 1 },
+    "flags": ["technology"],
+    "icon": "stronger-explosives-3",
+    "iconText": "7"
+  },
+  {
+    "id": "refined-flammables-7",
+    "name": "Refined flammables",
+    "category": "technology",
+    "row": 6,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "military-science-pack": 1,
+      "utility-science-pack": 1,
+      "space-science-pack": 1
+    },
+    "out": { "refined-flammables-7": 1 },
+    "flags": ["technology"],
+    "icon": "refined-flammables-1",
+    "iconText": "7"
+  },
+  {
+    "id": "laser-weapons-damage-7",
+    "name": "Energy weapons damage",
+    "category": "technology",
+    "row": 6,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "military-science-pack": 1,
+      "utility-science-pack": 1,
+      "space-science-pack": 1
+    },
+    "out": { "laser-weapons-damage-7": 1 },
+    "flags": ["technology"],
+    "icon": "laser-weapons-damage-1",
+    "iconText": "7"
+  },
+  {
+    "id": "artillery-shell-range-1",
+    "name": "Artillery shell range",
+    "category": "technology",
+    "row": 6,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "military-science-pack": 1,
+      "utility-science-pack": 1,
+      "space-science-pack": 1
+    },
+    "out": { "artillery-shell-range-1": 1 },
+    "flags": ["technology"],
+    "iconText": "1"
+  },
+  {
+    "id": "artillery-shell-speed-1",
+    "name": "Artillery shell shooting speed",
+    "category": "technology",
+    "row": 6,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "military-science-pack": 1,
+      "utility-science-pack": 1,
+      "space-science-pack": 1
+    },
+    "out": { "artillery-shell-speed-1": 1 },
+    "flags": ["technology"],
+    "iconText": "1"
+  },
+  {
+    "id": "worker-robots-speed-6",
+    "name": "Worker robot speed",
+    "category": "technology",
+    "row": 6,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "production-science-pack": 1,
+      "utility-science-pack": 1,
+      "space-science-pack": 1
+    },
+    "out": { "worker-robots-speed-6": 1 },
+    "flags": ["technology"],
+    "icon": "worker-robots-speed-1",
+    "iconText": "6"
+  },
+  {
+    "id": "mining-productivity-4",
+    "name": "Mining productivity",
+    "category": "technology",
+    "row": 6,
+    "time": 60,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "production-science-pack": 1,
+      "utility-science-pack": 1,
+      "space-science-pack": 1
+    },
+    "out": { "mining-productivity-4": 1 },
+    "flags": ["technology"],
+    "icon": "mining-productivity-1",
+    "iconText": "4"
+  },
+  {
+    "id": "follower-robot-count-5",
+    "name": "Follower robot count",
+    "category": "technology",
+    "row": 7,
+    "time": 30,
+    "producers": ["lab"],
+    "in": {
+      "automation-science-pack": 1,
+      "logistic-science-pack": 1,
+      "chemical-science-pack": 1,
+      "military-science-pack": 1,
+      "production-science-pack": 1,
+      "utility-science-pack": 1,
+      "space-science-pack": 1
+    },
+    "out": { "follower-robot-count-5": 1 },
+    "flags": ["technology"],
+    "icon": "follower-robot-count-1",
+    "iconText": "5"
+  }
+]
