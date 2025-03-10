@@ -32,7 +32,7 @@ export function ItemContainer(props: ItemContainerProps) {
         width: desiredIconSize,
         height: desiredIconSize,
         backgroundImage: import.meta.env.PROD
-          ? "url(/icons.webp)"
+          ? "url(/factorio-production-calculator/icons.webp)"
           : "url(/factorio-production-calculator/icons.webp)",
         backgroundPosition: iconClip,
         backgroundSize: `${atlasWidth * scale}px ${atlasHeight * scale}px`,
