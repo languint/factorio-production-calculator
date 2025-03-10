@@ -32,10 +32,15 @@ interface SelectSheetProps {
 export function SelectSheet(props: SelectSheetProps) {
   const [currentItem, setCurrentItem] = useState<string>("wooden-chest");
   const rateRef = useRef(1);
-  const [open, setOpen] = useState(false);
+  const setOpen = (v: boolean) => {
+    props.setAppState({
+      ...props.appState,
+      productionPanelOpen: v,
+    });
+  };
 
   return (
-    <Drawer open={open}>
+    <Drawer open={props.appState.productionPanelOpen}>
       <DrawerTrigger>
         <Button
           className="flex aspect-square size-12 items-center justify-center rounded-lg"

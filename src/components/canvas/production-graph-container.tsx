@@ -145,6 +145,15 @@ export function ProductionGraphContainer(props: Props) {
       props.setAppState({
         ...props.appState,
         electricityPanelOpen: !props.appState.electricityPanelOpen,
+        productionPanelOpen: false,
+      });
+    }
+
+    if (e.key === "p") {
+      props.setAppState({
+        ...props.appState,
+        electricityPanelOpen: false,
+        productionPanelOpen: !props.appState.productionPanelOpen,
       });
     }
 
@@ -152,13 +161,13 @@ export function ProductionGraphContainer(props: Props) {
       if (e.ctrlKey) {
         scaleRef.current -= 0.1;
       } else {
-        offsetYRef.current += dy;
+        offsetYRef.current -= dy;
       }
     } else if (e.key === "ArrowUp") {
       if (e.ctrlKey) {
         scaleRef.current += 0.1;
       } else {
-        offsetYRef.current -= dy;
+        offsetYRef.current += dy;
       }
     } else if (e.key === "ArrowLeft") {
       offsetXRef.current += dx;
