@@ -18,6 +18,7 @@ import { hierarchy, tree } from "d3-hierarchy";
 import { getProductionBuilding } from "@/calc/get-production-building";
 import { buildDAG } from "./buildDAG";
 import { buildCombinedTree } from "./buildCombinedTree";
+import { toast } from "sonner";
 
 interface ProductionGraphProps {
   appConfig: AppConfig;
@@ -37,6 +38,7 @@ const NODE_WIDTH = 360;
 const NODE_HEIGHT = 120;
 
 export function ProductionGraph(props: ProductionGraphProps) {
+  const startingTime = Date.now();
   const finalLine = props.appState.production[0];
   if (!finalLine || !finalLine.item) return null;
 
@@ -99,12 +101,17 @@ export function ProductionGraph(props: ProductionGraphProps) {
   props.powerConsumption.current = totalPower;
 
   const treeNodeMap = new Map<string, any>();
-  
+
   allNodes.forEach((d: any) => {
     if (d.data.item && d.data.item.id) {
       treeNodeMap.set(d.data.item.id, d);
     }
   });
+
+  const endingTime = Date.now();
+
+  const time = endingTime - startingTime;
+  toast.info(`Calculated ${allNodes.length} nodes in ${time}ms.`);
 
   return (
     <svg className="overflow-visible">

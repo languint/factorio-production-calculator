@@ -2,6 +2,7 @@ import { getItem, getRecipes, Item } from "@/types/data";
 import { Node, ProductionLine } from "./types";
 import { getProductionBuilding } from "./get-production-building";
 import { AppConfig } from "@/config";
+import { toast } from "sonner";
 
 export function calculateProduction(
   config: AppConfig,
@@ -11,7 +12,10 @@ export function calculateProduction(
 
   const rootRecipes = getRecipes(line.item.id);
 
-  if (!rootRecipes || rootRecipes.length === 0) {
+  if (rootRecipes || rootRecipes!.length === 0) {
+    toast.error(
+      `Failed to calculate! Could not find recipe for ${line.item.id}.`
+    );
     console.error("Failed to calculate production of " + line.item.id);
     return {} as Node;
   }

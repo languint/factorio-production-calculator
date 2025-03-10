@@ -15,6 +15,8 @@ import {
   DrawerTrigger,
 } from "../ui/drawer";
 import { SelectTabs } from "./select-tabs";
+import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
+import { Skeleton } from "../ui/skeleton";
 
 interface SelectSheetProps {
   appConfig: AppConfig;
@@ -36,69 +38,83 @@ export function SelectSheet(props: SelectSheetProps) {
 
   useEffect(() => {
     setOpen(props.appState.productionPanelOpen);
-  }, [props.appState.productionPanelOpen])
+  }, [props.appState.productionPanelOpen]);
 
   return (
-    <Drawer open={open}>
-      <DrawerTrigger>
-        <Button
-          className="flex aspect-square size-12 items-center justify-center rounded-lg"
-          onClick={() => setOpen(true)}
-          asChild
-        >
-          <Hammer className="size-12" />
-        </Button>
-      </DrawerTrigger>
-      <DrawerContent aria-describedby="Select an item">
-        <div className="mx-auto w-full max-w-xl h-auto">
-          <DrawerHeader>
-            <DrawerTitle>Select an item</DrawerTitle>
-          </DrawerHeader>
-          <div>
-            <SelectTabs
-              {...props}
-              currentItem={currentItem}
-              setCurrentItem={setCurrentItem}
-            />
-          </div>
-          <DrawerFooter>
-            <div className="flex flex-row gap-16">
-              <Input
-                type="number"
-                placeholder={
-                  rateRef.current + " per " + props.appConfig.display.itemUnits
-                }
-                onChange={(e) => {
-                  const value = Number.parseInt(e.currentTarget.value);
-                  if (value) {
-                    rateRef.current = value;
-                  }
-                }}
+    <Tooltip>
+      <Drawer open={open}>
+        <TooltipTrigger asChild>
+          <DrawerTrigger>
+            <Button
+              className={`flex aspect-square size-12 items-center justify-center rounded-lg`}
+              onClick={() => setOpen(true)}
+              asChild
+            >
+              <div className="">
+                {props.appState.production.length === 0 && (
+                  <Skeleton className="w-full h-full absolute size-12 z-10 bg-green-500" />
+                )}
+                <Hammer className="z-20" />
+              </div>
+            </Button>
+          </DrawerTrigger>
+        </TooltipTrigger>
+        <DrawerContent aria-describedby="Select an item">
+          <div className="mx-auto w-full max-w-xl h-auto">
+            <DrawerHeader>
+              <DrawerTitle>Select an item</DrawerTitle>
+            </DrawerHeader>
+            <div>
+              <SelectTabs
+                {...props}
+                currentItem={currentItem}
+                setCurrentItem={setCurrentItem}
               />
-              <Button
-                className="w-24"
-                onClick={() => {
-                  props.setAppState({
-                    ...props.appState,
-                    production: [
-                      {
-                        item: getItem(currentItem)!,
-                        rate: reverseUnit(
-                          rateRef.current,
-                          props.appConfig.display.itemUnits
-                        ),
-                      },
-                    ],
-                  });
-                  setOpen(false);
-                }}
-              >
-                Set
-              </Button>
             </div>
-          </DrawerFooter>
-        </div>
-      </DrawerContent>
-    </Drawer>
+            <DrawerFooter>
+              <div className="flex flex-row gap-16">
+                <Input
+                  type="number"
+                  placeholder={
+                    rateRef.current +
+                    " per " +
+                    props.appConfig.display.itemUnits
+                  }
+                  onChange={(e) => {
+                    const value = Number.parseInt(e.currentTarget.value);
+                    if (value) {
+                      rateRef.current = value;
+                    }
+                  }}
+                />
+                <Button
+                  className="w-24"
+                  onClick={() => {
+                    props.setAppState({
+                      ...props.appState,
+                      production: [
+                        {
+                          item: getItem(currentItem)!,
+                          rate: reverseUnit(
+                            rateRef.current,
+                            props.appConfig.display.itemUnits
+                          ),
+                        },
+                      ],
+                    });
+                    setOpen(false);
+                  }}
+                >
+                  Set
+                </Button>
+              </div>
+            </DrawerFooter>
+          </div>
+        </DrawerContent>
+        <TooltipContent side="left">
+          <p>Add Items</p>
+        </TooltipContent>
+      </Drawer>
+    </Tooltip>
   );
 }

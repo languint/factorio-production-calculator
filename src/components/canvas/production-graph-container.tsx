@@ -18,6 +18,12 @@ import {
   DialogTrigger,
 } from "../ui/dialog";
 import { getPowerUnit } from "@/util/get-unit";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "../ui/tooltip";
 
 type Props = {
   children?: ReactNode | ReactNode[];
@@ -206,64 +212,80 @@ export function ProductionGraphContainer(props: Props) {
     >
       <div className="absolute w-14 h-full right-64 flex flex-col items-center gap-2 justify-center border-0">
         <div className="flex flex-col gap-2 items-center absolute bg-neutral-900 p-2 justify-center border-card border rounded-md">
-          <Dialog
-            open={props.appState.electricityPanelOpen}
-            onOpenChange={(open) =>
-              props.setAppState({
-                ...props.appState,
-                electricityPanelOpen: open,
-              })
-            }
-          >
-            <DialogTrigger>
-              <Button
-                className="flex aspect-square size-12 items-center justify-center rounded-lg"
-                variant={"secondary"}
-                onClick={() =>
-                  props.setAppState({
-                    ...props.appState,
-                    electricityPanelOpen: true,
-                  })
-                }
-                asChild
-              >
-                <Zap className="size-12" fill="" />
-              </Button>
-            </DialogTrigger>
-            <DialogContent>
-              <DialogHeader>
-                <DialogTitle>Power Statistics</DialogTitle>
-                <DialogDescription>
-                  Approximately how much power your build will consume. <br />
-                  This is found with the power consumption of each building
-                  times by how many of that building you need.
-                </DialogDescription>
-              </DialogHeader>
-              <div className="flex flex-row items-center justify-center w-full">
-                <p className="text-2xl">
-                  {getPowerUnit(
-                    props.appConfig.display.powerUnits,
-                    power
-                  )?.toFixed(2) +
-                    " " +
-                    props.appConfig.display.powerUnits}
-                </p>
-              </div>
-            </DialogContent>
-          </Dialog>
-          <SelectSheet {...props} />
-          <Button
-            className="flex aspect-square size-12 items-center justify-center rounded-lg"
-            variant={"secondary"}
-            asChild
-            onClick={() => {
-              offsetXRef.current = 0;
-              offsetYRef.current = 0;
-              applyTransformations();
-            }}
-          >
-            <Focus className="size-12" fill="" />
-          </Button>
+          <TooltipProvider>
+            <Dialog
+              open={props.appState.electricityPanelOpen}
+              onOpenChange={(open) =>
+                props.setAppState({
+                  ...props.appState,
+                  electricityPanelOpen: open,
+                })
+              }
+            >
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <DialogTrigger>
+                    <Button
+                      className="flex aspect-square size-12 items-center justify-center rounded-lg"
+                      variant={"secondary"}
+                      onClick={() =>
+                        props.setAppState({
+                          ...props.appState,
+                          electricityPanelOpen: true,
+                        })
+                      }
+                      asChild
+                    >
+                      <Zap className="size-12" fill="" />
+                    </Button>
+                  </DialogTrigger>
+                </TooltipTrigger>
+                <TooltipContent side="left">
+                  <p>Power Usage</p>
+                </TooltipContent>
+              </Tooltip>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Power Statistics</DialogTitle>
+                  <DialogDescription>
+                    Approximately how much power your build will consume. <br />
+                    This is found with the power consumption of each building
+                    times by how many of that building you need.
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="flex flex-row items-center justify-center w-full">
+                  <p className="text-2xl">
+                    {getPowerUnit(
+                      props.appConfig.display.powerUnits,
+                      power
+                    )?.toFixed(2) +
+                      " " +
+                      props.appConfig.display.powerUnits}
+                  </p>
+                </div>
+              </DialogContent>
+            </Dialog>
+            <SelectSheet {...props} />
+            <Tooltip>
+              <TooltipTrigger>
+                <Button
+                  className="flex aspect-square size-12 items-center justify-center rounded-lg"
+                  variant={"secondary"}
+                  asChild
+                  onClick={() => {
+                    offsetXRef.current = 0;
+                    offsetYRef.current = 0;
+                    applyTransformations();
+                  }}
+                >
+                  <Focus className="size-12" fill="" />
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent side="left">
+                <p>Center Content</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
         </div>
       </div>
 
