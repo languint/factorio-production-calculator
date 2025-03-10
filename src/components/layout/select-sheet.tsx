@@ -1,7 +1,7 @@
 import { AppConfig } from "@/config";
 import { AppState } from "@/state";
 import { getItem, Item, ItemDisplay, Recipe } from "@/types/data";
-import { Dispatch, SetStateAction, useRef, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import { Hammer } from "lucide-react";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
@@ -32,15 +32,14 @@ interface SelectSheetProps {
 export function SelectSheet(props: SelectSheetProps) {
   const [currentItem, setCurrentItem] = useState<string>("wooden-chest");
   const rateRef = useRef(1);
-  const setOpen = (v: boolean) => {
-    props.setAppState({
-      ...props.appState,
-      productionPanelOpen: v,
-    });
-  };
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    setOpen(props.appState.productionPanelOpen);
+  }, [props.appState.productionPanelOpen])
 
   return (
-    <Drawer open={props.appState.productionPanelOpen}>
+    <Drawer open={open}>
       <DrawerTrigger>
         <Button
           className="flex aspect-square size-12 items-center justify-center rounded-lg"
