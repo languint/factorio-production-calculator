@@ -1,6 +1,6 @@
 import { AppConfig } from "@/config";
 import { Dispatch, SetStateAction, useRef } from "react";
-import { PannableZoomableSVG } from "./canvas/pannable-zoomable-canvas";
+import { ProductionGraphContainer } from "./canvas/production-graph-container";
 import { Item, ItemDisplay, Recipe } from "@/types/data";
 import { Sidebar } from "./layout/sidebar";
 import { AppState } from "@/state";
@@ -26,12 +26,12 @@ export function Layout(props: LayoutProps) {
     <div className="Layout">
       <Sidebar {...props} />
       <div className="w-full h-full absolute bottom-0">
-        <PannableZoomableSVG {...props} powerConsumption={powerConsumption}>
+        <ProductionGraphContainer {...props} powerConsumption={powerConsumption}>
           <ProductionGraph
             {...props}
             powerConsumption={powerConsumption}
           ></ProductionGraph>
-        </PannableZoomableSVG>
+        </ProductionGraphContainer>
       </div>
     </div>
   );

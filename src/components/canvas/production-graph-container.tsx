@@ -24,7 +24,7 @@ type Props = {
   powerConsumption: RefObject<number>;
 } & LayoutProps;
 
-export function PannableZoomableSVG(props: Props) {
+export function ProductionGraphContainer(props: Props) {
   const svgRef = useRef<SVGSVGElement>(null);
   const containerRef = useRef(null);
 
@@ -138,6 +138,31 @@ export function PannableZoomableSVG(props: Props) {
     isDraggingRef.current = false;
   };
 
+  const handleKeydown = (e: KeyboardEvent) => {
+    const dx = 10;
+    const dy = 10;
+
+    if (e.key === "ArrowDown") {
+      if (e.ctrlKey) {
+        scaleRef.current -= 0.1;
+      } else {
+        offsetYRef.current -= dy;
+      }
+    } else if (e.key === "ArrowUp") {
+      if (e.ctrlKey) {
+        scaleRef.current += 0.1;
+      } else {
+        offsetYRef.current += dy;
+      }
+    } else if (e.key === "ArrowLeft") {
+      offsetXRef.current += dx;
+    } else if (e.key === "ArrowRight") {
+      offsetXRef.current -= dx;
+    }
+
+    applyTransformations();
+  };
+
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
@@ -148,6 +173,8 @@ export function PannableZoomableSVG(props: Props) {
     resizeObserver.observe(container);
 
     resizeSVG();
+
+    document.addEventListener("keydown", handleKeydown);
 
     return () => resizeObserver.disconnect();
   }, []);
@@ -203,7 +230,7 @@ export function PannableZoomableSVG(props: Props) {
             onClick={() => {
               offsetXRef.current = 0;
               offsetYRef.current = 0;
-              applyTransformations()
+              applyTransformations();
             }}
           >
             <Focus className="size-12" fill="" />
