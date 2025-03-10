@@ -161,9 +161,9 @@ export function ProductionGraphContainer(props: Props) {
         offsetYRef.current -= dy;
       }
     } else if (e.key === "ArrowLeft") {
-      offsetXRef.current -= dx;
-    } else if (e.key === "ArrowRight") {
       offsetXRef.current += dx;
+    } else if (e.key === "ArrowRight") {
+      offsetXRef.current -= dx;
     }
 
     applyTransformations();
