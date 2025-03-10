@@ -139,25 +139,32 @@ export function ProductionGraphContainer(props: Props) {
   };
 
   const handleKeydown = (e: KeyboardEvent) => {
-    const dx = 20;
-    const dy = 20;
+    const dx = 40;
+    const dy = 40;
+
+    if (e.key === "e") {
+      props.setAppState({
+        ...props.appState,
+        electricityPanelOpen: !props.appState.electricityPanelOpen,
+      });
+    }
 
     if (e.key === "ArrowDown") {
       if (e.ctrlKey) {
         scaleRef.current -= 0.1;
       } else {
-        offsetYRef.current -= dy;
+        offsetYRef.current += dy;
       }
     } else if (e.key === "ArrowUp") {
       if (e.ctrlKey) {
         scaleRef.current += 0.1;
       } else {
-        offsetYRef.current += dy;
+        offsetYRef.current -= dy;
       }
     } else if (e.key === "ArrowLeft") {
-      offsetXRef.current += dx;
-    } else if (e.key === "ArrowRight") {
       offsetXRef.current -= dx;
+    } else if (e.key === "ArrowRight") {
+      offsetXRef.current += dx;
     }
 
     applyTransformations();
@@ -191,11 +198,25 @@ export function ProductionGraphContainer(props: Props) {
     >
       <div className="absolute w-14 h-full right-64 flex flex-col items-center gap-2 justify-center border-0">
         <div className="flex flex-col gap-2 items-center absolute bg-neutral-900 p-2 justify-center border-card border rounded-md">
-          <Dialog>
+          <Dialog
+            open={props.appState.electricityPanelOpen}
+            onOpenChange={(open) =>
+              props.setAppState({
+                ...props.appState,
+                electricityPanelOpen: open,
+              })
+            }
+          >
             <DialogTrigger>
               <Button
                 className="flex aspect-square size-12 items-center justify-center rounded-lg"
                 variant={"secondary"}
+                onClick={() =>
+                  props.setAppState({
+                    ...props.appState,
+                    electricityPanelOpen: true,
+                  })
+                }
                 asChild
               >
                 <Zap className="size-12" fill="" />
