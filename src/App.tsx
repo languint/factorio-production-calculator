@@ -15,6 +15,7 @@ import { LoadingModal } from "./components/layout/loading-modal";
 import { AppState, defaultAppState } from "./state";
 import { useIsMobile } from "./hooks/use-mobile";
 import { MobileModal } from "./components/layout/mobile-modal";
+import { getCookie } from "./cookies";
 
 function App() {
   const [appConfig, setAppConfig] = useState<AppConfig>(defaultConfig);
@@ -29,6 +30,8 @@ function App() {
     setIcons(loadIcons);
     setRecipes(loadRecipes);
     setIsLoading(false);
+
+    setAppConfig(JSON.parse(getCookie("data") ?? "{}"))
   }, []);
 
   console.log(`Loaded: ${items!.length} items.`);

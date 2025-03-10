@@ -20,12 +20,14 @@ import {
   SidebarGroupLabel,
   SidebarGroupContent,
   Sidebar as S,
+  SidebarFooter,
 } from "../ui/sidebar";
 import { AppConfig } from "@/config";
 import { getItemName, Item, ItemDisplay } from "@/types/data";
 import { Dispatch, SetStateAction } from "react";
 import { ItemContainer } from "../item-container";
 import { Switch } from "../ui/switch";
+import { getCookie } from "@/cookies";
 
 interface SidebarProps {
   appConfig: AppConfig;
@@ -44,7 +46,9 @@ export function Sidebar(props: SidebarProps) {
             <div className="flex aspect-square size-8 items-center justify-center text-sidebar-primary-foreground">
               <img src="/factorio-production-calculator/logo.svg" />
             </div>
-            <span className="font-semibold text-sm">Factorio Production Calculator</span>
+            <span className="font-semibold text-sm">
+              Factorio Production Calculator
+            </span>
           </SidebarMenuItem>
         </SidebarHeader>
         <Collapsible className="group/collapsible">
@@ -371,6 +375,29 @@ export function Sidebar(props: SidebarProps) {
             </SidebarGroupContent>
           </CollapsibleContent>
         </Collapsible>
+        <div className="flex grow" />
+        <SidebarFooter>
+          <SidebarGroupLabel>Data</SidebarGroupLabel>
+          <div className="flex flex-row justify-center gap-2">
+            <Button
+              variant={"outline"}
+              className="flex-grow"
+              onClick={() =>
+                props.setAppConfig(JSON.parse(getCookie("data") ?? "{}"))
+              }
+            >
+              Load
+            </Button>
+            <Button
+              className="flex-grow"
+              onClick={() =>
+                (document.cookie = `data=${JSON.stringify(props.appConfig)}`)
+              }
+            >
+              Save
+            </Button>
+          </div>
+        </SidebarFooter>
       </S>
     </SidebarProvider>
   );
