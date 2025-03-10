@@ -31,7 +31,9 @@ function App() {
     setRecipes(loadRecipes);
     setIsLoading(false);
 
-    setAppConfig(JSON.parse(getCookie("data") ?? "{}"))
+    if (Object.keys(JSON.parse(getCookie("data") ?? "{}")).length !== 0) {
+      setAppConfig(JSON.parse(getCookie("data") ?? "{}"));
+    }
   }, []);
 
   console.log(`Loaded: ${items!.length} items.`);
