@@ -1,7 +1,6 @@
 import ITEMS from "../data/items.json";
 import ICONS from "../data/icons.json";
 import RECIPES from "../data/recipes.json";
-import { toast } from "sonner";
 
 export enum ItemCategory {
   LOGISTICS,
