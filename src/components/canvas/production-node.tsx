@@ -18,6 +18,9 @@ interface ProductionNodeProps {
 }
 
 export function ProductionNode(props: ProductionNodeProps) {
+  const itemName = getItemName(props.id);
+  const shouldAddSuffix = props.machine === "oil-refinery";
+  const suffix = props.id === "petroleum-gas" ? "(Basic Oil Processing)" : "(Advanced Oil Processing)";
   return (
     <foreignObject
       className="w-80 h-30 overflow-visible"
@@ -38,7 +41,7 @@ export function ProductionNode(props: ProductionNodeProps) {
         <CardHeader className="flex flex-row px-2 justify-between">
           <div className="flex flex-row gap-2 select-none">
             <div className="h-10">
-              <CardTitle>{getItemName(props.id)}</CardTitle>
+              <CardTitle>{itemName}<br />{shouldAddSuffix ? suffix : ""}</CardTitle>
               <p className="text-muted-foreground select-none">
                 (
                 {getUnit(
