@@ -3,22 +3,16 @@ import { getMachineCount } from "@/calc/calculate-production";
 import { Node } from "@/calc/types";
 import { AppConfig } from "@/config";
 import { AppState } from "@/state";
-import {
-  getIconColor,
-  getItem,
-  getPowerConsumption,
-  getRecipes,
-  Item,
-  ItemDisplay,
-  Recipe,
-} from "@/types/data";
+import { getRecipes, Item, ItemDisplay, Recipe } from "@/types/data";
 import { Dispatch, RefObject, SetStateAction } from "react";
 import { ProductionNode } from "./production-node";
 import { hierarchy, tree } from "d3-hierarchy";
 import { getProductionBuilding } from "@/calc/get-production-building";
-import { buildDAG } from "./buildDAG";
-import { buildCombinedTree } from "./buildCombinedTree";
+import { buildDAG } from "./build-dag";
+import { buildCombinedTree } from "./build-combined-tree";
 import { toast } from "sonner";
+import { Edge } from "./edge";
+import { totalPower } from "../total-power";
 
 interface ProductionGraphProps {
   appConfig: AppConfig;
@@ -33,9 +27,6 @@ interface ProductionGraphProps {
   setRecipes: Dispatch<SetStateAction<Recipe[]>>;
   powerConsumption: RefObject<number>;
 }
-
-const NODE_WIDTH = 360;
-const NODE_HEIGHT = 120;
 
 export function ProductionGraph(props: ProductionGraphProps) {
   const startingTime = Date.now();
@@ -70,35 +61,7 @@ export function ProductionGraph(props: ProductionGraphProps) {
     (d as any).screenY -= minY;
   });
 
-  const totalPower = root.descendants().reduce((acc, d) => {
-    if (!d.data.item) return acc;
-
-    const recipes = getRecipes(d.data.item.id);
-
-    const machineId =
-      getProductionBuilding(props.appConfig, recipes!) ??
-      "assembling-machine-1";
-
-    const numberOfMachines = getMachineCount(
-      machineId,
-      d.data.rate,
-      d.data.item,
-      props.appConfig.bonuses.mining
-    );
-
-    const machine = getItem(machineId);
-    const power =
-      machine && getPowerConsumption(machine)
-        ? getPowerConsumption(machine) *
-          (numberOfMachines !== 0
-            ? Number.parseFloat(numberOfMachines)
-            : numberOfMachines)
-        : 0;
-
-    return acc + power;
-  }, 0);
-
-  props.powerConsumption.current = totalPower;
+  props.powerConsumption.current = totalPower(props.appConfig, root);
 
   const treeNodeMap = new Map<string, any>();
 
@@ -148,46 +111,10 @@ export function ProductionGraph(props: ProductionGraphProps) {
         );
       })}
 
-      {allEdges.map((link, i) => {
-        const s = treeNodeMap.get(link.source);
-        const t = treeNodeMap.get(link.target);
-        if (!s || !t) {
-          console.log(link.value + " is missing s or t");
-          return null;
-        }
-
-        const sx = s.screenX;
-        const sy = s.screenY;
-
-        const tx = t.screenX;
-        const ty = t.screenY;
-
-        const sourceX = sx;
-        const sourceY = sy + NODE_HEIGHT / 2;
-
-        const targetX = tx + NODE_WIDTH;
-        const targetY = ty + NODE_HEIGHT / 2;
-
-        const curveOffset = Math.min(150, Math.abs(sourceX - targetX) * 0.5);
-
-        return (
-          <path
-            key={i}
-            d={`
-              M ${sourceX},${sourceY}
-              C ${sourceX - curveOffset},${sourceY} 
-                ${targetX + curveOffset},${targetY} 
-                ${targetX - 40},${targetY}
-            `}
-            stroke={`rgba(from ${getIconColor(s.data.item.id)} r g b)`}
-            fillOpacity={0}
-            z={10}
-            strokeOpacity={0.1}
-            strokeWidth="40"
-            style={{ pointerEvents: "none" }}
-          />
-        );
-      })}
+      {props.appConfig.display.showFlow &&
+        allEdges.map((link, i) => {
+          return <Edge link={link} treeNodeMap={treeNodeMap} i={i} key={i} />;
+        })}
     </svg>
   );
 }

@@ -209,6 +209,19 @@ export function Sidebar(props: SidebarProps) {
                     </DropdownMenuCheckboxItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
+                <p className="text-sm text-muted-foreground">Show flow</p>
+                <Switch
+                  onCheckedChange={(checked) => {
+                    props.setAppConfig({
+                      ...props.appConfig,
+                      display: {
+                        ...props.appConfig.display,
+                        showFlow: checked,
+                      },
+                    });
+                  }}
+                  checked={props.appConfig.display.showFlow}
+                />
               </SidebarGroupContent>
             </CollapsibleContent>
           </SidebarGroup>
