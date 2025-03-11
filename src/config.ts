@@ -1,5 +1,6 @@
 import { FurnaceBuildings, AssemblyBuildings } from "./types/buildings";
 import { LogisticsBelt } from "./types/logistics";
+import { Modules } from "./types/modules";
 import { ItemRateUnit, PowerUnit } from "./types/units";
 
 export interface AppConfig {
@@ -13,6 +14,7 @@ export interface AppConfig {
     furnace: FurnaceBuildings;
     assembly: AssemblyBuildings;
     preferRefinery: boolean;
+    modules: Map<Modules, number>;
   };
   display: {
     itemUnits: ItemRateUnit;
@@ -32,6 +34,7 @@ export const defaultConfig = {
     furnace: "stone-furnace",
     assembly: "assembling-machine-1",
     preferRefinery: true,
+    modules: new Map(),
   },
   display: {
     itemUnits: "minute",

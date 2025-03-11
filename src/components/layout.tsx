@@ -4,7 +4,7 @@ import { ProductionGraphContainer } from "./canvas/production-graph-container";
 import { Item, ItemDisplay, Recipe } from "@/types/data";
 import { Sidebar } from "./layout/sidebar";
 import { AppState } from "@/state";
-import { ProductionGraph } from "./canvas/production-graph";
+import { ProductionGraph } from "./canvas/graph/production-graph";
 import { Toaster } from "./ui/sonner";
 
 export interface LayoutProps {
@@ -33,7 +33,7 @@ export function Layout(props: LayoutProps) {
         >
           <ProductionGraph {...props} powerConsumption={powerConsumption} />
         </ProductionGraphContainer>
-        <Toaster visibleToasts={1} position="bottom-left"/>
+        <Toaster visibleToasts={1} position="bottom-left" />
       </div>
     </div>
   );

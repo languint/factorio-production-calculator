@@ -22,25 +22,19 @@ import {
   Sidebar as S,
   SidebarFooter,
 } from "../ui/sidebar";
-import { AppConfig } from "@/config";
-import { getItemName, Item, ItemDisplay } from "@/types/data";
-import { Dispatch, SetStateAction } from "react";
+import { getItemName } from "@/types/data";
 import { ItemContainer } from "../item-container";
 import { Switch } from "../ui/switch";
 import { getCookie } from "@/cookies";
+import { ModuleSelector } from "./module-selector";
+import { LayoutProps } from "../layout";
 
-interface SidebarProps {
-  appConfig: AppConfig;
-  setAppConfig: Dispatch<SetStateAction<AppConfig>>;
-  items: Item[];
-  setItems: Dispatch<SetStateAction<Item[]>>;
-  icons: ItemDisplay[];
-}
+type SidebarProps = {} & LayoutProps;
 
 export function Sidebar(props: SidebarProps) {
   return (
     <SidebarProvider>
-      <S side="right" collapsible="offcanvas" className="w-60">
+      <S side="right" collapsible="offcanvas" className="w-80">
         <SidebarHeader>
           <SidebarMenuItem className="flex-row flex gap-4 items-center">
             <div className="flex aspect-square size-8 items-center justify-center text-sidebar-primary-foreground">
@@ -372,6 +366,7 @@ export function Sidebar(props: SidebarProps) {
                   </DropdownMenuCheckboxItem>
                 </DropdownMenuContent>
               </DropdownMenu>
+              <ModuleSelector {...props} />
               <p className="text-sm text-muted-foreground">Prefer Refinery</p>
               <Switch
                 onCheckedChange={(checked) => {

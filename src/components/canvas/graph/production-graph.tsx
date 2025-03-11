@@ -12,7 +12,7 @@ import { buildDAG } from "./build-dag";
 import { buildCombinedTree } from "./build-combined-tree";
 import { toast } from "sonner";
 import { Edge } from "./edge";
-import { totalPower } from "../total-power";
+import { totalPower } from "../../total-power";
 
 interface ProductionGraphProps {
   appConfig: AppConfig;

@@ -1,11 +1,15 @@
 import { AppConfig } from "@/config";
 import { getRecipes } from "@/types/data";
 
-export function buildDAG(_config: AppConfig, finalItemId: string, finalRate: number) {
-  const nodeMap = new Map<string, { id: string; rate: number; }>();
+export function buildDAG(
+  _config: AppConfig,
+  finalItemId: string,
+  finalRate: number
+) {
+  const nodeMap = new Map<string, { id: string; rate: number }>();
 
   const edges = new Map<string, Set<string>>();
-  const allEdges: Array<{ source: string; target: string; value: number; }> = [];
+  const allEdges: Array<{ source: string; target: string; value: number }> = [];
 
   function visit(itemId: string, rate: number) {
     if (nodeMap.has(itemId)) {

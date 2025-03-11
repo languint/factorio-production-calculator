@@ -210,7 +210,7 @@ export function ProductionGraphContainer(props: Props) {
         backgroundColor: "var(--secondary)",
       }}
     >
-      <div className="absolute w-14 h-full right-64 flex flex-col items-center gap-2 justify-center border-0">
+      <div className="absolute w-14 h-full right-84 flex flex-col items-center gap-2 justify-center border-0">
         <div className="flex flex-col gap-2 items-center absolute bg-neutral-900 p-2 justify-center border-card border rounded-md">
           <TooltipProvider>
             <Dialog

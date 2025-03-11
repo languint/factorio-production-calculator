@@ -3,8 +3,9 @@ import { getItem } from "@/types/data";
 
 export function buildCombinedTree(
   finalItemId: string,
-  nodeMap: Map<string, { id: string; rate: number; }>,
-  edges: Map<string, Set<string>>): Node {
+  nodeMap: Map<string, { id: string; rate: number }>,
+  edges: Map<string, Set<string>>
+): Node {
   const visited = new Set<string>();
 
   function buildTree(itemId: string): Node {

@@ -13,6 +13,7 @@ import { AppConfig } from "@/config";
 import { AppState } from "@/state";
 import { Item, ItemDisplay, Recipe } from "@/types/data";
 import { Dispatch, SetStateAction } from "react";
+import { ItemContainerWithTooltip } from "./item-container-with-tooltip";
 
 interface SelectTabsProps {
   appConfig: AppConfig;
@@ -211,36 +212,15 @@ export function SelectTabs(props: SelectTabsProps) {
             <ScrollArea className="h-80">
               <div className="grid grid-cols-8 gap-2">
                 {combat.map((recipe, index) => (
-                  <TooltipProvider key={index}>
-                    <Tooltip>
-                      <TooltipTrigger asChild>
-                        <Button
-                          variant="outline"
-                          className="p-1 border aspect-square items-center justify-center flex rounded-sm w-auto h-auto"
-                          style={{
-                            backgroundColor:
-                              props.currentItem === recipe.id
-                                ? "var(--secondary)"
-                                : "var(--background)",
-                            borderColor:
-                              props.currentItem === recipe.id
-                                ? "var(--ring)"
-                                : "var(--border)",
-                          }}
-                          onClick={() => props.setCurrentItem(recipe.id)}
-                        >
-                          <ItemContainer
-                            icon={recipe.icon}
-                            size={32}
-                            key={index}
-                          />
-                        </Button>
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>{recipe.name}</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
+                  <ItemContainerWithTooltip
+                    currentItem={props.currentItem}
+                    onClick={() => {
+                      props.setCurrentItem(recipe.id);
+                    }}
+                    recipe={recipe}
+                    index={index}
+                    key={index}
+                  />
                 ))}
               </div>
             </ScrollArea>
