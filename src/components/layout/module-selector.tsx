@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { LayoutProps } from "../layout";
 import {
   Card,
@@ -20,6 +20,7 @@ type ModuleNumberInputProps = {
   enabled: boolean;
   max: number;
   Native?: React.ComponentProps<"input">;
+  placeholder?: string;
 };
 
 export function ModuleNumberInput(props: ModuleNumberInputProps) {
@@ -30,7 +31,7 @@ export function ModuleNumberInput(props: ModuleNumberInputProps) {
       disabled={!props.enabled}
       step={1}
       min={0}
-      placeholder="0"
+      placeholder={props.placeholder ?? "0"}
       max={props.max}
       {...props.Native}
     />
@@ -52,6 +53,27 @@ export function ModuleSelector(props: ModuleSelectorProps) {
   const canSubmitValue = () => {
     return speedNumber + effNumber + prodNumber <= 4;
   };
+
+  useEffect(() => {
+    const modules = Array.from(props.appConfig.production.modules);
+    for (const [module, count] of modules) {
+      if (module.includes("speed")) {
+        setSelectedSpeedModule(module);
+        setSpeedNumber(count);
+        continue;
+      }
+      if (module.includes("efficiency")) {
+        setSelectedEfficiencyModule(module);
+        setEffNumber(count);
+        continue;
+      }
+      if (module.includes("productivity")) {
+        setSelectedProductivityModule(module);
+        setProdNumber(count);
+        continue;
+      }
+    }
+  }, [props.appConfig.production.modules]);
 
   const constructModules = () => {
     const modules = new Map<Modules, number>();
@@ -108,6 +130,7 @@ export function ModuleSelector(props: ModuleSelectorProps) {
                 }
               },
             }}
+            placeholder={speedNumber.toString()}
           />
         </div>
         <div className="flex flex-row justify-between gap-2">
@@ -148,6 +171,7 @@ export function ModuleSelector(props: ModuleSelectorProps) {
                 }
               },
             }}
+            placeholder={effNumber.toString()}
           />
         </div>
         <div className="flex flex-row justify-between gap-2">
@@ -188,6 +212,7 @@ export function ModuleSelector(props: ModuleSelectorProps) {
                 }
               },
             }}
+            placeholder={prodNumber.toString()}
           />
         </div>
         <Button

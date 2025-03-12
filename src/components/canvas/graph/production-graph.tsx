@@ -100,13 +100,13 @@ export function ProductionGraph(props: ProductionGraphProps) {
         return (
           <ProductionNode
             key={i}
-            appConfig={props.appConfig}
             id={d.data.item.id}
             ratePerSecond={d.data.rate}
             machine={machineId}
             numberOfMachine={numberOfMachines}
             x={sx}
             y={sy}
+            {...props}
           />
         );
       })}

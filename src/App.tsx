@@ -15,7 +15,7 @@ import { LoadingModal } from "./components/layout/loading-modal";
 import { AppState, defaultAppState } from "./state";
 import { useIsMobile } from "./hooks/use-mobile";
 import { MobileModal } from "./components/layout/mobile-modal";
-import { getCookie } from "./cookies";
+import { getCookie, reviver } from "./cookies";
 
 function App() {
   const [appConfig, setAppConfig] = useState<AppConfig>(defaultConfig);
@@ -29,10 +29,10 @@ function App() {
     setItems(loadItems);
     setIcons(loadIcons);
     setRecipes(loadRecipes);
-    setIsLoading(false);
-
+    setTimeout(() => setIsLoading(false), import.meta.env.DEV ? 0 : 2000);
     if (Object.keys(JSON.parse(getCookie("data") ?? "{}")).length !== 0) {
-      setAppConfig(JSON.parse(getCookie("data") ?? "{}"));
+      console.log(JSON.parse(getCookie("data")!, reviver));
+      setAppConfig(JSON.parse(getCookie("data") ?? "{}", reviver));
     }
   }, []);
 

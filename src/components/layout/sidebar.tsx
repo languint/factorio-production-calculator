@@ -25,7 +25,7 @@ import {
 import { getItemName } from "@/types/data";
 import { ItemContainer } from "../item-container";
 import { Switch } from "../ui/switch";
-import { getCookie } from "@/cookies";
+import { getCookie, replacer } from "@/cookies";
 import { ModuleSelector } from "./module-selector";
 import { LayoutProps } from "../layout";
 
@@ -399,7 +399,10 @@ export function Sidebar(props: SidebarProps) {
             <Button
               className="flex-grow"
               onClick={() =>
-                (document.cookie = `data=${JSON.stringify(props.appConfig)}`)
+                (document.cookie = `data=${JSON.stringify(
+                  props.appConfig,
+                  replacer
+                )}`)
               }
             >
               Save

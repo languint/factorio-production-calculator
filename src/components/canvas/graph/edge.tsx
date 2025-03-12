@@ -14,7 +14,7 @@ interface Link {
 }
 
 const NODE_WIDTH = 360;
-const NODE_HEIGHT = 120;
+const NODE_HEIGHT = 160;
 
 export function Edge(props: EdgeProps) {
   const { treeNodeMap, link, i } = props;

@@ -188,6 +188,8 @@ export function loadRecipes(): Recipe[] {
 }
 
 export function getIconClip(name: string): string {
+  if (name === undefined) return "";
+  
   const icon = ICONS.find((v) => v.id === name);
   const item = ITEMS.find((v) => v.id === name);
 

@@ -4,8 +4,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "../../ui/card";
 import { AppConfig } from "@/config";
 import { getUnit } from "@/util/get-unit";
 import { X } from "lucide-react";
+import { NodeModulesDisplay } from "./node-modules-display";
+import { LayoutProps } from "@/components/layout";
 
-interface ProductionNodeProps {
+type ProductionNodeProps = {
   appConfig: AppConfig;
   id: string;
   ratePerSecond: number;
@@ -15,7 +17,7 @@ interface ProductionNodeProps {
   y: number;
   closeVisible?: boolean;
   onCloseClick?: () => void;
-}
+} & LayoutProps;
 
 export function ProductionNode(props: ProductionNodeProps) {
   const itemName = getItemName(props.id);
@@ -26,14 +28,14 @@ export function ProductionNode(props: ProductionNodeProps) {
       : "(Advanced Oil Processing)";
   return (
     <foreignObject
-      className="w-80 h-30 overflow-visible"
+      className="w-80 h-40 overflow-visible"
       style={{ pointerEvents: "none" }}
       x={props.x}
       y={props.y}
       z={40}
     >
       <Card
-        className={`w-80 h-30 light:bg-${getIconColor(props.id)} `}
+        className={`w-80 h-40 light:bg-${getIconColor(props.id)} `}
         style={{
           backgroundColor: `rgb(from ${getIconColor(props.id)} r g b / 0.5)`,
           borderColor: `${getIconColor(props.id)}`,
@@ -67,10 +69,17 @@ export function ProductionNode(props: ProductionNodeProps) {
             onClick={props.onCloseClick}
           />
         </CardHeader>
-        <CardContent className="flex flex-row gap-4 px-2 items-center select-none">
-          <p>{props.numberOfMachine}</p>
-          <ItemContainer icon={props.machine} size={20} />
-          <p className="">{getItemName(props.machine)}</p>
+        <CardContent className="flex flex-col gap-4 px-2 select-none">
+          <div className="flex flex-row gap-4 items-center w-full">
+            <p>{props.numberOfMachine}</p>
+            <ItemContainer icon={props.machine} size={20} />
+            <p>{getItemName(props.machine)}</p>
+          </div>
+          {props.machine.includes("assembling") ? (
+            <NodeModulesDisplay {...props} />
+          ) : (
+            <></>
+          )}
         </CardContent>
       </Card>
     </foreignObject>
