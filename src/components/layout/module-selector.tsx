@@ -89,7 +89,11 @@ export function ModuleSelector(props: ModuleSelectorProps) {
     <Card>
       <CardHeader>
         <CardTitle>Modules</CardTitle>
-        <CardDescription>You may mix and match 4 modules.</CardDescription>
+        <CardDescription>
+          You may mix and match 4 modules.
+          <br />
+          Only applies to Assembling machine 2 or above
+        </CardDescription>
       </CardHeader>
       <CardContent className="flex flex-col gap-2">
         <div className="flex flex-row justify-between gap-2">
