@@ -1,8 +1,9 @@
-import { getItem, getRecipes, Item } from "@/types/data";
+import { getItem, getPowerConsumption, getRecipes, Item } from "@/types/data";
 import { Node, ProductionLine } from "./types";
 import { getProductionBuilding } from "./get-production-building";
 import { AppConfig } from "@/config";
 import { toast } from "sonner";
+import { getModuleBonuses } from "./get-module-bonus";
 
 export function calculateProduction(
   config: AppConfig,
@@ -33,7 +34,7 @@ export function calculateProduction(
 
 function calculateNode(config: AppConfig, node: Node, path: string[]): Node[] {
   const children: Node[] = [];
-
+  
   const recipes = getRecipes(node.item.id);
   if (!recipes || recipes.length === 0) {
     console.log(`No recipe found for ${node.item.id}`);
@@ -57,12 +58,24 @@ function calculateNode(config: AppConfig, node: Node, path: string[]): Node[] {
     const inputAmount = chosenRecipe!.in[inputId];
     const outputAmount = chosenRecipe!.out[node.item.id] || 1;
 
+    const bonuses = getModuleBonuses(config.production.modules);
+
+    const machine = getProductionBuilding(config, childRecipes);
+
     const childNode: Node = {
       item: getItem(inputId)!,
-      machine: getProductionBuilding(config, childRecipes)!,
+      machine: machine!,
       rate: (node.rate * inputAmount) / outputAmount,
       children: [],
     };
+
+    if (machine?.includes("assembling") && machine !== "assembling-machine-1") {
+      const factor = bonuses.powerConsumption ?? 1;
+      childNode.powerConsumption =
+        getPowerConsumption(getItem(inputId)!) * factor;
+    }
+
+    childNode.powerConsumption = getPowerConsumption(getItem(inputId)!);
 
     childNode.children = calculateNode(config, childNode, [...path, inputId]);
     children.push(childNode);

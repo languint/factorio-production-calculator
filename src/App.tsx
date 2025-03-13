@@ -31,7 +31,6 @@ function App() {
     setRecipes(loadRecipes);
     setTimeout(() => setIsLoading(false), import.meta.env.DEV ? 0 : 2000);
     if (Object.keys(JSON.parse(getCookie("data") ?? "{}")).length !== 0) {
-      console.log(JSON.parse(getCookie("data")!, reviver));
       setAppConfig(JSON.parse(getCookie("data") ?? "{}", reviver));
     }
   }, []);

@@ -122,7 +122,6 @@ export function ModuleSelector(props: ModuleSelectorProps) {
             max={4}
             Native={{
               onChange: (e) => {
-                e.preventDefault();
                 const value = e.currentTarget.value;
 
                 if (parseInt(value)) {
@@ -163,12 +162,9 @@ export function ModuleSelector(props: ModuleSelectorProps) {
             max={4}
             Native={{
               onChange: (e) => {
-                e.preventDefault();
                 const value = e.currentTarget.value;
 
-                if (parseInt(value)) {
-                  setEffNumber(parseInt(value));
-                }
+                setEffNumber(parseInt(value));
               },
             }}
             placeholder={effNumber.toString()}
@@ -204,12 +200,9 @@ export function ModuleSelector(props: ModuleSelectorProps) {
             max={4}
             Native={{
               onChange: (e) => {
-                e.preventDefault();
                 const value = e.currentTarget.value;
 
-                if (parseInt(value)) {
-                  setProdNumber(parseInt(value));
-                }
+                setProdNumber(parseInt(value));
               },
             }}
             placeholder={prodNumber.toString()}

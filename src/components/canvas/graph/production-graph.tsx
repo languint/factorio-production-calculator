@@ -3,7 +3,14 @@ import { getMachineCount } from "@/calc/calculate-production";
 import { Node } from "@/calc/types";
 import { AppConfig } from "@/config";
 import { AppState } from "@/state";
-import { getRecipes, Item, ItemDisplay, Recipe } from "@/types/data";
+import {
+  getItem,
+  getPowerConsumption,
+  getRecipes,
+  Item,
+  ItemDisplay,
+  Recipe,
+} from "@/types/data";
 import { Dispatch, RefObject, SetStateAction } from "react";
 import { ProductionNode } from "./production-node";
 import { hierarchy, tree } from "d3-hierarchy";
@@ -12,7 +19,7 @@ import { buildDAG } from "./build-dag";
 import { buildCombinedTree } from "./build-combined-tree";
 import { toast } from "sonner";
 import { Edge } from "./edge";
-import { totalPower } from "../../total-power";
+import { getModuleBonuses } from "@/calc/get-module-bonus";
 
 interface ProductionGraphProps {
   appConfig: AppConfig;
@@ -52,6 +59,42 @@ export function ProductionGraph(props: ProductionGraphProps) {
     (d as any).screenY = d.x;
   });
 
+  const totalPower = root.descendants().reduce((acc, d) => {
+    if (!d.data.item) return acc;
+
+    const recipes = getRecipes(d.data.item.id);
+
+    const machineId =
+      getProductionBuilding(props.appConfig, recipes!) ??
+      "assembling-machine-1";
+
+    const count = getMachineCount(
+      machineId!,
+      d.data.rate,
+      d.data.item,
+      props.appConfig.bonuses.mining
+    );
+
+    const machine = getItem(machineId);
+
+    const power =
+      machine && getPowerConsumption(machine)
+        ? getPowerConsumption(machine) *
+          (parseInt(
+            count.toString().substring(0, count.toString().length - 2)
+          ) ?? 1)
+        : 0;
+
+    if (machine!.id.includes("assembling")) {
+      const bonuses = getModuleBonuses(props.appConfig.production.modules);
+      const factor = bonuses.powerConsumption;
+
+      return acc + power * factor;
+    } else {
+      return acc + power;
+    }
+  }, 0);
+
   const allNodes = root.descendants();
   const minX = Math.min(...allNodes.map((d) => (d as any).screenX));
   const minY = Math.min(...allNodes.map((d) => (d as any).screenY));
@@ -61,8 +104,6 @@ export function ProductionGraph(props: ProductionGraphProps) {
     (d as any).screenY -= minY;
   });
 
-  props.powerConsumption.current = totalPower(props.appConfig, root);
-
   const treeNodeMap = new Map<string, any>();
 
   allNodes.forEach((d: any) => {
@@ -70,6 +111,9 @@ export function ProductionGraph(props: ProductionGraphProps) {
       treeNodeMap.set(d.data.item.id, d);
     }
   });
+
+  console.log(totalPower);
+  props.powerConsumption.current = totalPower;
 
   const endingTime = Date.now();
 
@@ -90,12 +134,17 @@ export function ProductionGraph(props: ProductionGraphProps) {
           getProductionBuilding(props.appConfig, recipes!) ??
           "assembling-machine-1";
 
-        const numberOfMachines = getMachineCount(
-          machineId,
-          d.data.rate,
-          d.data.item,
-          props.appConfig.bonuses.mining
-        );
+        const bonuses = getModuleBonuses(props.appConfig.production.modules);
+        const prodBonus = bonuses.bonuses.get("productivity") ?? 1;
+        const speedBonus = bonuses.bonuses.get("speed") ?? 1;
+
+        const numberOfMachines =
+          getMachineCount(
+            machineId,
+            d.data.rate,
+            d.data.item,
+            props.appConfig.bonuses.mining
+          ) ?? 1 / prodBonus / speedBonus;
 
         return (
           <ProductionNode

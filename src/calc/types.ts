@@ -12,4 +12,5 @@ export type Node = {
     machine: AssemblyBuildings | FurnaceBuildings | string;
     children?: Node[];
     parent?: Node;
+    powerConsumption?: number;
 }

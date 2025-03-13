@@ -11,7 +11,7 @@ export function NodeModulesDisplay(props: NodeModulesDisplayProps) {
       {modules.map((v) => {
         if (v[1] !== 0) {
           return (
-            <div className="flex flex-row gap-2">
+            <div className="flex flex-row gap-2" key={v[0]}>
               <p>{v[1]}x</p>
               <ItemContainer key={v[0]} size={20} icon={v[0]} />
             </div>

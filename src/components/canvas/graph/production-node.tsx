@@ -75,7 +75,8 @@ export function ProductionNode(props: ProductionNodeProps) {
             <ItemContainer icon={props.machine} size={20} />
             <p>{getItemName(props.machine)}</p>
           </div>
-          {props.machine.includes("assembling") ? (
+          {props.machine.includes("assembling") &&
+          props.machine !== "assembling-machine-1" ? (
             <NodeModulesDisplay {...props} />
           ) : (
             <></>
